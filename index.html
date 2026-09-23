@@ -54,8 +54,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com">
-    <link rel="preconnect" href="https://www.youtube.com">
-    <link rel="preconnect" href="https://i.ytimg.com">
 
     <link rel="stylesheet" href="assets/styles.css">
 
@@ -188,7 +186,7 @@
 
     <main>
 
-                <!-- =====================================================
+        <!-- =====================================================
              01 · HERO — CINEMATIC VIDEO BANNER
         ====================================================== -->
 
@@ -198,9 +196,7 @@
 
                 <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture
                     poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1920&q=90">
-                    <!-- Replace the src below with your Pixabay video URL -->
-                    <source src="assets/videos/347325_medium.mp4"
-                        type="video/mp4">
+                    <source src="assets/videos/347325_medium.mp4" type="video/mp4">
                 </video>
 
                 <div class="hero-overlay"></div>
@@ -565,27 +561,9 @@
         }
 
         img,
-        video,
-        iframe {
+        video {
             display: block;
             max-width: 100%;
-        }
-
-                .hero-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            min-width: 100%;
-            min-height: 100%;
-            object-fit: cover;
-            object-position: center;
-            transform: translate(-50%, -50%) scale(1.04);
-            animation: heroKenBurns 26s ease-in-out infinite alternate;
-            will-change: transform;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
         }
 
         a {
@@ -1062,7 +1040,7 @@
         }
 
         /* =========================================================
-           HERO — CINEMATIC YOUTUBE VIDEO
+           HERO — CINEMATIC VIDEO
         ========================================================= */
 
         .hero {
@@ -1089,19 +1067,16 @@
             will-change: transform;
         }
 
-        /* YouTube iframe as a full-bleed background — uses the 16:9 cover trick */
         .hero-video {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 100vw;
-            height: 56.25vw;
-            /* 16:9 */
-            min-width: 177.77vh;
-            /* 100 * 16 / 9 */
-            min-height: 100vh;
-            border: 0;
-            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            object-position: center;
             transform: translate(-50%, -50%) scale(1.04);
             animation: heroKenBurns 26s ease-in-out infinite alternate;
             will-change: transform;
@@ -1153,7 +1128,6 @@
             will-change: transform, opacity;
         }
 
-        /* Brand wordmark centered */
         .hero-brand {
             position: absolute;
             top: 50%;
@@ -1246,21 +1220,25 @@
         }
 
         /* =========================================================
-           WORK SECTION — FORCED EQUAL SIZING
+           WORK SECTION — REFINED SPACING & SUBTLE MOTION
         ========================================================= */
 
         .work-section {
             background: var(--bg);
-            padding-block: clamp(4rem, 8vw, 9rem);
+            padding-block: clamp(3rem, 5vw, 5.5rem);
             position: relative;
         }
 
         .work-heading {
-            margin-bottom: clamp(2rem, 4vw, 4rem);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: clamp(1.5rem, 2.2vw, 2.25rem);
+            max-width: 720px;
         }
 
         .work-heading h2 {
-            margin: 1.25rem 0 0;
+            margin: 0;
             font-family: var(--font-display);
             font-size: clamp(1.75rem, 4vw, 3.2rem);
             font-weight: 600;
@@ -1320,7 +1298,7 @@
 
         .work-card-image {
             position: absolute !important;
-            inset: -8% 0 !important;
+            inset: -5% 0 !important;
             will-change: transform;
         }
 
@@ -1328,27 +1306,27 @@
             width: 100% !important;
             height: 100% !important;
             object-fit: cover !important;
-            transition: transform 1.2s var(--ease-out), filter 0.5s ease;
-            filter: saturate(0.7) contrast(1.05) brightness(0.72);
+            transition: transform 1.2s var(--ease-out), filter 0.6s ease;
+            filter: saturate(0.82) contrast(1.02) brightness(0.78);
         }
 
         .work-card:hover .work-card-image img {
-            transform: scale(1.06);
-            filter: saturate(1) contrast(1.1) brightness(0.9);
+            transform: scale(1.04);
+            filter: saturate(0.95) contrast(1.05) brightness(0.88);
         }
 
         .work-card-overlay {
             position: absolute;
             inset: 0;
             background: linear-gradient(to top,
-                    rgba(5, 5, 6, 0.95) 0%,
-                    rgba(5, 5, 6, 0.4) 45%,
+                    rgba(5, 5, 6, 0.92) 0%,
+                    rgba(5, 5, 6, 0.35) 50%,
                     transparent 100%);
             transition: opacity 0.5s ease;
         }
 
         .work-card:hover .work-card-overlay {
-            opacity: 0.9;
+            opacity: 0.92;
         }
 
         .work-card-content {
@@ -2058,7 +2036,37 @@
 
 
                 /* =========================================================
-                   GSAP CINEMATIC SCROLL EFFECTS
+                   VIDEO PLAYBACK ROBUSTNESS
+                ========================================================= */
+                const heroVideo = document.querySelector(".hero-video");
+
+                if (heroVideo) {
+                    heroVideo.muted = true;
+
+                    const tryPlay = () => {
+                        const p = heroVideo.play();
+                        if (p && typeof p.catch === "function") {
+                            p.catch(() => { /* silent fail — poster remains */ });
+                        }
+                    };
+
+                    tryPlay();
+
+                    document.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+                    document.addEventListener("click", tryPlay, { once: true });
+
+                    document.addEventListener("visibilitychange", () => {
+                        if (document.hidden) {
+                            heroVideo.pause();
+                        } else {
+                            tryPlay();
+                        }
+                    });
+                }
+
+
+                /* =========================================================
+                   GSAP — REFINED, SUBTLE SCROLL ANIMATIONS
                 ========================================================= */
                 if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
 
@@ -2095,49 +2103,48 @@
                         });
                     }
 
-                    /* ---- 2 · WORK HEADING REVEAL ---- */
+                    /* ---- 2 · WORK HEADING REVEAL — subtle ---- */
                     const heading = document.querySelector("[data-reveal-heading]");
                     if (heading) {
                         gsap.from(heading, {
-                            y: 60,
+                            y: 24,
                             opacity: 0,
-                            duration: 1.1,
-                            ease: "power3.out",
+                            duration: 0.85,
+                            ease: "power2.out",
                             scrollTrigger: {
                                 trigger: heading,
-                                start: "top 85%",
+                                start: "top 88%",
                                 once: true
                             }
                         });
                     }
 
-                    /* ---- 3 · WORK CARDS — CINEMATIC STAGGERED ENTRANCE ---- */
+                    /* ---- 3 · WORK CARDS — refined staggered entrance ---- */
                     const cards = document.querySelectorAll("[data-card]");
 
                     if (cards.length) {
                         gsap.from(cards, {
-                            y: 90,
+                            y: 36,
                             opacity: 0,
-                            scale: 0.96,
-                            duration: 1.15,
-                            stagger: 0.14,
-                            ease: "power3.out",
+                            duration: 0.9,
+                            stagger: 0.08,
+                            ease: "power2.out",
                             scrollTrigger: {
                                 trigger: "[data-stagger-grid]",
-                                start: "top 82%",
+                                start: "top 85%",
                                 once: true
                             }
                         });
 
-                        /* ---- 4 · CARD IMAGE INNER PARALLAX ---- */
+                        /* ---- 4 · CARD IMAGE INNER PARALLAX — subtle ---- */
                         cards.forEach((card) => {
                             const imgWrap = card.querySelector("[data-card-image]");
                             if (!imgWrap) return;
 
                             gsap.fromTo(imgWrap,
-                                { yPercent: -6 },
+                                { yPercent: -4 },
                                 {
-                                    yPercent: 6,
+                                    yPercent: 4,
                                     ease: "none",
                                     scrollTrigger: {
                                         trigger: card,
@@ -2150,7 +2157,7 @@
                         });
                     }
 
-                    /* ---- 5 · SCROLL VELOCITY SKEW — SUBTLE MOMENTUM FEEL ---- */
+                    /* ---- 5 · SCROLL VELOCITY SKEW — gentle ---- */
                     const skewTargets = document.querySelectorAll(".work-card");
                     if (skewTargets.length) {
                         const skewSetter = gsap.quickSetter(skewTargets, "skewY", "deg");
@@ -2158,12 +2165,12 @@
                         ScrollTrigger.create({
                             onUpdate: (self) => {
                                 const velocity = self.getVelocity();
-                                const skew = gsap.utils.clamp(-2.5, 2.5, velocity / -500);
+                                const skew = gsap.utils.clamp(-1.5, 1.5, velocity / -700);
                                 skewSetter(skew);
 
                                 gsap.to(skewTargets, {
                                     skewY: 0,
-                                    duration: 0.8,
+                                    duration: 0.9,
                                     ease: "power2.out",
                                     overwrite: true
                                 });
@@ -2171,17 +2178,17 @@
                         });
                     }
 
-                    /* ---- 6 · FOOTER REVEAL ---- */
+                    /* ---- 6 · FOOTER REVEAL — soft ---- */
                     const footer = document.querySelector(".site-footer");
                     if (footer) {
                         gsap.from(footer, {
                             opacity: 0,
-                            y: 40,
-                            duration: 1,
-                            ease: "power3.out",
+                            y: 24,
+                            duration: 0.9,
+                            ease: "power2.out",
                             scrollTrigger: {
                                 trigger: footer,
-                                start: "top 92%",
+                                start: "top 94%",
                                 once: true
                             }
                         });

@@ -411,7 +411,7 @@
                     <div class="ca-about-collage scroll-reveal">
 
                         <div class="ca-about-img ca-about-img-1">
-                            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=90"
+                            <img src="about-3.webp"
                                 alt="Model portrait" loading="lazy">
                         </div>
 
@@ -421,7 +421,7 @@
                         </div>
 
                         <div class="ca-about-img ca-about-img-3">
-                            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=90"
+                            <img src="about-1.webp"
                                 alt="Resort pool" loading="lazy">
                         </div>
 
@@ -590,12 +590,8 @@
             <div class="ca-concept-grid">
 
                 <div class="ca-concept-image scroll-reveal">
-                    <img src="https://images.unsplash.com/photo-1585842368784-3d3b3b2c6cc1?auto=format&fit=crop&w=2400&q=90"
-                        srcset="
-                            https://images.unsplash.com/photo-1585842368784-3d3b3b2c6cc1?auto=format&fit=crop&w=1200&q=85 1200w,
-                            https://images.unsplash.com/photo-1585842368784-3d3b3b2c6cc1?auto=format&fit=crop&w=1920&q=90 1920w,
-                            https://images.unsplash.com/photo-1585842368784-3d3b3b2c6cc1?auto=format&fit=crop&w=2400&q=90 2400w
-                        " sizes="(max-width: 1024px) 100vw, 55vw" alt="Professional cinema camera" loading="lazy">
+                    <img src="Sony Camera Insight.jpg"
+                        sizes="(max-width: 1024px) 100vw, 55vw" alt="Professional cinema camera" loading="lazy">
                     <div class="ca-concept-image-overlay"></div>
                 </div>
 
@@ -1533,13 +1529,12 @@
 
         .ca-team-hero {
             position: relative;
-            min-height: 85vh;
-            min-height: 85svh;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             overflow: hidden;
             isolation: isolate;
-            padding-block: clamp(5rem, 9vw, 8rem);
+            padding-block: clamp(4rem, 6vw, 6rem);
         }
 
         .ca-team-hero-bg {
@@ -1574,9 +1569,12 @@
             margin-bottom: 1.5rem;
         }
 
+        /* Specifically override the huge display class for this section */
         .ca-team-hero-content h2 {
             color: var(--white);
             margin-bottom: 1.5rem;
+            font-size: clamp(2rem, 4.5vw, 3.5rem);
+            line-height: 1.1;
         }
 
         .ca-team-hero-content p {
@@ -1584,7 +1582,7 @@
             line-height: 1.75;
             color: var(--white-soft);
             max-width: 720px;
-            margin: 0 auto 1.25rem;
+            margin: 0 auto 1rem;
         }
 
         .ca-team-hero-button {
@@ -1592,7 +1590,7 @@
             align-items: center;
             gap: 1rem;
             padding: 1rem 2.25rem;
-            margin-top: 1.75rem;
+            margin-top: 1rem;
             border: 1px solid rgba(255, 255, 255, 0.25);
             color: var(--white);
             font-size: 0.7rem;

@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="has-submenu">
-                    <a href="../work.html" class="work-trigger active" aria-haspopup="true">
+                    <a href="film.html" class="work-trigger active" aria-haspopup="true">
                         Work
                         <span class="nav-arrow" aria-hidden="true">↘</span>
                     </a>
@@ -134,7 +134,7 @@
                     <a href="../team.html"><span>03</span>Team</a>
                     <a href="../services/pre-production.html"><span>04</span>Services</a>
                     <div class="mobile-nav-group">
-                        <a href="../work.html" class="mobile-nav-parent">
+                        <a href="film.html" class="mobile-nav-parent">
                             <span>05</span>Work
                             <span class="mobile-nav-toggle-icon" aria-hidden="true">+</span>
                         </a>
@@ -574,8 +574,8 @@
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="../about.html">Studio</a></li>
                         <li><a href="../team.html">Team</a></li>
-                        <li>
-                            <a href="../work.html">Our Work</a>
+                        <li class="footer-col-parent">
+                            <span class="footer-parent-label">Our Work</span>
                             <ul class="footer-sub-list">
                                 <li><a href="film.html">Film</a></li>
                                 <li><a href="photography.html">Photography</a></li>
@@ -1396,6 +1396,15 @@
 
         .site-footer .footer-col-list a:hover::before { width: 6px !important; }
 
+        /* "Our Work" non-link parent label */
+        .site-footer .footer-parent-label {
+            display: inline-block !important;
+            color: var(--text-muted) !important;
+            font-size: 0.82rem !important;
+            line-height: 1.5 !important;
+            cursor: default !important;
+        }
+
         .site-footer .footer-contact-list {
             list-style: none !important;
             padding: 0 !important;
@@ -1719,6 +1728,8 @@
                     });
 
                     mobileNav.querySelectorAll('a').forEach(link => {
+                        if (link.classList.contains('mobile-nav-parent')) return;
+
                         link.addEventListener('click', () => {
                             mobileNav.classList.remove('is-open');
                             menuToggle.setAttribute('aria-expanded', 'false');

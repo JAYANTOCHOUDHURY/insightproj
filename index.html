@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <meta name="description"
         content="Cloudsartist21 is an Indian Film Production Company based in Bhubaneswar, Odisha India. We bring your ideas to life with creative resort ad films and visual storytelling.">
@@ -54,6 +54,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://www.youtube.com">
+    <link rel="preconnect" href="https://i.ytimg.com">
 
     <link rel="stylesheet" href="assets/styles.css">
 
@@ -63,13 +65,21 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+
     <script src="assets/app.js" defer></script>
 </head>
 
 <body>
 
     <div class="noise" aria-hidden="true"></div>
-    <div class="custom-cursor" aria-hidden="true"></div>
+
+    <!-- =========================================================
+         CUSTOM CURSOR
+    ========================================================== -->
+    <div class="custom-cursor" aria-hidden="true">
+        <span class="custom-cursor-dot"></span>
+        <span class="custom-cursor-ring"></span>
+    </div>
 
 
     <!-- =========================================================
@@ -79,7 +89,7 @@
     <header class="site-header">
         <div class="container nav-inner">
 
-            <a href="index.html" class="logo" aria-label="Cloudsartist21 home" data-cursor="HOME">
+            <a href="index.html" class="logo" aria-label="Cloudsartist21 home">
                 Clouds<span class="logo-dot">artist21</span>
             </a>
 
@@ -116,7 +126,7 @@
 
             </nav>
 
-            <a href="contact.html" class="header-cta" data-cursor="START">
+            <a href="contact.html" class="header-cta">
                 Start a project
                 <span aria-hidden="true">↗</span>
             </a>
@@ -178,623 +188,139 @@
 
     <main>
 
-        <!-- =====================================================
-             01 · HERO — 100vh Cinematic
+                <!-- =====================================================
+             01 · HERO — CINEMATIC VIDEO BANNER
         ====================================================== -->
 
-        <section class="hero" aria-label="Cloudsartist21 introduction">
+        <section class="hero" aria-label="Cloudsartist21 cinematic reel">
 
-            <div class="hero-bg" aria-hidden="true">
-                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2400&q=90"
-                    srcset="
-                        https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85 1200w,
-                        https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1920&q=90 1920w,
-                        https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2400&q=90 2400w
-                    " sizes="100vw" alt="" class="parallax-img" fetchpriority="high">
+            <div class="hero-bg" data-hero-bg>
+
+                <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture
+                    poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1920&q=90">
+                    <!-- Replace the src below with your Pixabay video URL -->
+                    <source src="assets/videos/347325_medium.mp4"
+                        type="video/mp4">
+                </video>
+
                 <div class="hero-overlay"></div>
                 <div class="hero-vignette"></div>
+
             </div>
 
-            <div class="hero-grid-lines" aria-hidden="true">
-                <span></span><span></span><span></span><span></span>
-            </div>
+            <div class="hero-content" data-hero-content>
 
-            <div class="container hero-content">
-
-                <div class="hero-topline fade-up">
-                    <span class="eyebrow">Cloudsartist21</span>
-                    <span class="hero-location">Bhubaneswar · Odisha · India</span>
+                <div class="hero-brand">
+                    Clouds<span>artist21</span>
                 </div>
 
-                <div class="hero-main">
+                <div class="hero-bottom">
 
-                    <p class="hero-kicker fade-up">Creative Resort Ad Films</p>
-
-                    <h1 class="display display-huge hero-title clip-reveal">
-                        We Bring
-                        <span>Your Ideas</span>
-                        <em>To Life.</em>
-                    </h1>
-
-                </div>
-
-                <div class="hero-bottom fade-up">
-
-                    <div class="hero-description">
-                        <span class="hero-description-label">01 — Our mission</span>
-                        <p>
-                            Revolutionize your brand image and make sure
-                            your ideas are well represented. We believe
-                            in a future filled with creativity and
-                            cutting-edge modern visions. We make it our
-                            mission to mesmerize your audience.
-                        </p>
+                    <div class="hero-meta">
+                        <span>Film Production</span>
+                        <span class="hero-meta-divider">·</span>
+                        <span>Bhubaneswar · Odisha · India</span>
                     </div>
 
-                    <a href="#intro" class="hero-discover" data-cursor="EXPLORE">
-                        <span class="hero-discover-line"></span>
-                        <span>Discover the studio</span>
-                        <span class="hero-discover-arrow" aria-hidden="true">↓</span>
+                    <a href="#work" class="hero-scroll-link" aria-label="Scroll to work">
+                        <span>Scroll</span>
+                        <span class="hero-scroll-line"></span>
                     </a>
 
                 </div>
 
             </div>
 
-            <div class="hero-scroll-mark" aria-hidden="true">
-                <span>Scroll</span>
-                <span class="hero-scroll-line"></span>
-            </div>
-
         </section>
 
 
         <!-- =====================================================
-             02 · INTRO + PARTNERS
+             02 · WORK — THREE CARDS
         ====================================================== -->
 
-        <section id="intro" class="section intro-section" aria-labelledby="intro-heading">
+        <section id="work" class="work-section" aria-labelledby="work-heading">
 
             <div class="container">
 
-                <div class="section-heading-row scroll-reveal">
-                    <span class="eyebrow">02 — The studio</span>
-                    <span class="section-index">Cloudsartist21 / Est. India</span>
+                <div class="work-heading" data-reveal-heading>
+                    <span class="eyebrow">01 — Selected work</span>
+                    <h2 id="work-heading">
+                        The work
+                        <span>speaks for itself.</span>
+                    </h2>
                 </div>
 
-                <div class="intro-grid">
 
-                    <div class="intro-label scroll-reveal">
-                        <span class="intro-symbol">+</span>
-                        <p>
-                            Film production.
-                            From ideas to dazzling visions.
-                        </p>
-                    </div>
+                <div class="work-grid" data-stagger-grid>
 
-                    <div class="intro-content scroll-reveal">
+                    <!-- 01 · Films -->
+                    <a href="work/film.html" class="work-card" data-card>
 
-                        <h2 id="intro-heading" class="display display-lg">
-                            Our partners
-                            <span>in success.</span>
-                        </h2>
+                        <div class="work-card-image" data-card-image>
+                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80"
+                                alt="Films — cinematic brand films and commercials" loading="lazy">
+                        </div>
 
-                        <div class="intro-bottom">
+                        <div class="work-card-overlay"></div>
 
-                            <p>
-                                <strong>CLOUDSARTIST21</strong> is an Indian
-                                Film Production Company based in Bhubaneswar,
-                                Odisha India. We consider you our partner
-                                and we guide you through every step of the
-                                film process starting with the concept, to
-                                the visual style, to filming, and then
-                                creation. Creativity meets technology,
-                                providing an unforgettable visual identity,
-                                and dazzling content that actually makes
-                                an impact.
+                        <div class="work-card-content">
+                            <span class="work-card-index">01</span>
+                            <h3 class="work-card-title">Films</h3>
+                            <p class="work-card-desc">
+                                Brand films, commercials, resort ad films,
+                                and cinematic documentaries.
                             </p>
-
-                            <a href="about.html" class="text-link" data-cursor="ABOUT">
-                                <span>About the studio</span>
-                                <span aria-hidden="true">↗</span>
-                            </a>
-
+                            <span class="work-card-arrow" aria-hidden="true">↗</span>
                         </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Partners Carousel -->
-                <div class="partners-block scroll-reveal">
-
-                    <div class="partners-heading">
-                        <span class="eyebrow">Trusted by</span>
-                        <p>Our partners in success</p>
-                    </div>
-
-                    <div class="partners-carousel" data-partners aria-label="Partner logos carousel">
-
-                        <button class="partners-arrow partners-arrow-prev" type="button" aria-label="Previous partner"
-                            data-partners-prev>
-                            <span aria-hidden="true">←</span>
-                        </button>
-
-                        <div class="partners-viewport">
-                            <div class="partners-track" data-partners-track>
-
-                                <div class="partner-slide">
-                                    <div class="partner-logo">
-                                        <span class="partner-name">Vismaya</span>
-                                        <span class="partner-type">Resorts</span>
-                                    </div>
-                                </div>
-
-                                <div class="partner-slide">
-                                    <div class="partner-logo">
-                                        <span class="partner-name">Mayfair</span>
-                                        <span class="partner-type">Hotels</span>
-                                    </div>
-                                </div>
-
-                                <div class="partner-slide">
-                                    <div class="partner-logo">
-                                        <span class="partner-name">Toshali</span>
-                                        <span class="partner-type">Group</span>
-                                    </div>
-                                </div>
-
-                                <div class="partner-slide">
-                                    <div class="partner-logo">
-                                        <span class="partner-name">Swosti</span>
-                                        <span class="partner-type">Resorts</span>
-                                    </div>
-                                </div>
-
-                                <div class="partner-slide">
-                                    <div class="partner-logo">
-                                        <span class="partner-name">Empires</span>
-                                        <span class="partner-type">Hotels</span>
-                                    </div>
-                                </div>
-
-                                <div class="partner-slide">
-                                    <div class="partner-logo">
-                                        <span class="partner-name">Lemon Tree</span>
-                                        <span class="partner-type">Premier</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <button class="partners-arrow partners-arrow-next" type="button" aria-label="Next partner"
-                            data-partners-next>
-                            <span aria-hidden="true">→</span>
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             03 · ABOUT — Cinematic Split
-        ====================================================== -->
-
-        <section class="ca-about-hero" aria-labelledby="about-heading">
-
-            <div class="container">
-
-                <div class="ca-about-hero-grid">
-
-                    <!-- Text -->
-                    <div class="ca-about-hero-text scroll-reveal">
-
-                        <span class="eyebrow">03 — About Cloudsartist21</span>
-
-                        <h2 id="about-heading" class="display display-lg">
-                            Where creativity meets
-                            <span>technology.</span>
-                        </h2>
-
-                        <p class="ca-about-hero-lead">
-                            We guide you through every step of the film
-                            process — from the concept, to the visual
-                            style, to filming, and then creation.
-                            Creativity meets technology, providing an
-                            unforgettable visual identity, and dazzling
-                            content that actually makes an impact.
-                        </p>
-
-                        <p class="ca-about-hero-sub">
-                            Wherever you are on your journey, our team
-                            can drive you forward, capturing your audience
-                            and building a buzz around your product or
-                            giving your brand the best possible image.
-                        </p>
-
-                        <a href="about.html" class="text-link" data-cursor="ABOUT">
-                            <span>Learn more</span>
-                            <span aria-hidden="true">↗</span>
-                        </a>
-
-                    </div>
-
-
-                    <!-- Image Collage -->
-                    <div class="ca-about-collage scroll-reveal">
-
-                        <div class="ca-about-img ca-about-img-1">
-                            <img src="about-3.webp" alt="Model portrait" loading="lazy">
-                        </div>
-
-                        <div class="ca-about-img ca-about-img-2">
-                            <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=800&q=90"
-                                alt="Lifestyle shot" loading="lazy">
-                        </div>
-
-                        <div class="ca-about-img ca-about-img-3">
-                            <img src="about-1.webp" alt="Resort pool" loading="lazy">
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             04 · OUR WORK — Cinematic Statement
-        ====================================================== -->
-
-        <section id="work" class="ca-work-hero" aria-labelledby="work-heading">
-
-            <div class="ca-work-bg">
-                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2400&q=90"
-                    alt="" class="parallax-img" loading="lazy">
-                <div class="ca-work-overlay"></div>
-            </div>
-
-            <div class="container ca-work-content">
-
-                <span class="eyebrow scroll-reveal">04 — Our work</span>
-
-                <h2 id="work-heading" class="display display-huge scroll-reveal">
-                    Unique content
-                    <span>to tell your stories.</span>
-                </h2>
-
-                <p class="scroll-reveal">
-                    We create unique content to tell your stories with
-                    creativity and art using the highest quality and
-                    most efficient technology.
-                </p>
-
-                <a href="work/film.html" class="ca-work-arrow scroll-reveal" aria-label="View all work">
-                    <span aria-hidden="true">↓</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             05 · WHAT WE DO — 3-Column Services
-        ====================================================== -->
-
-        <section id="services" class="section ca-what" aria-labelledby="what-heading">
-
-            <div class="container">
-
-                <div class="section-heading-row scroll-reveal">
-
-                    <div>
-                        <span class="eyebrow">05 — What we do</span>
-                        <h2 id="what-heading" class="section-title display">
-                            Every stage is a chance
-                            <span>to collaborate.</span>
-                        </h2>
-                    </div>
-
-                    <span class="section-index">Full Spectrum</span>
-
-                </div>
-
-                <p class="ca-what-intro scroll-reveal">
-                    Pre-production, production, and post-production.
-                    Every stage is a chance to collaborate and
-                    communicate the perfect brand image.
-                </p>
-
-
-                <div class="ca-what-grid">
-
-                    <!-- 01 · Pre Production -->
-                    <a href="services/pre-production.html" class="ca-what-card scroll-reveal" data-cursor="VIEW">
-
-                        <span class="ca-what-number">01</span>
-
-                        <h3 class="display">Pre Production</h3>
-
-                        <p class="ca-what-desc">
-                            Every project begins with a plan — from the
-                            first spark of an idea to the final
-                            storyboard.
-                        </p>
-
-                        <ul class="ca-what-list">
-                            <li><span>Strategy</span></li>
-                            <li><span>Concept</span></li>
-                            <li><span>Script</span></li>
-                            <li><span>Storyboards</span></li>
-                            <li><span>Production design</span></li>
-                        </ul>
 
                     </a>
 
 
-                    <!-- 02 · Production -->
-                    <a href="services/production.html" class="ca-what-card ca-what-card-featured scroll-reveal"
-                        data-cursor="VIEW">
+                    <!-- 02 · Photography -->
+                    <a href="work/photography.html" class="work-card" data-card>
 
-                        <span class="ca-what-number">02</span>
+                        <div class="work-card-image" data-card-image>
+                            <img src="Photography background.jpg"
+                                alt="Photography — product, lifestyle, and resort imagery" loading="lazy">
+                        </div>
 
-                        <h3 class="display">Production</h3>
+                        <div class="work-card-overlay"></div>
 
-                        <p class="ca-what-desc">
-                            Full-service production with the right team,
-                            equipment and creative direction for every
-                            story.
-                        </p>
-
-                        <ul class="ca-what-list">
-                            <li><span>Full service Production</span></li>
-                            <li><span>Production office</span></li>
-                            <li><span>Film production</span></li>
-                            <li><span>Commercials</span></li>
-                            <li><span>Corporate Films</span></li>
-                            <li><span>Directing</span></li>
-                            <li><span>Cinematography and Equipment</span></li>
-                        </ul>
+                        <div class="work-card-content">
+                            <span class="work-card-index">02</span>
+                            <h3 class="work-card-title">Photography</h3>
+                            <p class="work-card-desc">
+                                Product, lifestyle, resort, and brand
+                                photography that captures light and form.
+                            </p>
+                            <span class="work-card-arrow" aria-hidden="true">↗</span>
+                        </div>
 
                     </a>
 
 
-                    <!-- 03 · Post Production -->
-                    <a href="services/post-production.html" class="ca-what-card scroll-reveal" data-cursor="VIEW">
+                    <!-- 03 · The Making Of -->
+                    <a href="work/film-making.html" class="work-card" data-card>
 
-                        <span class="ca-what-number">03</span>
+                        <div class="work-card-image" data-card-image>
+                            <img src="Para Gliding.jpg"
+                                alt="The Making Of — behind the scenes" loading="lazy">
+                        </div>
 
-                        <h3 class="display">Post Production</h3>
+                        <div class="work-card-overlay"></div>
 
-                        <p class="ca-what-desc">
-                            The final polish — where every frame, note,
-                            and color comes together into one
-                            unforgettable experience.
-                        </p>
-
-                        <ul class="ca-what-list">
-                            <li><span>Editing</span></li>
-                            <li><span>Music and Sound</span></li>
-                            <li><span>CGI and VFX</span></li>
-                            <li><span>Color Grading</span></li>
-                        </ul>
+                        <div class="work-card-content">
+                            <span class="work-card-index">03</span>
+                            <h3 class="work-card-title">The Making Of</h3>
+                            <p class="work-card-desc">
+                                Behind the scenes — the craft, the crew,
+                                and the creative process.
+                            </p>
+                            <span class="work-card-arrow" aria-hidden="true">↗</span>
+                        </div>
 
                     </a>
 
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             06 · CONCEPT, CREATION, COLLABORATION — Split
-        ====================================================== -->
-
-        <section class="ca-concept" aria-labelledby="concept-heading">
-
-            <div class="ca-concept-grid">
-
-                <div class="ca-concept-image scroll-reveal">
-                    <img src="Sony Camera Insight.jpg" sizes="(max-width: 1024px) 100vw, 55vw"
-                        alt="Professional cinema camera" loading="lazy">
-                    <div class="ca-concept-image-overlay"></div>
-                </div>
-
-
-                <div class="ca-concept-content scroll-reveal">
-
-                    <span class="eyebrow">06 — Our approach</span>
-
-                    <h2 id="concept-heading" class="display display-lg">
-                        Concept,
-                        <span>Creation,</span>
-                        Collaboration.
-                    </h2>
-
-                    <p class="ca-concept-lead">
-                        Every project is a story waiting to be told,
-                        and we're here to craft yours.
-                    </p>
-
-                    <p>
-                        Through early consultations, we define your
-                        vision, goals, and ideas to create a customized
-                        plan that aligns with your unique identity.
-                        From concept to storyboarding, production to
-                        publishing, we collaborate with you every step
-                        of the way, ensuring your project stands out
-                        and reaches its fullest potential.
-                    </p>
-
-                    <p class="ca-concept-emphasis">
-                        Let's work together to transform your vision
-                        into impactful video content tailored to
-                        your needs.
-                    </p>
-
-                    <a href="contact.html" class="text-link" data-cursor="START">
-                        <span>Start a project</span>
-                        <span aria-hidden="true">↗</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             07 · INSIDE CLOUDSARTIST21
-        ====================================================== -->
-
-        <section class="section ca-inside" aria-labelledby="inside-heading">
-
-            <div class="container">
-
-                <div class="section-heading-row scroll-reveal">
-                    <span class="eyebrow">07 — Inside</span>
-                    <span class="section-index">Cloudsartist21</span>
-                </div>
-
-                <div class="ca-inside-grid">
-
-                    <div class="ca-inside-label scroll-reveal">
-                        <span class="intro-symbol">+</span>
-                        <p>
-                            Precision, professionalism,
-                            and lasting impact.
-                        </p>
-                    </div>
-
-                    <div class="ca-inside-copy scroll-reveal">
-
-                        <h2 id="inside-heading" class="display display-lg">
-                            Where creativity
-                            <span>meets precision.</span>
-                        </h2>
-
-                        <p class="ca-inside-lead">
-                            At Cloudsartist21, we specialize in delivering
-                            exceptional video production and editing
-                            through a seamless and innovative process.
-                        </p>
-
-                        <p>
-                            Our projects drive our growth and reflect our
-                            dedication to professionalism. We go beyond
-                            creative direction, ensuring not only
-                            top-quality production and meticulous
-                            attention to detail but also leveraging our
-                            vast experience in visual content creation.
-                            This expertise allows us to craft integrated
-                            and captivating visuals that bring your
-                            vision to life and leave a lasting impact.
-                        </p>
-
-                        <p class="ca-inside-emphasis">
-                            Discover the art of storytelling with
-                            Cloudsartist21.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             08 · MEET THE TEAM — Cinematic Teaser
-        ====================================================== -->
-
-        <section id="team" class="ca-team-hero" aria-labelledby="team-heading">
-
-            <div class="ca-team-hero-bg">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2400&q=90"
-                    alt="" class="parallax-img" loading="lazy">
-                <div class="ca-team-hero-overlay"></div>
-            </div>
-
-            <div class="container ca-team-hero-content">
-
-                <span class="eyebrow scroll-reveal">08 — Meet the team</span>
-
-                <h2 id="team-heading" class="display display-huge scroll-reveal">
-                    The talented individuals
-                    <span>behind every project.</span>
-                </h2>
-
-                <p class="scroll-reveal">
-                    Get to know the talented individuals who bring
-                    your creative vision to life. Our team is composed
-                    of skilled professionals, each bringing a unique
-                    set of talents and perspectives. We are united by
-                    our passion for storytelling and a shared
-                    commitment to delivering exceptional results.
-                </p>
-
-                <p class="scroll-reveal">
-                    Explore the people behind the scenes who work
-                    tirelessly to ensure every project is executed
-                    with precision, creativity, and excellence.
-                </p>
-
-                <a href="team.html" class="ca-team-hero-button scroll-reveal" data-cursor="TEAM">
-                    <span>Meet the Team</span>
-                    <span class="ca-team-hero-arrow" aria-hidden="true">↗</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             09 · TRANSFORM YOUR VISION — Final CTA
-        ====================================================== -->
-
-        <section id="contact" class="cta-section" aria-labelledby="cta-heading">
-
-            <div class="container">
-
-                <div class="cta-top scroll-reveal">
-                    <span class="eyebrow">09 — Let's create together</span>
-                    <span>Ready when you are.</span>
-                </div>
-
-                <div class="cta-main scroll-reveal">
-
-                    <h2 id="cta-heading" class="display display-huge">
-                        Transform your vision
-                        <span>into reality.</span>
-                    </h2>
-
-                    <a href="contact.html" class="cta-button" data-cursor="START">
-                        <span>Get in touch</span>
-                        <span class="cta-button-arrow" aria-hidden="true">↗</span>
-                    </a>
-
-                </div>
-
-                <div class="cta-bottom scroll-reveal">
-                    <p>Film Production · Commercials · Cinematography</p>
-                    <p>Bhubaneswar · Odisha · India</p>
                 </div>
 
             </div>
@@ -805,7 +331,7 @@
 
 
     <!-- =========================================================
-         FOOTER — REDESIGNED & COMPACT
+         FOOTER
     ========================================================== -->
 
     <footer class="site-footer">
@@ -907,7 +433,7 @@
                 </div>
 
 
-                <!-- Column 4 — Contact (NEW) -->
+                <!-- Column 4 — Contact -->
                 <div class="footer-col footer-col-contact">
 
                     <h3 class="footer-col-title">Contact</h3>
@@ -990,757 +516,415 @@
 
     <style>
         /* =========================================================
-           INTRO — PARTNERS BLOCK
+           BASE
         ========================================================= */
 
-        .partners-block {
-            margin-top: clamp(3rem, 6vw, 5rem);
-            padding-top: clamp(2.5rem, 4vw, 3.5rem);
-            border-top: 1px solid var(--border);
+        :root {
+            --bg: #08080a;
+            --white: #ffffff;
+            --white-soft: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --text-dim: rgba(255, 255, 255, 0.4);
+            --accent: #d4af37;
+            --accent-glow: rgba(212, 175, 55, 0.12);
+            --border: rgba(255, 255, 255, 0.12);
+            --border-soft: rgba(255, 255, 255, 0.08);
+            --font-display: 'Manrope', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .partners-heading {
-            text-align: center;
-            margin-bottom: 2rem;
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
         }
 
-        .partners-heading p {
-            margin: 0.6rem 0 0;
-            font-family: var(--font-display);
-            font-size: clamp(1rem, 1.4vw, 1.3rem);
-            font-weight: 600;
-            letter-spacing: -0.02em;
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
             color: var(--white);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            min-height: 100%;
         }
 
-        .partners-carousel {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            max-width: 1100px;
+        .container {
+            width: 100%;
+            max-width: 1280px;
             margin: 0 auto;
+            padding-inline: clamp(1.25rem, 4vw, 3rem);
         }
 
-        .partners-viewport {
-            flex: 1;
-            overflow: hidden;
+        img,
+        video,
+        iframe {
+            display: block;
+            max-width: 100%;
         }
 
-        .partners-track {
-            display: flex;
-            gap: 1.25rem;
-            transition: transform 0.6s var(--ease-out);
+                .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transform: translate(-50%, -50%) scale(1.04);
+            animation: heroKenBurns 26s ease-in-out infinite alternate;
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        /* Noise overlay */
+        .noise {
+            position: fixed;
+            inset: 0;
+            z-index: 9990;
+            pointer-events: none;
+            opacity: 0.028;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        /* =========================================================
+           CUSTOM CURSOR
+        ========================================================= */
+
+        @media (pointer: fine) {
+
+            html,
+            body,
+            a,
+            button,
+            [role="button"],
+            .work-card,
+            .header-cta,
+            .menu-toggle,
+            .logo,
+            .hero-scroll-link,
+            .footer-col-list a,
+            .footer-socials-inline a,
+            .mobile-nav-links a,
+            .mobile-nav-parent,
+            .submenu a,
+            .nav-links a,
+            .work-trigger {
+                cursor: none !important;
+            }
+        }
+
+        .custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .custom-cursor.is-active {
+            opacity: 1;
+        }
+
+        .custom-cursor-dot,
+        .custom-cursor-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
             will-change: transform;
         }
 
-        .partner-slide {
-            flex: 0 0 auto;
-            width: calc((100% - 2.5rem) / 3);
-        }
-
-        .partner-logo {
-            aspect-ratio: 1.7 / 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0.35rem;
-            padding: 1.25rem;
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), transparent);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-
-        .partner-logo:hover {
-            border-color: var(--accent-dim);
-            background: linear-gradient(145deg, var(--accent-glow), transparent);
-            transform: translateY(-4px);
-        }
-
-        .partner-name {
-            font-family: var(--font-display);
-            font-size: clamp(1rem, 1.4vw, 1.3rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--white);
-            line-height: 1;
-        }
-
-        .partner-type {
-            font-size: 0.6rem;
-            font-weight: 600;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        .partners-arrow {
-            flex: 0 0 auto;
-            width: 40px;
-            height: 40px;
-            display: grid;
-            place-items: center;
-            border: 1px solid var(--border);
+        .custom-cursor-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
             border-radius: 50%;
-            background: transparent;
-            color: var(--white);
-            font-size: 0.9rem;
-            cursor: none;
-            transition: all 0.35s ease;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+            transition: width 0.25s ease, height 0.25s ease, opacity 0.3s ease;
         }
 
-        .partners-arrow:hover {
-            background: var(--white);
-            color: var(--bg);
-            border-color: var(--white);
+        .custom-cursor-ring {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 50%;
+            transition: width 0.35s var(--ease-out),
+                height 0.35s var(--ease-out),
+                border-color 0.3s ease,
+                background 0.3s ease,
+                opacity 0.3s ease;
         }
 
-        @media (max-width: 768px) {
-            .partner-slide {
-                width: calc((100% - 1.25rem) / 2);
+        .custom-cursor.is-hovering .custom-cursor-ring {
+            width: 68px;
+            height: 68px;
+            border-color: var(--accent);
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        .custom-cursor.is-hovering .custom-cursor-dot {
+            width: 4px;
+            height: 4px;
+        }
+
+        .custom-cursor.is-pressed .custom-cursor-ring {
+            width: 24px;
+            height: 24px;
+            border-color: var(--accent);
+        }
+
+        @media (pointer: coarse) {
+            .custom-cursor {
+                display: none !important;
             }
 
-            .partners-arrow {
-                display: none;
+            html,
+            body,
+            a,
+            button,
+            [role="button"] {
+                cursor: auto !important;
             }
         }
-
-        @media (max-width: 480px) {
-            .partner-slide {
-                width: 100%;
-            }
-        }
-
 
         /* =========================================================
-           ABOUT HERO
+           HEADER
         ========================================================= */
 
-        .ca-about-hero {
-            padding-block: clamp(5rem, 9vw, 8rem);
-            background: #08080a;
-            position: relative;
-            overflow: hidden;
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding-block: clamp(0.9rem, 1.6vw, 1.25rem);
+            transition: background 0.4s ease, backdrop-filter 0.4s ease, padding 0.3s ease;
         }
 
-        .ca-about-hero::before {
+        .site-header.is-scrolled {
+            background: rgba(8, 8, 10, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-soft);
+            padding-block: 0.75rem;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: clamp(1rem, 2vw, 2rem);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+            font-weight: 700;
+            letter-spacing: -0.06em;
+            color: var(--white);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .logo-dot {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: clamp(1.25rem, 2.2vw, 2rem);
+        }
+
+        .nav-links>a,
+        .nav-links .work-trigger {
+            position: relative;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+            padding-block: 0.25rem;
+            white-space: nowrap;
+        }
+
+        .nav-links>a::after,
+        .nav-links .work-trigger::after {
             content: "";
             position: absolute;
-            top: 20%;
-            left: -10%;
-            width: 40vw;
-            height: 40vw;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--accent-glow), transparent 68%);
-            pointer-events: none;
-        }
-
-        .ca-about-hero-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-            gap: clamp(2.5rem, 6vw, 6rem);
-            align-items: center;
-            position: relative;
-        }
-
-        .ca-about-hero-text {
-            max-width: 620px;
-        }
-
-        .ca-about-hero-text h2 {
-            margin: 1.25rem 0 1.75rem;
-        }
-
-        .ca-about-hero-lead {
-            font-family: var(--font-display);
-            font-size: clamp(0.98rem, 1.15vw, 1.08rem);
-            line-height: 1.75;
-            color: var(--white-soft);
-            margin: 0 0 1.25rem;
-        }
-
-        .ca-about-hero-sub {
-            font-size: 0.92rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-            margin: 0 0 2rem;
-        }
-
-        .ca-about-collage {
-            position: relative;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: auto auto;
-            gap: 0.85rem;
-            max-width: 480px;
-            margin-inline: auto;
-        }
-
-        .ca-about-img {
-            position: relative;
-            overflow: hidden;
-            background: #111;
-            border-radius: 4px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .ca-about-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1s var(--ease-out);
-        }
-
-        .ca-about-img:hover img {
-            transform: scale(1.05);
-        }
-
-        .ca-about-img-1 {
-            grid-column: 1 / 2;
-            grid-row: 1 / 3;
-            aspect-ratio: 0.85 / 1;
-            align-self: end;
-        }
-
-        .ca-about-img-2 {
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-            aspect-ratio: 1 / 1;
-        }
-
-        .ca-about-img-3 {
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
-            aspect-ratio: 1 / 1;
-        }
-
-        @media (max-width: 1024px) {
-            .ca-about-hero-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .ca-about-collage {
-                max-width: 100%;
-            }
-        }
-
-
-        /* =========================================================
-           OUR WORK — Cinematic
-        ========================================================= */
-
-        .ca-work-hero {
-            position: relative;
-            min-height: 85vh;
-            min-height: 85svh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            isolation: isolate;
-            padding-block: clamp(5rem, 9vw, 8rem);
-        }
-
-        .ca-work-bg {
-            position: absolute;
-            inset: -5%;
-            z-index: -2;
-        }
-
-        .ca-work-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: saturate(0.7) contrast(1.1) brightness(0.55);
-            transform: scale(1.06);
-        }
-
-        .ca-work-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(8, 8, 10, 0.7) 0%, rgba(8, 8, 10, 0.35) 40%, rgba(8, 8, 10, 0.85) 100%);
-        }
-
-        .ca-work-content {
-            position: relative;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .ca-work-content .eyebrow {
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-        }
-
-        .ca-work-content h2 {
-            color: var(--white);
-            margin-bottom: 1.5rem;
-        }
-
-        .ca-work-content p {
-            font-size: clamp(0.92rem, 1.1vw, 1rem);
-            line-height: 1.75;
-            color: var(--white-soft);
-            max-width: 640px;
-            margin: 0 auto 2.5rem;
-        }
-
-        .ca-work-arrow {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 50%;
-            color: var(--white);
-            font-size: 1rem;
-            transition: all 0.35s ease;
-        }
-
-        .ca-work-arrow:hover {
-            background: var(--white);
-            color: var(--bg);
-            border-color: var(--white);
-        }
-
-
-        /* =========================================================
-           WHAT WE DO
-        ========================================================= */
-
-        .ca-what {
-            background: var(--bg);
-        }
-
-        .ca-what-intro {
-            max-width: 720px;
-            margin: 0 auto clamp(2.5rem, 4vw, 3.5rem);
-            text-align: center;
-            font-size: clamp(0.92rem, 1.05vw, 1rem);
-            line-height: 1.75;
-            color: var(--text-muted);
-        }
-
-        .ca-what-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-        }
-
-        .ca-what-card {
-            position: relative;
-            padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.5rem, 2vw, 2rem);
-            background: var(--bg);
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-            transition: background 0.4s ease;
-            color: inherit;
-            text-decoration: none;
-            cursor: none;
-        }
-
-        .ca-what-card:hover {
-            background: #0e0e10;
-        }
-
-        .ca-what-card-featured {
-            background: linear-gradient(180deg, rgba(216, 185, 111, 0.04), transparent);
-        }
-
-        .ca-what-card-featured:hover {
-            background: linear-gradient(180deg, var(--accent-glow), transparent);
-        }
-
-        .ca-what-number {
-            font-family: var(--font-display);
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.22em;
-            color: var(--accent);
-        }
-
-        .ca-what-card h3 {
-            margin: 0;
-            font-size: clamp(1.3rem, 1.8vw, 1.7rem);
-            font-weight: 600;
-            letter-spacing: -0.035em;
-            color: var(--white);
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .ca-what-desc {
-            margin: 0;
-            font-size: 0.85rem;
-            line-height: 1.7;
-            color: var(--text-muted);
-        }
-
-        .ca-what-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.55rem;
-        }
-
-        .ca-what-list li {
-            font-size: 0.82rem;
-            line-height: 1.55;
-            color: var(--text-muted);
-            padding-left: 1.15rem;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .ca-what-list li::before {
-            content: "→";
-            position: absolute;
             left: 0;
-            color: var(--accent);
-            opacity: 0.6;
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            bottom: -2px;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.35s var(--ease-out);
         }
 
-        .ca-what-card:hover .ca-what-list li {
+        .nav-links>a:hover,
+        .nav-links .work-trigger:hover,
+        .nav-links>a.active,
+        .nav-links .work-trigger.active {
             color: var(--white);
         }
 
-        .ca-what-card:hover .ca-what-list li::before {
-            opacity: 1;
-            transform: translateX(3px);
-        }
-
-        @media (max-width: 1024px) {
-            .ca-what-grid {
-                grid-template-columns: 1fr;
-                gap: 1px;
-            }
-        }
-
-
-        /* =========================================================
-           CONCEPT, CREATION, COLLABORATION
-        ========================================================= */
-
-        .ca-concept {
-            position: relative;
-            background: var(--bg);
-        }
-
-        .ca-concept-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-            min-height: 85vh;
-            min-height: 85svh;
-        }
-
-        .ca-concept-image {
-            position: relative;
-            overflow: hidden;
-            background: #111;
-        }
-
-        .ca-concept-image img {
-            position: absolute;
-            inset: 0;
+        .nav-links>a:hover::after,
+        .nav-links .work-trigger:hover::after,
+        .nav-links>a.active::after,
+        .nav-links .work-trigger.active::after {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: saturate(0.85) contrast(1.05) brightness(0.85);
         }
 
-        .ca-concept-image-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 60%, rgba(8, 8, 10, 0.5) 100%);
-        }
-
-        .ca-concept-content {
-            padding: clamp(2.5rem, 5vw, 5rem) clamp(2rem, 5vw, 5rem);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-width: 720px;
-        }
-
-        .ca-concept-content h2 {
-            margin: 1.25rem 0 1.5rem;
-        }
-
-        .ca-concept-lead {
-            font-family: var(--font-display);
-            font-size: clamp(1rem, 1.2vw, 1.15rem);
-            line-height: 1.6;
-            font-weight: 500;
-            color: var(--white-soft);
-            margin: 0 0 1.25rem;
-        }
-
-        .ca-concept-content p {
-            font-size: 0.92rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-            margin: 0 0 1.25rem;
-        }
-
-        .ca-concept-emphasis {
-            font-weight: 600;
-            color: var(--white-soft) !important;
-            margin-bottom: 1.75rem !important;
-        }
-
-        @media (max-width: 1024px) {
-            .ca-concept-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ca-concept-image {
-                aspect-ratio: 1.6 / 1;
-                min-height: 380px;
-            }
-        }
-
-
-        /* =========================================================
-           INSIDE CLOUDSARTIST21
-        ========================================================= */
-
-        .ca-inside {
-            background: var(--bg);
-        }
-
-        .ca-inside-grid {
-            display: grid;
-            grid-template-columns: minmax(150px, 1fr) minmax(0, 4fr);
-            gap: clamp(2rem, 6vw, 7rem);
-        }
-
-        .ca-inside-label {
-            padding-top: 0.5rem;
-        }
-
-        .ca-inside-label p {
-            max-width: 170px;
-            color: var(--text-dim);
-            font-size: 0.65rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            line-height: 1.65;
-            text-transform: uppercase;
-            margin: 1.25rem 0 0;
-        }
-
-        .ca-inside-copy {
-            max-width: 900px;
-        }
-
-        .ca-inside-copy h2 {
-            margin: 0 0 2rem;
-        }
-
-        .ca-inside-lead {
-            font-family: var(--font-display);
-            font-size: clamp(0.98rem, 1.15vw, 1.1rem);
-            line-height: 1.7;
-            color: var(--white-soft);
-            margin: 0 0 1.5rem;
-        }
-
-        .ca-inside-copy p {
-            font-size: 0.92rem;
-            line-height: 1.85;
-            color: var(--text-muted);
-            margin: 0 0 1.25rem;
-        }
-
-        .ca-inside-emphasis {
-            font-weight: 600;
-            color: var(--accent) !important;
-            font-family: var(--font-display);
-            font-size: clamp(0.98rem, 1.1vw, 1.05rem) !important;
-            margin-top: 1.75rem !important;
-        }
-
-        @media (max-width: 768px) {
-            .ca-inside-grid {
-                grid-template-columns: 1fr;
-                gap: 1.75rem;
-            }
-
-            .ca-inside-label {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .ca-inside-label p {
-                margin: 0;
-                max-width: 240px;
-            }
-        }
-
-
-        /* =========================================================
-           MEET THE TEAM
-        ========================================================= */
-
-        .ca-team-hero {
+        .has-submenu {
             position: relative;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            isolation: isolate;
-            padding-block: clamp(4rem, 6vw, 6rem);
         }
 
-        .ca-team-hero-bg {
-            position: absolute;
-            inset: -5%;
-            z-index: -2;
-        }
-
-        .ca-team-hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: saturate(0.55) contrast(1.15) brightness(0.4);
-            transform: scale(1.06);
-        }
-
-        .ca-team-hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(8, 8, 10, 0.75) 0%, rgba(8, 8, 10, 0.5) 40%, rgba(8, 8, 10, 0.95) 100%);
-        }
-
-        .ca-team-hero-content {
-            position: relative;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .ca-team-hero-content .eyebrow {
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-        }
-
-        /* Specifically override the huge display class for this section */
-        .ca-team-hero-content h2 {
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            font-size: clamp(2rem, 4.5vw, 3.5rem);
-            line-height: 1.1;
-        }
-
-        .ca-team-hero-content p {
-            font-size: clamp(0.9rem, 1.05vw, 1rem);
-            line-height: 1.75;
-            color: var(--white-soft);
-            max-width: 720px;
-            margin: 0 auto 1rem;
-        }
-
-        .ca-team-hero-button {
+        .has-submenu .work-trigger {
             display: inline-flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1rem 2.25rem;
-            margin-top: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            color: var(--white);
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            transition: all 0.4s ease;
+            gap: 0.35rem;
         }
 
-        .ca-team-hero-button span:first-child {
-            color: var(--white);
-        }
-
-        .ca-team-hero-arrow {
-            color: var(--accent);
+        .nav-arrow {
+            font-size: 0.65rem;
+            opacity: 0.6;
             transition: transform 0.35s var(--ease-out);
         }
 
-        .ca-team-hero-button:hover {
-            background: var(--white);
+        .has-submenu:hover .nav-arrow {
+            transform: rotate(-45deg);
+        }
+
+        .submenu {
+            position: absolute;
+            top: calc(100% + 1rem);
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            min-width: 210px;
+            background: rgba(12, 12, 14, 0.96);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out),
+                visibility 0.35s;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .has-submenu:hover .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .submenu a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.65rem 0.85rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-radius: 4px;
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        .submenu a span {
+            font-size: 0.6rem;
+            color: var(--text-dim);
+        }
+
+        .submenu a:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.4rem;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--white);
+            transition: background 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .header-cta:hover {
+            background: var(--accent);
+            border-color: var(--accent);
             color: var(--bg);
-            border-color: var(--white);
         }
-
-        .ca-team-hero-button:hover span:first-child {
-            color: var(--bg);
-        }
-
-        .ca-team-hero-button:hover .ca-team-hero-arrow {
-            color: var(--bg);
-            transform: translate(4px, -4px);
-        }
-
-
-        /* =========================================================
-           FINAL CTA
-        ========================================================= */
-
-        .cta-section {
-            padding-block: clamp(5rem, 9vw, 8rem);
-        }
-
-
-        /* =========================================================
-           MOBILE NAVIGATION
-        ========================================================= */
 
         .menu-toggle {
             display: none;
-            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
             background: none;
             border: none;
+            cursor: pointer;
             padding: 0.5rem;
-            z-index: 1001;
-            position: relative;
+            z-index: 1002;
         }
 
         .menu-toggle span {
             display: block;
             width: 24px;
-            height: 2px;
+            height: 1.5px;
             background: var(--white);
-            margin: 5px 0;
-            transition: all 0.3s var(--ease-out);
+            transition: transform 0.35s var(--ease-out), opacity 0.35s ease;
         }
 
-        /* Mobile Navigation Overlay */
+        /* Mobile Navigation */
         .mobile-navigation {
             position: fixed;
             inset: 0;
             background: var(--bg);
-            z-index: 999;
+            z-index: 1001;
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.4s var(--ease-out);
-            padding: 2rem;
+            transition: opacity 0.45s var(--ease-out), visibility 0.45s;
+            padding: 2rem 1.5rem;
             overflow-y: auto;
         }
 
-        .mobile-navigation.is-open,
-        .mobile-navigation.active {
+        .mobile-navigation.is-open {
             opacity: 1;
             visibility: visible;
         }
@@ -1761,35 +945,97 @@
             border-bottom: 1px solid var(--border);
         }
 
+        .eyebrow {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+        }
+
+        .mobile-menu-number {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            color: var(--text-dim);
+        }
+
         .mobile-nav-links {
             display: flex;
             flex-direction: column;
             gap: 1.25rem;
         }
 
-        .mobile-nav-links a {
-            font-family: var(--font-display);
-            font-size: clamp(1.25rem, 5vw, 1.75rem);
-            font-weight: 600;
-            color: var(--text-muted);
+        .mobile-nav-links>a,
+        .mobile-nav-links .mobile-nav-parent {
             display: flex;
             align-items: center;
             gap: 1rem;
-            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 5vw, 1.9rem);
+            font-weight: 600;
+            color: var(--text-muted);
             transition: color 0.3s ease;
         }
 
-        .mobile-nav-links a span {
-            font-size: 0.7rem;
+        .mobile-nav-links>a span,
+        .mobile-nav-links .mobile-nav-parent>span:first-child {
+            font-size: 0.68rem;
             font-weight: 700;
             color: var(--accent);
             opacity: 0.6;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.14em;
         }
 
-        .mobile-nav-links a:hover,
-        .mobile-nav-links a.active {
+        .mobile-nav-links>a:hover,
+        .mobile-nav-links>a.active,
+        .mobile-nav-links .mobile-nav-parent:hover {
             color: var(--white);
+        }
+
+        .mobile-nav-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-nav-parent {
+            justify-content: space-between;
+        }
+
+        .mobile-nav-toggle-icon {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: var(--accent);
+            transition: transform 0.35s var(--ease-out);
+        }
+
+        .mobile-nav-group.is-expanded .mobile-nav-toggle-icon {
+            transform: rotate(45deg);
+        }
+
+        .mobile-nav-sub {
+            display: none;
+            flex-direction: column;
+            gap: 0.85rem;
+            padding: 1rem 0 1rem 2.75rem;
+            margin-top: 0.5rem;
+            border-left: 1px solid var(--border);
+            margin-left: 0.5rem;
+        }
+
+        .mobile-nav-group.is-expanded .mobile-nav-sub {
+            display: flex;
+        }
+
+        .mobile-nav-sub a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-sub a:hover {
+            color: var(--accent);
         }
 
         .mobile-navigation-bottom {
@@ -1813,82 +1059,368 @@
             color: var(--accent);
             font-size: 0.9rem;
             font-weight: 600;
-            text-decoration: none;
         }
-
-        /* Toggle Visibility */
-        @media (max-width: 1024px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
-
 
         /* =========================================================
-           MOBILE NAV — Work Submenu Group
+           HERO — CINEMATIC YOUTUBE VIDEO
         ========================================================= */
 
-        .mobile-nav-group {
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            height: 100svh;
+            height: 100dvh;
+            min-height: 600px;
+            max-height: 1300px;
             display: flex;
-            flex-direction: column;
+            align-items: stretch;
+            overflow: hidden;
+            background: #050505;
+            isolation: isolate;
         }
 
-        .mobile-nav-parent {
+        .hero-bg {
+            position: absolute;
+            inset: -12% 0;
+            z-index: 0;
+            overflow: hidden;
+            background: #050505;
+            will-change: transform;
+        }
+
+        /* YouTube iframe as a full-bleed background — uses the 16:9 cover trick */
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw;
+            /* 16:9 */
+            min-width: 177.77vh;
+            /* 100 * 16 / 9 */
+            min-height: 100vh;
+            border: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale(1.04);
+            animation: heroKenBurns 26s ease-in-out infinite alternate;
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        @keyframes heroKenBurns {
+            0% {
+                transform: translate(-50%, -50%) scale(1.04);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1.16);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg,
+                    rgba(8, 8, 10, 0.55) 0%,
+                    rgba(8, 8, 10, 0.15) 40%,
+                    rgba(8, 8, 10, 0.55) 100%);
+            z-index: 1;
+        }
+
+        .hero-vignette {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 38%, rgba(8, 8, 10, 0.75) 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
             justify-content: space-between;
+            padding-top: clamp(110px, 12vw, 170px);
+            padding-bottom: clamp(28px, 4vw, 62px);
+            padding-inline: clamp(1.5rem, 5vw, 3.5rem);
+            color: #fff;
+            will-change: transform, opacity;
         }
 
-        .mobile-nav-toggle-icon {
-            font-size: 1.25rem;
-            font-weight: 300;
+        /* Brand wordmark centered */
+        .hero-brand {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 4vw, 3.4rem);
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            color: rgba(255, 255, 255, 0.96);
+            text-align: center;
+            text-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            pointer-events: none;
+        }
+
+        .hero-brand span {
             color: var(--accent);
-            line-height: 1;
-            transition: transform 0.35s var(--ease-out);
         }
 
-        .mobile-nav-group.is-expanded .mobile-nav-toggle-icon {
-            transform: rotate(45deg);
-        }
-
-        .mobile-nav-sub {
-            display: none;
-            flex-direction: column;
-            gap: 0.85rem;
-            padding: 1rem 0 1rem 2.75rem;
-            margin-top: 0.5rem;
-            border-left: 1px solid var(--border);
-            margin-left: 0.5rem;
-        }
-
-        .mobile-nav-group.is-expanded .mobile-nav-sub {
+        .hero-bottom {
             display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            margin-top: auto;
         }
 
-        .mobile-nav-sub a {
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-decoration: none;
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: clamp(0.62rem, 0.8vw, 0.72rem);
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.72);
+            white-space: nowrap;
+        }
+
+        .hero-meta-divider {
+            opacity: 0.4;
+        }
+
+        .hero-scroll-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.9rem;
+            font-size: clamp(0.62rem, 0.75vw, 0.68rem);
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.65);
             transition: color 0.3s ease;
-            letter-spacing: 0;
+            white-space: nowrap;
         }
 
-        .mobile-nav-sub a:hover {
+        .hero-scroll-link:hover {
+            color: var(--white);
+        }
+
+        .hero-scroll-line {
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.45);
+            position: relative;
+            overflow: hidden;
+            transform-origin: left center;
+        }
+
+        .hero-scroll-line::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--accent);
+            transform: translateX(-100%);
+            animation: scrollLine 2.4s ease-in-out infinite;
+        }
+
+        @keyframes scrollLine {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* =========================================================
+           WORK SECTION — FORCED EQUAL SIZING
+        ========================================================= */
+
+        .work-section {
+            background: var(--bg);
+            padding-block: clamp(4rem, 8vw, 9rem);
+            position: relative;
+        }
+
+        .work-heading {
+            margin-bottom: clamp(2rem, 4vw, 4rem);
+        }
+
+        .work-heading h2 {
+            margin: 1.25rem 0 0;
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 4vw, 3.2rem);
+            font-weight: 600;
+            letter-spacing: -0.05em;
+            color: var(--white);
+            line-height: 1.05;
+        }
+
+        .work-heading h2 span {
             color: var(--accent);
+        }
+
+        /* Grid — force 3 equal columns, equal row heights */
+        .work-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: clamp(0.85rem, 1.5vw, 1.5rem) !important;
+            align-items: stretch !important;
+            grid-auto-rows: 1fr !important;
+        }
+
+        /* Every card — identical sizing, no exceptions */
+        .work-grid>.work-card {
+            position: relative !important;
+            display: block !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            height: 100% !important;
+            min-height: 0 !important;
+            aspect-ratio: 3 / 4 !important;
+            align-self: stretch !important;
+            grid-column: auto !important;
+            grid-row: auto !important;
+            overflow: hidden !important;
+            border-radius: 8px !important;
+            background: #111 !important;
+            transition: transform 0.6s var(--ease-out) !important;
+            will-change: transform;
+        }
+
+        /* Neutralize any nth-child / last-child quirks from shared stylesheet */
+        .work-grid>.work-card:first-child,
+        .work-grid>.work-card:nth-child(2),
+        .work-grid>.work-card:nth-child(3),
+        .work-grid>.work-card:last-child {
+            grid-column: auto !important;
+            grid-row: auto !important;
+            aspect-ratio: 3 / 4 !important;
+            width: 100% !important;
+            height: 100% !important;
+            align-self: stretch !important;
+        }
+
+        .work-card:hover {
+            transform: translateY(-6px) !important;
+        }
+
+        .work-card-image {
+            position: absolute !important;
+            inset: -8% 0 !important;
+            will-change: transform;
+        }
+
+        .work-card-image img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            transition: transform 1.2s var(--ease-out), filter 0.5s ease;
+            filter: saturate(0.7) contrast(1.05) brightness(0.72);
+        }
+
+        .work-card:hover .work-card-image img {
+            transform: scale(1.06);
+            filter: saturate(1) contrast(1.1) brightness(0.9);
+        }
+
+        .work-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(5, 5, 6, 0.95) 0%,
+                    rgba(5, 5, 6, 0.4) 45%,
+                    transparent 100%);
+            transition: opacity 0.5s ease;
+        }
+
+        .work-card:hover .work-card-overlay {
+            opacity: 0.9;
+        }
+
+        .work-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: clamp(1.25rem, 2vw, 1.75rem);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .work-card-index {
+            font-family: var(--font-display);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            color: var(--accent);
+        }
+
+        .work-card-title {
+            margin: 0;
+            font-family: var(--font-display);
+            font-size: clamp(1.35rem, 2vw, 2rem);
+            font-weight: 600;
+            letter-spacing: -0.04em;
+            color: var(--white);
+            line-height: 1.1;
+        }
+
+        .work-card-desc {
+            margin: 0;
+            font-size: clamp(0.78rem, 0.9vw, 0.85rem);
+            line-height: 1.6;
+            color: var(--text-muted);
+            max-width: 300px;
+        }
+
+        .work-card-arrow {
+            position: absolute;
+            top: clamp(1rem, 1.5vw, 1.5rem);
+            right: clamp(1rem, 1.5vw, 1.5rem);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(36px, 3vw, 42px);
+            height: clamp(36px, 3vw, 42px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 0.85rem;
+            transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease,
+                transform 0.4s var(--ease-out);
+        }
+
+        .work-card:hover .work-card-arrow {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg);
+            transform: rotate(-45deg);
         }
 
 
         /* =========================================================
-           FOOTER — BULLETPROOF CSS
+           FOOTER — BULLETPROOF
         ========================================================= */
 
         .site-footer {
             position: relative !important;
-            padding-block: clamp(4rem, 6vw, 6rem) 2rem !important;
+            padding-block: clamp(3.5rem, 6vw, 6rem) 2rem !important;
             background: #050505 !important;
             border-top: 1px solid var(--border-soft) !important;
             display: block !important;
@@ -1896,34 +1428,30 @@
         }
 
         .site-footer .container {
-            width: 90% !important;
-            max-width: 1200px !important;
+            width: 100% !important;
+            max-width: 1280px !important;
             margin: 0 auto !important;
-            padding: 0 !important;
+            padding-inline: clamp(1.25rem, 4vw, 3rem) !important;
         }
 
         .site-footer .footer-grid {
             display: grid !important;
             grid-template-columns: minmax(240px, 1.5fr) minmax(140px, 0.9fr) minmax(140px, 0.9fr) minmax(240px, 1.4fr) !important;
             gap: clamp(2rem, 4vw, 4rem) !important;
-            padding-bottom: clamp(3rem, 5vw, 4rem) !important;
+            padding-bottom: clamp(2.5rem, 5vw, 4rem) !important;
             align-items: start !important;
         }
 
         .site-footer .footer-col {
             display: flex !important;
             flex-direction: column !important;
-        }
-
-        .site-footer .footer-col-brand {
-            display: flex !important;
-            flex-direction: column !important;
+            min-width: 0 !important;
         }
 
         .site-footer .footer-logo {
             display: inline-block !important;
             font-family: var(--font-display) !important;
-            font-size: clamp(1.75rem, 2.4vw, 2.25rem) !important;
+            font-size: clamp(1.5rem, 2.4vw, 2.25rem) !important;
             font-weight: 700 !important;
             letter-spacing: -0.06em !important;
             line-height: 1 !important;
@@ -2007,10 +1535,6 @@
             display: flex !important;
             flex-direction: column !important;
             gap: 0.7rem !important;
-        }
-
-        .site-footer .footer-col-list li {
-            line-height: 1.5 !important;
         }
 
         .site-footer .footer-col-list a {
@@ -2117,6 +1641,7 @@
             letter-spacing: 0.14em !important;
             text-transform: uppercase !important;
             color: var(--text-dim) !important;
+            flex-wrap: wrap !important;
         }
 
         .site-footer .footer-bottom a {
@@ -2132,7 +1657,6 @@
             border-color: var(--accent) !important;
         }
 
-        /* Footer sub-list for Work */
         .footer-sub-list {
             list-style: none;
             padding: 0;
@@ -2144,27 +1668,46 @@
             padding-left: 0.85rem;
         }
 
-        .footer-sub-list li {
-            line-height: 1.4;
-        }
-
         .footer-sub-list a {
             font-size: 0.78rem !important;
             color: var(--text-dim) !important;
-            padding-left: 0;
-        }
-
-        .footer-sub-list a::before {
-            display: none !important;
         }
 
         .footer-sub-list a:hover {
             color: var(--accent) !important;
-            transform: translateX(3px) !important;
         }
 
-        /* Footer Responsive Adjustments */
+
+        /* =========================================================
+           RESPONSIVE — TABLETS LANDSCAPE (≤ 1024px)
+        ========================================================= */
+
         @media (max-width: 1024px) {
+            .nav-links,
+            .header-cta {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            /* 2 equal columns, no special last-child sizing */
+            .work-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                grid-auto-rows: 1fr !important;
+            }
+
+            .work-grid>.work-card,
+            .work-grid>.work-card:last-child,
+            .work-grid>.work-card:nth-child(3) {
+                grid-column: auto !important;
+                grid-row: auto !important;
+                aspect-ratio: 3 / 4 !important;
+                width: 100% !important;
+                height: 100% !important;
+            }
+
             .site-footer .footer-grid {
                 grid-template-columns: minmax(240px, 1.4fr) minmax(140px, 1fr) minmax(140px, 1fr) !important;
                 gap: 2.5rem 2rem !important;
@@ -2183,7 +1726,56 @@
             }
         }
 
+
+        /* =========================================================
+           RESPONSIVE — TABLETS (≤ 768px)
+        ========================================================= */
+
         @media (max-width: 768px) {
+            .hero {
+                min-height: 580px;
+            }
+
+            .hero-brand {
+                font-size: clamp(1.4rem, 7vw, 2.4rem);
+            }
+
+            .hero-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.25rem;
+            }
+
+            .hero-meta {
+                flex-wrap: wrap;
+                white-space: normal;
+            }
+
+            .hero-scroll-link {
+                font-size: 0.62rem;
+            }
+
+            .hero-scroll-line {
+                width: 40px;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+                grid-auto-rows: auto !important;
+            }
+
+            .work-grid>.work-card {
+                aspect-ratio: 4 / 5 !important;
+                height: auto !important;
+            }
+
+            .work-grid>.work-card:last-child,
+            .work-grid>.work-card:nth-child(3) {
+                aspect-ratio: 4 / 5 !important;
+                height: auto !important;
+            }
+
             .site-footer .footer-grid {
                 grid-template-columns: 1fr 1fr !important;
                 gap: 2rem 1.75rem !important;
@@ -2209,7 +1801,44 @@
             }
         }
 
-        @media (max-width: 480px) {
+
+        /* =========================================================
+           RESPONSIVE — PHONES (≤ 540px)
+        ========================================================= */
+
+        @media (max-width: 540px) {
+            .hero {
+                min-height: 560px;
+            }
+
+            .hero-content {
+                padding-top: 96px;
+                padding-bottom: 24px;
+            }
+
+            .work-card-title {
+                font-size: 1.35rem;
+            }
+
+            .work-card-desc {
+                font-size: 0.78rem;
+            }
+        }
+
+
+        /* =========================================================
+           RESPONSIVE — SMALL PHONES (≤ 400px)
+        ========================================================= */
+
+        @media (max-width: 400px) {
+            .hero {
+                min-height: 540px;
+            }
+
+            .hero-brand {
+                font-size: clamp(1.2rem, 8vw, 2rem);
+            }
+
             .site-footer .footer-grid {
                 grid-template-columns: 1fr !important;
             }
@@ -2222,40 +1851,35 @@
                 flex-direction: column !important;
                 align-items: flex-start !important;
                 gap: 0.6rem !important;
+                font-size: 0.62rem !important;
             }
         }
 
 
         /* =========================================================
-           RESPONSIVE — GLOBAL SECTIONS
+           RESPONSIVE — ULTRA WIDE (≥ 1600px)
         ========================================================= */
 
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: clamp(2.4rem, 11vw, 3.8rem);
-            }
-
-            .ca-work-content h2 {
-                font-size: clamp(2rem, 9vw, 3.2rem);
-            }
-
-            .ca-team-hero-content h2 {
-                font-size: clamp(2rem, 9vw, 3.2rem);
+        @media (min-width: 1600px) {
+            .container {
+                max-width: 1440px;
             }
         }
 
-        @media (max-width: 480px) {
-            .ca-about-collage {
-                grid-template-columns: 1fr;
-                max-width: 320px;
+
+        /* =========================================================
+           ACCESSIBILITY — REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .hero-video,
+            .hero-scroll-line::after {
+                animation: none !important;
             }
 
-            .ca-about-img-1,
-            .ca-about-img-2,
-            .ca-about-img-3 {
-                grid-column: 1 / 2;
-                grid-row: auto;
-                aspect-ratio: 1 / 1;
+            html {
+                scroll-behavior: auto;
             }
         }
     </style>
@@ -2263,7 +1887,7 @@
 
 
     <!-- =========================================================
-         PAGE-SPECIFIC JAVASCRIPT
+         PAGE-SPECIFIC JAVASCRIPT — CINEMATIC SCROLL EFFECTS
     ========================================================== -->
 
     <script>
@@ -2272,7 +1896,151 @@
 
             document.addEventListener("DOMContentLoaded", function () {
 
-                /* Smooth scroll for anchor links ONLY (same-page anchors) */
+                /* =========================================================
+                   CUSTOM CURSOR
+                ========================================================= */
+                const cursor = document.querySelector(".custom-cursor");
+
+                if (cursor && window.matchMedia("(pointer: fine)").matches) {
+
+                    const dot = cursor.querySelector(".custom-cursor-dot");
+                    const ring = cursor.querySelector(".custom-cursor-ring");
+
+                    let mouseX = window.innerWidth / 2;
+                    let mouseY = window.innerHeight / 2;
+                    let dotX = mouseX;
+                    let dotY = mouseY;
+                    let ringX = mouseX;
+                    let ringY = mouseY;
+
+                    const DOT_SPEED = 0.35;
+                    const RING_SPEED = 0.16;
+
+                    /* Track mouse */
+                    window.addEventListener("mousemove", (e) => {
+                        mouseX = e.clientX;
+                        mouseY = e.clientY;
+                        cursor.classList.add("is-active");
+                    });
+
+                    window.addEventListener("mouseleave", () => {
+                        cursor.classList.remove("is-active");
+                    });
+
+                    window.addEventListener("mouseenter", () => {
+                        cursor.classList.add("is-active");
+                    });
+
+                    /* Pressed state */
+                    window.addEventListener("mousedown", () => {
+                        cursor.classList.add("is-pressed");
+                    });
+
+                    window.addEventListener("mouseup", () => {
+                        cursor.classList.remove("is-pressed");
+                    });
+
+                    /* Smooth lag animation */
+                    function tick() {
+                        dotX += (mouseX - dotX) * DOT_SPEED;
+                        dotY += (mouseY - dotY) * DOT_SPEED;
+                        ringX += (mouseX - ringX) * RING_SPEED;
+                        ringY += (mouseY - ringY) * RING_SPEED;
+
+                        dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+                        ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+
+                        requestAnimationFrame(tick);
+                    }
+
+                    requestAnimationFrame(tick);
+
+                    /* Grow on interactive elements */
+                    const hoverTargets = document.querySelectorAll(
+                        "a, button, [role='button'], .work-card, .header-cta, .menu-toggle, .logo, .hero-scroll-link, .footer-socials-inline a, .footer-col-list a, .mobile-nav-links a, .mobile-nav-parent, .submenu a, .nav-links a, .work-trigger"
+                    );
+
+                    hoverTargets.forEach((el) => {
+                        el.addEventListener("mouseenter", () => {
+                            cursor.classList.add("is-hovering");
+                        });
+
+                        el.addEventListener("mouseleave", () => {
+                            cursor.classList.remove("is-hovering");
+                        });
+                    });
+                }
+
+
+                /* =========================================================
+                   HEADER SCROLL STATE
+                ========================================================= */
+                const header = document.querySelector(".site-header");
+
+                function updateHeader() {
+                    if (window.scrollY > 40) {
+                        header.classList.add("is-scrolled");
+                    } else {
+                        header.classList.remove("is-scrolled");
+                    }
+                }
+
+                updateHeader();
+                window.addEventListener("scroll", updateHeader, { passive: true });
+
+
+                /* =========================================================
+                   MOBILE NAVIGATION
+                ========================================================= */
+                const menuToggle = document.querySelector(".menu-toggle");
+                const mobileNav = document.getElementById("mobile-navigation");
+
+                if (menuToggle && mobileNav) {
+                    menuToggle.addEventListener("click", function () {
+                        const isOpen = mobileNav.classList.contains("is-open");
+
+                        if (isOpen) {
+                            mobileNav.classList.remove("is-open");
+                            menuToggle.setAttribute("aria-expanded", "false");
+                            mobileNav.setAttribute("aria-hidden", "true");
+                            document.body.style.overflow = "";
+                        } else {
+                            mobileNav.classList.add("is-open");
+                            menuToggle.setAttribute("aria-expanded", "true");
+                            mobileNav.setAttribute("aria-hidden", "false");
+                            document.body.style.overflow = "hidden";
+                        }
+                    });
+
+                    mobileNav.querySelectorAll("a").forEach(link => {
+                        if (link.classList.contains("mobile-nav-parent")) return;
+
+                        link.addEventListener("click", () => {
+                            mobileNav.classList.remove("is-open");
+                            menuToggle.setAttribute("aria-expanded", "false");
+                            mobileNav.setAttribute("aria-hidden", "true");
+                            document.body.style.overflow = "";
+                        });
+                    });
+                }
+
+
+                /* Mobile Work submenu toggle */
+                const mobileWorkGroup = document.querySelector(".mobile-nav-group");
+                const mobileWorkParent = document.querySelector(".mobile-nav-parent");
+
+                if (mobileWorkParent && mobileWorkGroup) {
+                    mobileWorkParent.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const expanded = mobileWorkGroup.classList.toggle("is-expanded");
+                        mobileWorkParent.setAttribute("aria-expanded", expanded ? "true" : "false");
+                    });
+                }
+
+
+                /* =========================================================
+                   SMOOTH SCROLL FOR ANCHORS
+                ========================================================= */
                 document.querySelectorAll('a[href^="#"]').forEach((link) => {
                     link.addEventListener("click", (e) => {
                         const href = link.getAttribute("href");
@@ -2290,112 +2058,139 @@
 
 
                 /* =========================================================
-                   MOBILE NAVIGATION TOGGLE
+                   GSAP CINEMATIC SCROLL EFFECTS
                 ========================================================= */
-                const menuToggle = document.querySelector('.menu-toggle');
-                const mobileNav = document.getElementById('mobile-navigation');
+                if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
 
-                if (menuToggle && mobileNav) {
-                    menuToggle.addEventListener('click', function () {
-                        const isOpen = mobileNav.classList.contains('is-open');
+                    gsap.registerPlugin(ScrollTrigger);
 
-                        if (isOpen) {
-                            mobileNav.classList.remove('is-open');
-                            menuToggle.setAttribute('aria-expanded', 'false');
-                            document.body.style.overflow = '';
-                        } else {
-                            mobileNav.classList.add('is-open');
-                            menuToggle.setAttribute('aria-expanded', 'true');
-                            document.body.style.overflow = 'hidden';
-                        }
-                    });
+                    /* ---- 1 · HERO PARALLAX ---- */
+                    const heroBg = document.querySelector("[data-hero-bg]");
+                    const heroContent = document.querySelector("[data-hero-content]");
 
-                    /* Close menu when a navigation link is clicked
-                       — EXCLUDING the Work parent (which expands a submenu) */
-                    mobileNav.querySelectorAll('a').forEach(link => {
-                        if (link.classList.contains('mobile-nav-parent')) return;
-
-                        link.addEventListener('click', () => {
-                            mobileNav.classList.remove('is-open');
-                            menuToggle.setAttribute('aria-expanded', 'false');
-                            document.body.style.overflow = '';
+                    if (heroBg) {
+                        gsap.to(heroBg, {
+                            yPercent: 22,
+                            ease: "none",
+                            scrollTrigger: {
+                                trigger: ".hero",
+                                start: "top top",
+                                end: "bottom top",
+                                scrub: true
+                            }
                         });
-                    });
-                }
-
-
-                /* =========================================================
-                   Mobile Nav — Work submenu expand/collapse
-                ========================================================= */
-                const mobileWorkGroup = document.querySelector('.mobile-nav-group');
-                const mobileWorkParent = document.querySelector('.mobile-nav-parent');
-
-                if (mobileWorkParent && mobileWorkGroup) {
-                    mobileWorkParent.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        mobileWorkGroup.classList.toggle('is-expanded');
-                    });
-                }
-
-
-                /* Partners carousel — auto-slide + manual */
-                const partners = document.querySelector("[data-partners]");
-                if (partners) {
-                    const track = partners.querySelector("[data-partners-track]");
-                    const slides = track ? Array.from(track.children) : [];
-                    const prevBtn = partners.querySelector("[data-partners-prev]");
-                    const nextBtn = partners.querySelector("[data-partners-next]");
-
-                    if (track && slides.length) {
-                        let index = 0;
-                        let autoplayTimer = null;
-
-                        const visibleSlides = () => {
-                            const w = window.innerWidth;
-                            if (w <= 480) return 1;
-                            if (w <= 768) return 2;
-                            return 3;
-                        };
-
-                        const maxIndex = () => Math.max(0, slides.length - visibleSlides());
-
-                        const goTo = (i) => {
-                            index = Math.max(0, Math.min(i, maxIndex()));
-
-                            const slideWidth = slides[0].getBoundingClientRect().width;
-                            const gap = parseFloat(getComputedStyle(track).gap) || 20;
-
-                            track.style.transform = `translate3d(-${index * (slideWidth + gap)}px, 0, 0)`;
-                        };
-
-                        prevBtn && prevBtn.addEventListener("click", () => {
-                            goTo(index - 1);
-                            resetAutoplay();
-                        });
-
-                        nextBtn && nextBtn.addEventListener("click", () => {
-                            goTo(index + 1);
-                            resetAutoplay();
-                        });
-
-                        const startAutoplay = () => {
-                            autoplayTimer = setInterval(() => {
-                                goTo(index >= maxIndex() ? 0 : index + 1);
-                            }, 4200);
-                        };
-
-                        const resetAutoplay = () => {
-                            clearInterval(autoplayTimer);
-                            startAutoplay();
-                        };
-
-                        partners.addEventListener("mouseenter", () => clearInterval(autoplayTimer));
-                        partners.addEventListener("mouseleave", startAutoplay);
-
-                        startAutoplay();
-
-                        window.addEventListener("resize", () => goTo(Math.min(index, maxIndex())));
                     }
+
+                    if (heroContent) {
+                        gsap.to(heroContent, {
+                            yPercent: -12,
+                            opacity: 0.15,
+                            ease: "none",
+                            scrollTrigger: {
+                                trigger: ".hero",
+                                start: "top top",
+                                end: "bottom top",
+                                scrub: true
+                            }
+                        });
+                    }
+
+                    /* ---- 2 · WORK HEADING REVEAL ---- */
+                    const heading = document.querySelector("[data-reveal-heading]");
+                    if (heading) {
+                        gsap.from(heading, {
+                            y: 60,
+                            opacity: 0,
+                            duration: 1.1,
+                            ease: "power3.out",
+                            scrollTrigger: {
+                                trigger: heading,
+                                start: "top 85%",
+                                once: true
+                            }
+                        });
+                    }
+
+                    /* ---- 3 · WORK CARDS — CINEMATIC STAGGERED ENTRANCE ---- */
+                    const cards = document.querySelectorAll("[data-card]");
+
+                    if (cards.length) {
+                        gsap.from(cards, {
+                            y: 90,
+                            opacity: 0,
+                            scale: 0.96,
+                            duration: 1.15,
+                            stagger: 0.14,
+                            ease: "power3.out",
+                            scrollTrigger: {
+                                trigger: "[data-stagger-grid]",
+                                start: "top 82%",
+                                once: true
+                            }
+                        });
+
+                        /* ---- 4 · CARD IMAGE INNER PARALLAX ---- */
+                        cards.forEach((card) => {
+                            const imgWrap = card.querySelector("[data-card-image]");
+                            if (!imgWrap) return;
+
+                            gsap.fromTo(imgWrap,
+                                { yPercent: -6 },
+                                {
+                                    yPercent: 6,
+                                    ease: "none",
+                                    scrollTrigger: {
+                                        trigger: card,
+                                        start: "top bottom",
+                                        end: "bottom top",
+                                        scrub: true
+                                    }
+                                }
+                            );
+                        });
+                    }
+
+                    /* ---- 5 · SCROLL VELOCITY SKEW — SUBTLE MOMENTUM FEEL ---- */
+                    const skewTargets = document.querySelectorAll(".work-card");
+                    if (skewTargets.length) {
+                        const skewSetter = gsap.quickSetter(skewTargets, "skewY", "deg");
+
+                        ScrollTrigger.create({
+                            onUpdate: (self) => {
+                                const velocity = self.getVelocity();
+                                const skew = gsap.utils.clamp(-2.5, 2.5, velocity / -500);
+                                skewSetter(skew);
+
+                                gsap.to(skewTargets, {
+                                    skewY: 0,
+                                    duration: 0.8,
+                                    ease: "power2.out",
+                                    overwrite: true
+                                });
+                            }
+                        });
+                    }
+
+                    /* ---- 6 · FOOTER REVEAL ---- */
+                    const footer = document.querySelector(".site-footer");
+                    if (footer) {
+                        gsap.from(footer, {
+                            opacity: 0,
+                            y: 40,
+                            duration: 1,
+                            ease: "power3.out",
+                            scrollTrigger: {
+                                trigger: footer,
+                                start: "top 92%",
+                                once: true
+                            }
+                        });
+                    }
+
+                    /* ---- 7 · REFRESH AFTER LOAD ---- */
+                    window.addEventListener("load", () => {
+                        ScrollTrigger.refresh();
+                    });
                 }
 
             });

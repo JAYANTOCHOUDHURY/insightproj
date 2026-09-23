@@ -1677,7 +1677,9 @@
                 });
 
 
-                /* Mobile Navigation Toggle */
+                /* =========================================================
+                   MOBILE NAVIGATION TOGGLE
+                ========================================================= */
                 const menuToggle = document.querySelector('.menu-toggle');
                 const mobileNav = document.getElementById('mobile-navigation');
                 
@@ -1696,7 +1698,11 @@
                         }
                     });
 
+                    /* Close menu when a link is clicked
+                       — EXCLUDING the Work parent (CRITICAL FIX) */
                     mobileNav.querySelectorAll('a').forEach(link => {
+                        if (link.classList.contains('mobile-nav-parent')) return;
+
                         link.addEventListener('click', () => {
                             mobileNav.classList.remove('is-open');
                             menuToggle.setAttribute('aria-expanded', 'false');
@@ -1705,7 +1711,11 @@
                     });
                 }
 
-                /* Mobile Nav — Work submenu expand/collapse */
+
+                /* =========================================================
+                   Mobile Nav — Work submenu expand/collapse
+                   (OUTSIDE GSAP conditional — always works)
+                ========================================================= */
                 const mobileWorkGroup = document.querySelector('.mobile-nav-group');
                 const mobileWorkParent = document.querySelector('.mobile-nav-parent');
 
@@ -1717,7 +1727,9 @@
                 }
 
 
-                /* Photography Category Filtering */
+                /* =========================================================
+                   Photography Category Filtering
+                ========================================================= */
                 const filterButtons = document.querySelectorAll('.photo-filter');
                 const photoCards = document.querySelectorAll('.photo-card');
 
@@ -1742,7 +1754,9 @@
                 });
 
 
-                /* GSAP Animations */
+                /* =========================================================
+                   GSAP ANIMATIONS
+                ========================================================= */
                 if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
 
                     const photoCards = document.querySelectorAll(".photo-card");

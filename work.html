@@ -139,7 +139,17 @@
                     <a href="about.html"><span>02</span>About</a>
                     <a href="team.html"><span>03</span>Team</a>
                     <a href="services/pre-production.html"><span>04</span>Services</a>
-                    <a href="work.html" class="active"><span>05</span>Work</a>
+                    <div class="mobile-nav-group is-expanded">
+                        <a href="work.html" class="mobile-nav-parent">
+                            <span>05</span>Work
+                            <span class="mobile-nav-toggle-icon" aria-hidden="true">+</span>
+                        </a>
+                        <div class="mobile-nav-sub">
+                            <a href="work/film.html">Film</a>
+                            <a href="work/photography.html">Photography</a>
+                            <a href="work/film-making.html">Film Making</a>
+                        </div>
+                    </div>
                     <a href="contact.html"><span>06</span>Contact</a>
                 </nav>
 
@@ -841,8 +851,6 @@
 
     <!-- =========================================================
          PAGE-SPECIFIC STYLES
-         (Includes the exact Footer CSS from index.html to 
-          guarantee it works perfectly)
     ========================================================== -->
 
     <style>
@@ -1151,7 +1159,6 @@
             grid-template-columns: repeat(4, 1fr);
             gap: clamp(1.5rem, 3vw, 2.5rem);
             grid-auto-rows: 250px;
-            /* Base row height */
         }
 
         /* Work Card Styling */
@@ -1294,59 +1301,6 @@
             margin: 0;
         }
 
-        /* =========================================================
-   MOBILE NAV — Work Submenu Group
-   ========================================================= */
-
-        .mobile-nav-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .mobile-nav-parent {
-            justify-content: space-between;
-        }
-
-        .mobile-nav-toggle-icon {
-            font-size: 1.25rem;
-            font-weight: 300;
-            color: var(--accent);
-            line-height: 1;
-            transition: transform 0.35s var(--ease-out);
-        }
-
-        .mobile-nav-group.is-expanded .mobile-nav-toggle-icon {
-            transform: rotate(45deg);
-        }
-
-        .mobile-nav-sub {
-            display: none;
-            flex-direction: column;
-            gap: 0.85rem;
-            padding: 1rem 0 1rem 2.75rem;
-            margin-top: 0.5rem;
-            border-left: 1px solid var(--border);
-            margin-left: 0.5rem;
-        }
-
-        .mobile-nav-group.is-expanded .mobile-nav-sub {
-            display: flex;
-        }
-
-        .mobile-nav-sub a {
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            letter-spacing: 0;
-        }
-
-        .mobile-nav-sub a:hover {
-            color: var(--accent);
-        }
-
         /* Bento Grid: Featured Item */
         @media (min-width: 1024px) {
             .work-card.featured {
@@ -1432,7 +1386,7 @@
 
 
         /* =========================================================
-           FOOTER CSS (Exact match from index.html)
+           FOOTER CSS
         ========================================================= */
 
         .site-footer {
@@ -1667,6 +1621,213 @@
             border-color: var(--accent);
         }
 
+        /* Footer sub-list for Work */
+        .footer-sub-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.65rem 0 0 0.65rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+            border-left: 1px solid var(--border);
+            padding-left: 0.85rem;
+        }
+
+        .footer-sub-list li {
+            line-height: 1.4;
+        }
+
+        .footer-sub-list a {
+            font-size: 0.78rem !important;
+            color: var(--text-dim) !important;
+            padding-left: 0;
+        }
+
+        .footer-sub-list a::before {
+            display: none !important;
+        }
+
+        .footer-sub-list a:hover {
+            color: var(--accent) !important;
+            transform: translateX(3px) !important;
+        }
+
+
+        /* =========================================================
+           MOBILE NAVIGATION
+        ========================================================= */
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            margin: 5px 0;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .mobile-navigation {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s var(--ease-out);
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-navigation.is-open,
+        .mobile-navigation.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-navigation-inner {
+            width: 100%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .mobile-navigation-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .mobile-nav-links a {
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 5vw, 1.75rem);
+            font-weight: 600;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-links a span {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+            opacity: 0.6;
+            letter-spacing: 0.15em;
+        }
+
+        .mobile-nav-links a:hover,
+        .mobile-nav-links a.active {
+            color: var(--white);
+        }
+
+        .mobile-navigation-bottom {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mobile-navigation-bottom p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .mobile-navigation-bottom a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Mobile Nav — Work Submenu Group */
+        .mobile-nav-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-nav-parent {
+            justify-content: space-between;
+        }
+
+        .mobile-nav-toggle-icon {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--accent);
+            line-height: 1;
+            transition: transform 0.35s var(--ease-out);
+        }
+
+        .mobile-nav-group.is-expanded .mobile-nav-toggle-icon {
+            transform: rotate(45deg);
+        }
+
+        .mobile-nav-sub {
+            display: none;
+            flex-direction: column;
+            gap: 0.85rem;
+            padding: 1rem 0 1rem 2.75rem;
+            margin-top: 0.5rem;
+            border-left: 1px solid var(--border);
+            margin-left: 0.5rem;
+        }
+
+        .mobile-nav-group.is-expanded .mobile-nav-sub {
+            display: flex;
+        }
+
+        .mobile-nav-sub a {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            letter-spacing: 0;
+        }
+
+        .mobile-nav-sub a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 1024px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
 
         /* =========================================================
            RESPONSIVE — GLOBAL + FOOTER
@@ -1888,16 +2049,53 @@
                     });
                 });
 
+
+                /* =========================================================
+                   MOBILE NAVIGATION TOGGLE (CRITICAL FIX)
+                ========================================================= */
+                const menuToggle = document.querySelector('.menu-toggle');
+                const mobileNav = document.getElementById('mobile-navigation');
+
+                if (menuToggle && mobileNav) {
+                    menuToggle.addEventListener('click', function () {
+                        const isOpen = mobileNav.classList.contains('is-open');
+
+                        if (isOpen) {
+                            mobileNav.classList.remove('is-open');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        } else {
+                            mobileNav.classList.add('is-open');
+                            menuToggle.setAttribute('aria-expanded', 'true');
+                            document.body.style.overflow = 'hidden';
+                        }
+                    });
+
+                    /* Close menu when a link is clicked
+                       — EXCLUDING the Work parent (which expands a submenu) */
+                    mobileNav.querySelectorAll('a').forEach(link => {
+                        if (link.classList.contains('mobile-nav-parent')) return;
+
+                        link.addEventListener('click', () => {
+                            mobileNav.classList.remove('is-open');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        });
+                    });
+                }
+
+
                 /* Mobile Nav — Work submenu expand/collapse */
                 const mobileWorkGroup = document.querySelector('.mobile-nav-group');
                 const mobileWorkParent = document.querySelector('.mobile-nav-parent');
 
                 if (mobileWorkParent && mobileWorkGroup) {
                     mobileWorkParent.addEventListener('click', function (e) {
-                        e.preventDefault(); // Prevent page jump
+                        e.preventDefault(); /* Prevent navigation */
                         mobileWorkGroup.classList.toggle('is-expanded');
                     });
                 }
+
 
                 /* Custom stagger animation for work cards */
                 if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {

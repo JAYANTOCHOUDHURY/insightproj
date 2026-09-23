@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="has-submenu">
-                    <a href="work.html" class="work-trigger" aria-haspopup="true">
+                    <a href="work/film.html" class="work-trigger" aria-haspopup="true">
                         Work
                         <span class="nav-arrow" aria-hidden="true">↘</span>
                     </a>
@@ -145,7 +145,7 @@
                     <a href="team.html"><span>03</span>Team</a>
                     <a href="services/pre-production.html"><span>04</span>Services</a>
                     <div class="mobile-nav-group">
-                        <a href="work.html" class="mobile-nav-parent">
+                        <a href="work/film.html" class="mobile-nav-parent">
                             <span>05</span>Work
                             <span class="mobile-nav-toggle-icon" aria-hidden="true">+</span>
                         </a>
@@ -479,7 +479,7 @@
                     most efficient technology.
                 </p>
 
-                <a href="work.html" class="ca-work-arrow scroll-reveal" aria-label="View all work">
+                <a href="work/film.html" class="ca-work-arrow scroll-reveal" aria-label="View all work">
                     <span aria-hidden="true">↓</span>
                 </a>
 
@@ -894,7 +894,7 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="team.html">Team</a></li>
                         <li>
-                            <a href="work.html">Our Work</a>
+                            <a href="work/film.html">Our Work</a>
                             <ul class="footer-sub-list">
                                 <li><a href="work/film.html">Film</a></li>
                                 <li><a href="work/photography.html">Photography</a></li>
@@ -1701,12 +1701,11 @@
 
 
         /* =========================================================
-           MOBILE NAVIGATION (NEW - Responsive Update)
+           MOBILE NAVIGATION
         ========================================================= */
 
         .menu-toggle {
             display: none;
-            /* Hidden on desktop */
             cursor: pointer;
             background: none;
             border: none;
@@ -1830,7 +1829,61 @@
 
 
         /* =========================================================
-           FOOTER — BULLETPROOF CSS (Mobile & Tablet Fix)
+           MOBILE NAV — Work Submenu Group
+        ========================================================= */
+
+        .mobile-nav-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-nav-parent {
+            justify-content: space-between;
+        }
+
+        .mobile-nav-toggle-icon {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--accent);
+            line-height: 1;
+            transition: transform 0.35s var(--ease-out);
+        }
+
+        .mobile-nav-group.is-expanded .mobile-nav-toggle-icon {
+            transform: rotate(45deg);
+        }
+
+        .mobile-nav-sub {
+            display: none;
+            flex-direction: column;
+            gap: 0.85rem;
+            padding: 1rem 0 1rem 2.75rem;
+            margin-top: 0.5rem;
+            border-left: 1px solid var(--border);
+            margin-left: 0.5rem;
+        }
+
+        .mobile-nav-group.is-expanded .mobile-nav-sub {
+            display: flex;
+        }
+
+        .mobile-nav-sub a {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            letter-spacing: 0;
+        }
+
+        .mobile-nav-sub a:hover {
+            color: var(--accent);
+        }
+
+
+        /* =========================================================
+           FOOTER — BULLETPROOF CSS
         ========================================================= */
 
         .site-footer {
@@ -2079,57 +2132,35 @@
             border-color: var(--accent) !important;
         }
 
-        /* =========================================================
-   MOBILE NAV — Work Submenu Group
-   ========================================================= */
-
-        .mobile-nav-group {
+        /* Footer sub-list for Work */
+        .footer-sub-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.65rem 0 0 0.65rem;
             display: flex;
             flex-direction: column;
-        }
-
-        .mobile-nav-parent {
-            justify-content: space-between;
-        }
-
-        .mobile-nav-toggle-icon {
-            font-size: 1.25rem;
-            font-weight: 300;
-            color: var(--accent);
-            line-height: 1;
-            transition: transform 0.35s var(--ease-out);
-        }
-
-        .mobile-nav-group.is-expanded .mobile-nav-toggle-icon {
-            transform: rotate(45deg);
-        }
-
-        .mobile-nav-sub {
-            display: none;
-            flex-direction: column;
-            gap: 0.85rem;
-            padding: 1rem 0 1rem 2.75rem;
-            margin-top: 0.5rem;
+            gap: 0.55rem;
             border-left: 1px solid var(--border);
-            margin-left: 0.5rem;
+            padding-left: 0.85rem;
         }
 
-        .mobile-nav-group.is-expanded .mobile-nav-sub {
-            display: flex;
+        .footer-sub-list li {
+            line-height: 1.4;
         }
 
-        .mobile-nav-sub a {
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            letter-spacing: 0;
+        .footer-sub-list a {
+            font-size: 0.78rem !important;
+            color: var(--text-dim) !important;
+            padding-left: 0;
         }
 
-        .mobile-nav-sub a:hover {
-            color: var(--accent);
+        .footer-sub-list a::before {
+            display: none !important;
+        }
+
+        .footer-sub-list a:hover {
+            color: var(--accent) !important;
+            transform: translateX(3px) !important;
         }
 
         /* Footer Responsive Adjustments */
@@ -2193,6 +2224,40 @@
                 gap: 0.6rem !important;
             }
         }
+
+
+        /* =========================================================
+           RESPONSIVE — GLOBAL SECTIONS
+        ========================================================= */
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: clamp(2.4rem, 11vw, 3.8rem);
+            }
+
+            .ca-work-content h2 {
+                font-size: clamp(2rem, 9vw, 3.2rem);
+            }
+
+            .ca-team-hero-content h2 {
+                font-size: clamp(2rem, 9vw, 3.2rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ca-about-collage {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+            }
+
+            .ca-about-img-1,
+            .ca-about-img-2,
+            .ca-about-img-3 {
+                grid-column: 1 / 2;
+                grid-row: auto;
+                aspect-ratio: 1 / 1;
+            }
+        }
     </style>
 
 
@@ -2223,13 +2288,51 @@
                     });
                 });
 
-                /* Mobile Nav — Work submenu expand/collapse */
+
+                /* =========================================================
+                   MOBILE NAVIGATION TOGGLE
+                ========================================================= */
+                const menuToggle = document.querySelector('.menu-toggle');
+                const mobileNav = document.getElementById('mobile-navigation');
+
+                if (menuToggle && mobileNav) {
+                    menuToggle.addEventListener('click', function () {
+                        const isOpen = mobileNav.classList.contains('is-open');
+
+                        if (isOpen) {
+                            mobileNav.classList.remove('is-open');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        } else {
+                            mobileNav.classList.add('is-open');
+                            menuToggle.setAttribute('aria-expanded', 'true');
+                            document.body.style.overflow = 'hidden';
+                        }
+                    });
+
+                    /* Close menu when a navigation link is clicked
+                       — EXCLUDING the Work parent (which expands a submenu) */
+                    mobileNav.querySelectorAll('a').forEach(link => {
+                        if (link.classList.contains('mobile-nav-parent')) return;
+
+                        link.addEventListener('click', () => {
+                            mobileNav.classList.remove('is-open');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        });
+                    });
+                }
+
+
+                /* =========================================================
+                   Mobile Nav — Work submenu expand/collapse
+                ========================================================= */
                 const mobileWorkGroup = document.querySelector('.mobile-nav-group');
                 const mobileWorkParent = document.querySelector('.mobile-nav-parent');
 
                 if (mobileWorkParent && mobileWorkGroup) {
                     mobileWorkParent.addEventListener('click', function (e) {
-                        e.preventDefault(); // Prevent page jump
+                        e.preventDefault();
                         mobileWorkGroup.classList.toggle('is-expanded');
                     });
                 }
@@ -2237,66 +2340,65 @@
 
                 /* Partners carousel — auto-slide + manual */
                 const partners = document.querySelector("[data-partners]");
-                if (!partners) return;
+                if (partners) {
+                    const track = partners.querySelector("[data-partners-track]");
+                    const slides = track ? Array.from(track.children) : [];
+                    const prevBtn = partners.querySelector("[data-partners-prev]");
+                    const nextBtn = partners.querySelector("[data-partners-next]");
 
-                const track = partners.querySelector("[data-partners-track]");
-                const slides = track ? Array.from(track.children) : [];
-                const prevBtn = partners.querySelector("[data-partners-prev]");
-                const nextBtn = partners.querySelector("[data-partners-next]");
+                    if (track && slides.length) {
+                        let index = 0;
+                        let autoplayTimer = null;
 
-                if (!track || !slides.length) return;
+                        const visibleSlides = () => {
+                            const w = window.innerWidth;
+                            if (w <= 480) return 1;
+                            if (w <= 768) return 2;
+                            return 3;
+                        };
 
-                let index = 0;
-                let autoplayTimer = null;
+                        const maxIndex = () => Math.max(0, slides.length - visibleSlides());
 
-                const visibleSlides = () => {
-                    const w = window.innerWidth;
-                    if (w <= 480) return 1;
-                    if (w <= 768) return 2;
-                    return 3;
-                };
+                        const goTo = (i) => {
+                            index = Math.max(0, Math.min(i, maxIndex()));
 
-                const maxIndex = () => Math.max(0, slides.length - visibleSlides());
+                            const slideWidth = slides[0].getBoundingClientRect().width;
+                            const gap = parseFloat(getComputedStyle(track).gap) || 20;
 
-                const goTo = (i) => {
-                    index = Math.max(0, Math.min(i, maxIndex()));
+                            track.style.transform = `translate3d(-${index * (slideWidth + gap)}px, 0, 0)`;
+                        };
 
-                    const slideWidth = slides[0].getBoundingClientRect().width;
-                    const gap = parseFloat(getComputedStyle(track).gap) || 20;
+                        prevBtn && prevBtn.addEventListener("click", () => {
+                            goTo(index - 1);
+                            resetAutoplay();
+                        });
 
-                    track.style.transform = `translate3d(-${index * (slideWidth + gap)}px, 0, 0)`;
-                };
+                        nextBtn && nextBtn.addEventListener("click", () => {
+                            goTo(index + 1);
+                            resetAutoplay();
+                        });
 
-                prevBtn && prevBtn.addEventListener("click", () => {
-                    goTo(index - 1);
-                    resetAutoplay();
-                });
+                        const startAutoplay = () => {
+                            autoplayTimer = setInterval(() => {
+                                goTo(index >= maxIndex() ? 0 : index + 1);
+                            }, 4200);
+                        };
 
-                nextBtn && nextBtn.addEventListener("click", () => {
-                    goTo(index + 1);
-                    resetAutoplay();
-                });
+                        const resetAutoplay = () => {
+                            clearInterval(autoplayTimer);
+                            startAutoplay();
+                        };
 
-                const startAutoplay = () => {
-                    autoplayTimer = setInterval(() => {
-                        goTo(index >= maxIndex() ? 0 : index + 1);
-                    }, 4200);
-                };
+                        partners.addEventListener("mouseenter", () => clearInterval(autoplayTimer));
+                        partners.addEventListener("mouseleave", startAutoplay);
 
-                const resetAutoplay = () => {
-                    clearInterval(autoplayTimer);
-                    startAutoplay();
-                };
+                        startAutoplay();
 
+                        window.addEventListener("resize", () => goTo(Math.min(index, maxIndex())));
+                    }
+                }
 
-                partners.addEventListener("mouseenter", () => clearInterval(autoplayTimer));
-                partners.addEventListener("mouseleave", startAutoplay);
-
-                startAutoplay();
-
-                window.addEventListener("resize", () => goTo(Math.min(index, maxIndex())));
             });
-
         })();
     </script>
 

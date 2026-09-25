@@ -453,7 +453,12 @@
                         </div>
 
 
-                        <form class="contact-form" action="#" method="POST" novalidate aria-labelledby="form-heading">
+                        <form class="contact-form" id="contact-form" action="#" method="POST" novalidate
+                            aria-labelledby="form-heading">
+
+                            <!-- Honeypot — invisible to humans, catches bots -->
+                            <input type="checkbox" name="botcheck" class="contact-honeypot" tabindex="-1"
+                                autocomplete="off" aria-hidden="true">
 
 
                             <!-- Name -->
@@ -2844,6 +2849,87 @@
                 gap: 0.6rem !important;
             }
         }
+
+        /* =========================================================
+           CONTACT FORM — SUBMISSION STATES
+        ========================================================= */
+
+        /* Honeypot — invisible to humans, catches bots */
+        .contact-honeypot {
+            position: absolute !important;
+            left: -9999px !important;
+            top: auto !important;
+            width: 1px !important;
+            height: 1px !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
+        /* Status message */
+        .contact-form-message {
+            display: none;
+            margin-top: 1.25rem;
+            padding: 1rem 1.15rem;
+            font-size: 0.84rem;
+            line-height: 1.65;
+            border: 1px solid transparent;
+        }
+
+        .contact-form-message.is-success,
+        .contact-form-message.is-error {
+            display: block;
+        }
+
+        .contact-form-message.is-success {
+            color: #8fe0a0;
+            border-color: rgba(143, 224, 160, 0.35);
+            background: rgba(143, 224, 160, 0.07);
+        }
+
+        .contact-form-message.is-error {
+            color: #ff8f8f;
+            border-color: rgba(255, 143, 143, 0.35);
+            background: rgba(255, 143, 143, 0.07);
+        }
+
+        /* Invalid field highlight */
+        .contact-form-field.has-error>label {
+            color: #ff8f8f !important;
+        }
+
+        .contact-form-field.has-error input,
+        .contact-form-field.has-error select,
+        .contact-form-field.has-error textarea {
+            border-color: #ff8f8f !important;
+        }
+
+        /* Submitting state */
+        .contact-submit.is-loading {
+            opacity: 0.65;
+            pointer-events: none;
+        }
+
+        .contact-submit.is-loading .contact-submit-arrow {
+            animation: contactSendPulse 1s ease-in-out infinite;
+        }
+
+        @keyframes contactSendPulse {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(3px, -3px);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .contact-submit.is-loading .contact-submit-arrow {
+                animation: none;
+            }
+        }
     </style>
 
 
@@ -2981,6 +3067,190 @@
                 }
 
             });
+        })();
+    </script>
+
+
+    <!-- =========================================================
+         CONTACT FORM — EMAIL SUBMISSION
+         ---------------------------------------------------------
+         Deliveries arrive at: info@cloudsartist21.com
+
+         SETUP (2 minutes, free):
+           1. Open https://web3forms.com
+           2. Enter  info@cloudsartist21.com  to create the key
+           3. Check that inbox — copy the Access Key you receive
+           4. Paste it below, replacing YOUR-WEB3FORMS-ACCESS-KEY
+         ========================================================== -->
+
+    <script>
+        (function () {
+            "use strict";
+
+            /* =========================================================
+               CONFIG — change only ACCESS_KEY
+            ========================================================= */
+            var FORM_ENDPOINT = "https://api.web3forms.com/submit";
+            var ACCESS_KEY = "YOUR-WEB3FORMS-ACCESS-KEY";
+            var TO_EMAIL = "info@cloudsartist21.com";
+
+            /* =========================================================
+               ELEMENTS
+            ========================================================= */
+            var form = document.getElementById("contact-form");
+            if (!form) return;
+
+            var messageBox = form.querySelector(".contact-form-message");
+            var submitBtn = form.querySelector(".contact-submit");
+            var submitLabel = submitBtn ? submitBtn.querySelector("span") : null;
+            var honeypot = form.querySelector('[name="botcheck"]');
+
+            var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+            /* =========================================================
+               HELPERS
+            ========================================================= */
+            function setMessage(type, text) {
+                if (!messageBox) return;
+                messageBox.textContent = text;
+                messageBox.classList.remove("is-success", "is-error");
+                messageBox.classList.add(type === "success" ? "is-success" : "is-error");
+            }
+
+            function clearMessage() {
+                if (!messageBox) return;
+                messageBox.textContent = "";
+                messageBox.classList.remove("is-success", "is-error");
+            }
+
+            function setLoading(state) {
+                if (!submitBtn) return;
+                submitBtn.classList.toggle("is-loading", state);
+                submitBtn.disabled = state;
+                if (submitLabel) {
+                    submitLabel.textContent = state ? "Sending..." : "Send Message";
+                }
+            }
+
+            function fieldOf(el) {
+                return el ? el.closest(".contact-form-field") : null;
+            }
+
+            /* =========================================================
+               VALIDATION
+            ========================================================= */
+            var RULES = [
+                { id: "contact-name", test: function (v) { return v.trim().length >= 2; } },
+                { id: "contact-email", test: function (v) { return EMAIL_RE.test(v.trim()); } },
+                { id: "contact-phone", test: function (v) { return v.replace(/\D/g, "").length >= 8; } },
+                { id: "contact-type", test: function (v) { return v !== ""; } },
+                { id: "contact-project", test: function (v) { return v.trim().length >= 10; } }
+            ];
+
+            function validate() {
+                var ok = true;
+                var firstBad = null;
+
+                RULES.forEach(function (rule) {
+                    var el = form.querySelector("#" + rule.id);
+                    if (!el) return;
+
+                    var valid = rule.test(el.value || "");
+                    var field = fieldOf(el);
+
+                    if (field) field.classList.toggle("has-error", !valid);
+
+                    if (!valid) {
+                        ok = false;
+                        if (!firstBad) firstBad = el;
+                    }
+                });
+
+                if (firstBad) firstBad.focus();
+                return ok;
+            }
+
+            /* Clear the error state as soon as the user fixes a field */
+            form.querySelectorAll("input, select, textarea").forEach(function (el) {
+                var clear = function () {
+                    var field = fieldOf(el);
+                    if (field) field.classList.remove("has-error");
+                };
+                el.addEventListener("input", clear);
+                el.addEventListener("change", clear);
+            });
+
+            /* =========================================================
+               SUBMIT
+            ========================================================= */
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                clearMessage();
+
+                /* Silent drop for bots that tick the honeypot */
+                if (honeypot && honeypot.checked) return;
+
+                /* Guard: key not configured yet */
+                if (!ACCESS_KEY || ACCESS_KEY.indexOf("YOUR-") === 0) {
+                    setMessage("error",
+                        "The form isn't connected yet. Please email us directly at " + TO_EMAIL + ".");
+                    return;
+                }
+
+                if (!validate()) {
+                    setMessage("error", "Please complete the highlighted fields before sending.");
+                    return;
+                }
+
+                /* Build the payload from every field the user filled in */
+                var data = new FormData(form);
+                var payload = {};
+
+                data.forEach(function (value, key) {
+                    if (key === "botcheck") return; /* never send the honeypot */
+                    payload[key] = typeof value === "string" ? value.trim() : value;
+                });
+
+                payload.access_key = ACCESS_KEY;
+                payload.subject = "New project brief — " + (payload.name || "Website enquiry");
+                payload.from_name = "Cloudsartist21 Website";
+                payload.replyto = payload.email;
+                payload.to = TO_EMAIL;
+
+                setLoading(true);
+
+                fetch(FORM_ENDPOINT, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                })
+                    .then(function (res) {
+                        return res.json()
+                            .catch(function () { return {}; })
+                            .then(function (result) {
+                                if (res.ok && result.success !== false) {
+                                    form.reset();
+                                    setMessage("success",
+                                        "Thank you — your brief has been sent to " + TO_EMAIL +
+                                        ". We'll get back to you within 24 hours.");
+                                } else {
+                                    throw new Error(result.message || "Submission failed");
+                                }
+                            });
+                    })
+                    .catch(function () {
+                        setMessage("error",
+                            "Something went wrong while sending. Please try again, or email us at " +
+                            TO_EMAIL + ".");
+                    })
+                    .finally(function () {
+                        setLoading(false);
+                    });
+            });
+
         })();
     </script>
 

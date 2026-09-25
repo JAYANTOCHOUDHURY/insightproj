@@ -21,7 +21,7 @@
     <meta property="og:title" content="Photography | Cloudsartist21">
     <meta property="og:description" content="A curated selection of our photography work.">
     <meta property="og:url" content="https://www.cloudsartist21.com/work/photography">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image" content="https://www.cloudsartist21.com/assets/PhotoGraphy/DJI_0041.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Photography | Cloudsartist21">
@@ -30,12 +30,15 @@
     <title>Photography | Cloudsartist21</title>
 
 
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" href="../assets/PhotoGraphy/DJI_0041.jpg" fetchpriority="high">
+
+
     <link rel="stylesheet" href="../assets/styles.css">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://images.unsplash.com">
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -167,15 +170,11 @@
 
             <div class="photo-hero-background" aria-hidden="true">
 
-                <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=2400&q=90"
-                    srcset="
-                        https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=1200&q=85 1200w,
-                        https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=1920&q=90 1920w,
-                        https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=2400&q=90 2400w
-                    "
-                    sizes="100vw" alt="" class="parallax-img" fetchpriority="high">
+                <img src="../assets/PhotoGraphy/DJI_0041.jpg" alt="" class="photo-hero-img"
+                    fetchpriority="high" decoding="async">
 
                 <div class="photo-hero-overlay"></div>
+                <div class="photo-hero-vignette"></div>
 
                 <div class="photo-hero-grid-lines" aria-hidden="true">
                     <span></span><span></span><span></span><span></span>
@@ -246,177 +245,241 @@
 
 
         <!-- =================================================
-             02 · PHOTOGRAPHY PORTFOLIO — Masonry Grid
+             02 · PHOTOGRAPHY GALLERY
         ================================================== -->
 
-        <section class="section photo-portfolio-section" aria-labelledby="photo-portfolio-heading">
+        <section class="section photo-gallery-section" aria-labelledby="photo-gallery-heading">
 
             <div class="container">
 
                 <div class="section-heading-row scroll-reveal">
                     <span class="eyebrow">02 — Selected work</span>
-                    <span class="section-index">Photography</span>
+                    <span class="section-index">The Gallery</span>
                 </div>
 
 
-                <div class="photo-portfolio-heading scroll-reveal">
+                <div class="photo-gallery-heading scroll-reveal">
 
-                    <h2 id="photo-portfolio-heading" class="display display-lg">
+                    <h2 id="photo-gallery-heading" class="display display-lg">
                         The work
                         <span>speaks for itself.</span>
                     </h2>
 
                     <p>
-                        A curated selection of our recent photography
-                        projects — from product and lifestyle to
-                        resort and brand imagery.
+                        A curated collection — from product and lifestyle
+                        to resort and brand imagery, captured with an
+                        eye for light, form, and story.
                     </p>
 
                 </div>
 
 
-                <!-- Category Filters -->
-                <div class="photo-filters scroll-reveal" role="tablist" aria-label="Photography categories">
-                    <button class="photo-filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-                    <button class="photo-filter" data-filter="product" role="tab" aria-selected="false">Product</button>
-                    <button class="photo-filter" data-filter="lifestyle" role="tab" aria-selected="false">Lifestyle</button>
-                    <button class="photo-filter" data-filter="resort" role="tab" aria-selected="false">Resort</button>
-                    <button class="photo-filter" data-filter="brand" role="tab" aria-selected="false">Brand</button>
+                <!-- Orientation Filters -->
+                <div class="gallery-filters scroll-reveal" role="tablist" aria-label="Photo orientation">
+                    <button class="gallery-filter is-active" data-filter="all" role="tab" aria-selected="true">
+                        All Photos
+                    </button>
+                    <button class="gallery-filter" data-filter="landscape" role="tab" aria-selected="false">
+                        Landscape
+                    </button>
+                    <button class="gallery-filter" data-filter="portrait" role="tab" aria-selected="false">
+                        Portrait
+                    </button>
                 </div>
 
 
-                <div class="photo-portfolio-grid">
+                <!-- Masonry Gallery -->
+                <div class="gallery-columns" id="photoGallery">
 
-                    <!-- Product -->
-                    <a href="#" class="photo-card photo-card-large" data-category="product" aria-label="View project">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80"
-                            alt="Product photography" loading="lazy">
-                        <div class="photo-card-overlay"></div>
-                        <div class="photo-card-meta">
-                            <span class="photo-card-category">Product</span>
-                            <h3 class="photo-card-title">Timepiece Campaign</h3>
-                        </div>
+                    <!-- ==========================
+                         LANDSCAPE (15)
+                    =========================== -->
+
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/02.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/02.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
                     </a>
 
-                    <!-- Lifestyle -->
-                    <a href="#" class="photo-card" data-category="lifestyle" aria-label="View project">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
-                            alt="Lifestyle photography" loading="lazy">
-                        <div class="photo-card-overlay"></div>
-                        <div class="photo-card-meta">
-                            <span class="photo-card-category">Lifestyle</span>
-                            <h3 class="photo-card-title">Urban Stories</h3>
-                        </div>
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/2O1A1749.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1749.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
                     </a>
 
-                    <!-- Resort -->
-                    <a href="#" class="photo-card photo-card-tall" data-category="resort" aria-label="View project">
-                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80"
-                            alt="Resort photography" loading="lazy">
-                        <div class="photo-card-overlay"></div>
-                        <div class="photo-card-meta">
-                            <span class="photo-card-category">Resort</span>
-                            <h3 class="photo-card-title">Serenity Bay</h3>
-                        </div>
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/2O1A1774.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1774.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
                     </a>
 
-                    <!-- Brand -->
-                    <a href="#" class="photo-card photo-card-wide" data-category="brand" aria-label="View project">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80"
-                            alt="Brand photography" loading="lazy">
-                        <div class="photo-card-overlay"></div>
-                        <div class="photo-card-meta">
-                            <span class="photo-card-category">Brand</span>
-                            <h3 class="photo-card-title">The Studio Session</h3>
-                        </div>
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/2O1A1930 01.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1930 01.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
                     </a>
 
-                    <!-- Product -->
-                    <a href="#" class="photo-card" data-category="product" aria-label="View project">
-                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&q=80"
-                            alt="Product photography" loading="lazy">
-                        <div class="photo-card-overlay"></div>
-                        <div class="photo-card-meta">
-                            <span class="photo-card-category">Product</span>
-                            <h3 class="photo-card-title">Eyewear Edit</h3>
-                        </div>
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/DJI_0041.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/DJI_0041.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
                     </a>
 
-                    <!-- Lifestyle -->
-                    <a href="#" class="photo-card photo-card-large" data-category="lifestyle" aria-label="View project">
-                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80"
-                            alt="Lifestyle photography" loading="lazy">
-                        <div class="photo-card-overlay"></div>
-                        <div class="photo-card-meta">
-                            <span class="photo-card-category">Lifestyle</span>
-                            <h3 class="photo-card-title">Fashion Forward</h3>
-                        </div>
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/DSC00476 01.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/DSC00476 01.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
                     </a>
 
-                    <!-- Resort -->
-                    <a href="#" class="photo-card" data-category="resort" aria-label="View project">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
-                            alt="Resort photography" loading="lazy">
-                        <div class="photo-card-overlay"></div>
-                        <div class="photo-card-meta">
-                            <span class="photo-card-category">Resort</span>
-                            <h3 class="photo-card-title">The Poolside</h3>
-                        </div>
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/2O1A1754.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1754.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
                     </a>
 
-                    <!-- Brand -->
-                    <a href="#" class="photo-card photo-card-tall" data-category="brand" aria-label="View project">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
-                            alt="Brand photography" loading="lazy">
-                        <div class="photo-card-overlay"></div>
-                        <div class="photo-card-meta">
-                            <span class="photo-card-category">Brand</span>
-                            <h3 class="photo-card-title">Team Portraits</h3>
-                        </div>
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/2O1A1759.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1759.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
                     </a>
 
-                    <!-- Product -->
-                    <a href="#" class="photo-card photo-card-wide" data-category="product" aria-label="View project">
-                        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=1200&q=80"
-                            alt="Product photography" loading="lazy">
-                        <div class="photo-card-overlay"></div>
-                        <div class="photo-card-meta">
-                            <span class="photo-card-category">Product</span>
-                            <h3 class="photo-card-title">The Fragrance Story</h3>
-                        </div>
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/2O1A1764.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1764.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
                     </a>
 
-                    <!-- Lifestyle -->
-                    <a href="#" class="photo-card" data-category="lifestyle" aria-label="View project">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80"
-                            alt="Lifestyle photography" loading="lazy">
-                        <div class="photo-card-overlay"></div>
-                        <div class="photo-card-meta">
-                            <span class="photo-card-category">Lifestyle</span>
-                            <h3 class="photo-card-title">Golden Hour</h3>
-                        </div>
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/2O1A1787.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1787.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
                     </a>
 
-                    <!-- Resort -->
-                    <a href="#" class="photo-card photo-card-large" data-category="resort" aria-label="View project">
-                        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80"
-                            alt="Resort photography" loading="lazy">
-                        <div class="photo-card-overlay"></div>
-                        <div class="photo-card-meta">
-                            <span class="photo-card-category">Resort</span>
-                            <h3 class="photo-card-title">Tropical Escape</h3>
-                        </div>
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/2O1A1787 b w.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1787 b w.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
                     </a>
 
-                    <!-- Brand -->
-                    <a href="#" class="photo-card" data-category="brand" aria-label="View project">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
-                            alt="Brand photography" loading="lazy">
-                        <div class="photo-card-overlay"></div>
-                        <div class="photo-card-meta">
-                            <span class="photo-card-category">Brand</span>
-                            <h3 class="photo-card-title">The Workspace</h3>
-                        </div>
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/01.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/01.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/2O1A6648 N.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A6648 N.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/04.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/04.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="landscape"
+                        href="../assets/PhotoGraphy/04 001 b w N.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/04 001 b w N.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+
+                    <!-- ==========================
+                         PORTRAIT (11)
+                    =========================== -->
+
+                    <a class="gallery-item" data-orientation="portrait"
+                        href="../assets/PhotoGraphy/2O1A1873.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1873.jpg"
+                            alt="Photography by Cloudsartist21" loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="portrait"
+                        href="../assets/PhotoGraphy/2O1A1873 b w N.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1873 b w N.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="portrait"
+                        href="../assets/PhotoGraphy/Final 02.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/Final 02.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="portrait"
+                        href="../assets/PhotoGraphy/2O1A1961.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1961.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="portrait"
+                        href="../assets/PhotoGraphy/Final 01.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/Final 01.jpg"
+                            alt="Photography by Cloudsartist21" loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="portrait"
+                        href="../assets/PhotoGraphy/2O1A1827.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1827.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="portrait"
+                        href="../assets/PhotoGraphy/2O1A1952.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1952.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="portrait"
+                        href="../assets/PhotoGraphy/2O1A1860.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1860.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="portrait"
+                        href="../assets/PhotoGraphy/2O1A1969 01.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/2O1A1969 01.jpg"
+                            alt="Photography by Cloudsartist21" loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="portrait"
+                        href="../assets/PhotoGraphy/DSC01806.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/DSC01806.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
+                    </a>
+
+                    <a class="gallery-item" data-orientation="portrait"
+                        href="../assets/PhotoGraphy/05.jpg" data-cursor="VIEW">
+                        <img src="../assets/PhotoGraphy/05.jpg" alt="Photography by Cloudsartist21"
+                            loading="lazy" decoding="async">
+                        <div class="gallery-item-overlay"><span class="gallery-item-zoom" aria-hidden="true">↗</span></div>
                     </a>
 
                 </div>
@@ -468,7 +531,28 @@
 
 
     <!-- =========================================================
-         FOOTER — BULLETPROOF (Same as index.html)
+         LIGHTBOX
+    ========================================================== -->
+
+    <div class="photo-lightbox" id="photoLightbox" aria-hidden="true" role="dialog" aria-label="Photo viewer">
+        <button class="photo-lightbox-close" type="button" aria-label="Close image">×</button>
+        <button class="photo-lightbox-prev" type="button" aria-label="Previous image">‹</button>
+        <button class="photo-lightbox-next" type="button" aria-label="Next image">›</button>
+
+        <div class="photo-lightbox-content">
+            <img id="photoLightboxImg" src="" alt="Enlarged photo">
+        </div>
+
+        <div class="photo-lightbox-counter" aria-hidden="true">
+            <span id="photoLightboxCurrent">1</span>
+            <span class="photo-lightbox-counter-sep">/</span>
+            <span id="photoLightboxTotal">26</span>
+        </div>
+    </div>
+
+
+    <!-- =========================================================
+         FOOTER
     ========================================================== -->
 
     <footer class="site-footer">
@@ -648,26 +732,23 @@
 
     <style>
 
-        /* =========================================================
-           FALLBACK CORE VARIABLES & BASE STYLES
-        ========================================================= */
-        
         :root {
             --bg: #08080a;
             --surface-color: #101012;
             --card-bg: #151518;
             --white: #ffffff;
-            --white-soft: rgba(255,255,255,0.85);
-            --text-muted: rgba(255,255,255,0.6);
-            --text-dim: rgba(255,255,255,0.4);
+            --white-soft: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --text-dim: rgba(255, 255, 255, 0.4);
             --accent: #d4af37;
             --accent-glow: rgba(212, 175, 55, 0.12);
-            --border: rgba(255,255,255,0.12);
-            --border-soft: rgba(255,255,255,0.08);
+            --border: rgba(255, 255, 255, 0.12);
+            --border-soft: rgba(255, 255, 255, 0.08);
             --font-display: 'Manrope', sans-serif;
             --font-body: 'DM Sans', sans-serif;
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-            --shadow-md: 0 10px 30px rgba(0,0,0,0.4);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.6);
         }
 
         .container {
@@ -675,6 +756,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
 
         /* =========================================================
            PHOTOGRAPHY HERO
@@ -689,7 +771,7 @@
             display: flex;
             align-items: stretch;
             overflow: hidden;
-            background: #08080a;
+            background: #0a0a0c;
             isolation: isolate;
         }
 
@@ -698,15 +780,23 @@
             inset: 0;
             z-index: 0;
             overflow: hidden;
+            background: #0a0a0c;
         }
 
-        .photo-hero-background img {
+        .photo-hero-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
-            filter: saturate(0.5) contrast(1.15) brightness(0.4);
+            filter: saturate(0.55) contrast(1.1) brightness(0.55);
             transform: scale(1.05);
+            animation: heroKenBurns 22s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+
+        @keyframes heroKenBurns {
+            0%   { transform: scale(1.05) translate3d(0, 0, 0); }
+            100% { transform: scale(1.15) translate3d(-1%, -0.6%, 0); }
         }
 
         .photo-hero-overlay {
@@ -714,10 +804,25 @@
             inset: 0;
             background:
                 linear-gradient(180deg,
-                    rgba(8, 8, 10, 0.78) 0%,
-                    rgba(8, 8, 10, 0.4) 35%,
-                    rgba(8, 8, 10, 0.72) 72%,
-                    rgba(8, 8, 10, 0.98) 100%);
+                    rgba(8, 8, 10, 0.75) 0%,
+                    rgba(8, 8, 10, 0.35) 32%,
+                    rgba(8, 8, 10, 0.55) 58%,
+                    rgba(8, 8, 10, 0.92) 85%,
+                    rgba(8, 8, 10, 1) 100%),
+                linear-gradient(90deg,
+                    rgba(8, 8, 10, 0.7) 0%,
+                    rgba(8, 8, 10, 0.25) 45%,
+                    rgba(8, 8, 10, 0.05) 72%,
+                    rgba(8, 8, 10, 0.4) 100%);
+        }
+
+        .photo-hero-vignette {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(ellipse 130% 95% at 50% 45%,
+                    rgba(0, 0, 0, 0) 45%,
+                    rgba(8, 8, 10, 0.6) 100%);
         }
 
         .photo-hero-grid-lines {
@@ -727,7 +832,7 @@
             grid-template-columns: repeat(4, 1fr);
             width: min(calc(100% - 8vw), 1560px);
             margin-inline: auto;
-            opacity: 0.12;
+            opacity: 0.1;
             pointer-events: none;
         }
 
@@ -783,6 +888,7 @@
             letter-spacing: 0.18em;
             text-transform: uppercase;
             color: var(--accent);
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
         }
 
         .photo-title {
@@ -793,6 +899,7 @@
             font-weight: 500;
             letter-spacing: -0.08em;
             color: #fff;
+            text-shadow: 0 6px 40px rgba(0, 0, 0, 0.55);
         }
 
         .photo-title span { color: var(--accent); }
@@ -802,7 +909,8 @@
             max-width: 620px;
             font-size: clamp(0.92rem, 1.1vw, 1.05rem);
             line-height: 1.7;
-            color: rgba(255, 255, 255, 0.78);
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
         }
 
         .photo-hero-bottom {
@@ -862,25 +970,26 @@
 
 
         /* =========================================================
-           PHOTOGRAPHY PORTFOLIO
+           GALLERY SECTION
         ========================================================= */
 
-        .photo-portfolio-section {
+        .photo-gallery-section {
             background: var(--bg);
             padding-block: clamp(4rem, 8vw, 7rem);
+            position: relative;
         }
 
-        .photo-portfolio-heading {
+        .photo-gallery-heading {
             max-width: 780px;
             margin: 0 auto clamp(2rem, 4vw, 3rem);
             text-align: center;
         }
 
-        .photo-portfolio-heading h2 {
+        .photo-gallery-heading h2 {
             margin: 0 0 1.75rem;
         }
 
-        .photo-portfolio-heading p {
+        .photo-gallery-heading p {
             font-size: clamp(0.92rem, 1.05vw, 1rem);
             line-height: 1.8;
             color: var(--text-muted);
@@ -889,252 +998,326 @@
 
 
         /* =========================================================
-           CATEGORY FILTERS
+           FILTERS
         ========================================================= */
 
-        .photo-filters {
+        .gallery-filters {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: clamp(2rem, 4vw, 3rem);
+            gap: 0.6rem;
+            margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
         }
 
-        .photo-filter {
-            padding: 0.65rem 1.5rem;
+        .gallery-filter {
+            padding: 0.7rem 1.6rem;
             border: 1px solid var(--border);
             background: transparent;
             color: var(--text-muted);
             font-family: var(--font-body);
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             font-weight: 600;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             cursor: pointer;
-            transition: all 0.35s ease;
-            border-radius: 2px;
+            transition: all 0.35s var(--ease-out);
+            border-radius: 100px;
+            white-space: nowrap;
         }
 
-        .photo-filter:hover {
+        .gallery-filter:hover {
             color: var(--white);
-            border-color: rgba(255,255,255,0.3);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
 
-        .photo-filter.is-active {
+        .gallery-filter.is-active {
             background: var(--accent);
             color: var(--bg);
             border-color: var(--accent);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
         }
 
 
         /* =========================================================
-           MASONRY GRID
+           MASONRY GALLERY (CSS Columns)
         ========================================================= */
 
-        .photo-portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 240px;
-            grid-auto-flow: dense;
-            gap: 12px;
+        .gallery-columns {
+            column-count: 4;
+            column-gap: 16px;
         }
 
-        .photo-card {
+        .gallery-item {
             position: relative;
+            display: block;
+            width: 100%;
+            break-inside: avoid;
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            margin-bottom: 16px;
             overflow: hidden;
             border-radius: 6px;
-            background: #111;
+            background: #0d0d0f;
             cursor: pointer;
-            display: block;
             text-decoration: none;
+            transform: translateZ(0);
+            will-change: transform;
         }
 
-        .photo-card-large {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-
-        .photo-card-wide {
-            grid-column: span 2;
-            grid-row: span 1;
-        }
-
-        .photo-card-tall {
-            grid-column: span 1;
-            grid-row: span 2;
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .gallery-item img {
             display: block;
-            transition: transform 0.7s var(--ease-out), filter 0.4s ease;
-            filter: saturate(0.8) contrast(1.05);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            filter: saturate(0.85) contrast(1.02) brightness(0.92);
+            transition: transform 0.9s var(--ease-out), filter 0.5s ease;
+            will-change: transform;
         }
 
-        .photo-card:hover img {
+        .gallery-item:hover img {
             transform: scale(1.06);
-            filter: saturate(1) contrast(1.1);
+            filter: saturate(1) contrast(1.05) brightness(1);
         }
 
-        .photo-card-overlay {
+        .gallery-item-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.35) 50%, transparent 100%);
-            opacity: 0.85;
-            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 1.15rem;
+            background: linear-gradient(180deg,
+                    transparent 45%,
+                    rgba(0, 0, 0, 0.35) 70%,
+                    rgba(0, 0, 0, 0.85) 100%);
+            opacity: 0;
+            transition: opacity 0.45s var(--ease-out);
+            pointer-events: none;
         }
 
-        .photo-card:hover .photo-card-overlay {
-            opacity: 0.95;
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
         }
 
-        .photo-card-meta {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 1.25rem;
-            z-index: 2;
-            transform: translateY(0);
-            transition: transform 0.4s var(--ease-out);
-        }
-
-        .photo-card-category {
-            display: block;
-            font-size: 0.62rem;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
+        .gallery-item-zoom {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border: 1px solid rgba(212, 175, 55, 0.7);
+            border-radius: 50%;
+            background: rgba(8, 8, 10, 0.55);
             color: var(--accent);
-            margin-bottom: 0.4rem;
+            font-size: 1rem;
+            line-height: 1;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transform: translateY(10px) rotate(45deg);
+            transition: transform 0.5s var(--ease-out),
+                background 0.35s ease,
+                color 0.35s ease;
         }
 
-        .photo-card-title {
-            font-family: var(--font-display);
-            font-size: clamp(1rem, 1.3vw, 1.25rem);
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            color: #fff;
-            margin: 0;
-            line-height: 1.2;
+        .gallery-item:hover .gallery-item-zoom {
+            transform: translateY(0) rotate(0);
         }
 
-        .photo-card-large .photo-card-title {
-            font-size: clamp(1.25rem, 1.8vw, 1.75rem);
-        }
-
-        /* Filter hiding */
-        .photo-card.is-hidden {
+        .gallery-item.is-hidden {
             display: none;
         }
 
 
         /* =========================================================
-           RESPONSIVE — MASONRY GRID
+           LIGHTBOX
         ========================================================= */
 
-        @media (max-width: 1024px) {
-            .photo-portfolio-grid {
-                grid-template-columns: repeat(3, 1fr);
-                grid-auto-rows: 200px;
-            }
+        .photo-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(5, 5, 7, 0.96);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(1rem, 4vw, 3rem);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
 
-            .photo-card-large {
-                grid-column: span 2;
-                grid-row: span 2;
-            }
+        .photo-lightbox.is-open { opacity: 1; visibility: visible; }
 
-            .photo-card-wide {
-                grid-column: span 2;
-                grid-row: span 1;
-            }
+        .photo-lightbox-content {
+            position: relative;
+            max-width: min(1200px, 92vw);
+            max-height: 88vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: scale(0.96);
+            transition: transform 0.5s var(--ease-out);
+        }
 
-            .photo-card-tall {
-                grid-column: span 1;
-                grid-row: span 2;
-            }
+        .photo-lightbox.is-open .photo-lightbox-content { transform: scale(1); }
+
+        .photo-lightbox-content img {
+            max-width: 100%;
+            max-height: 88vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+        }
+
+        .photo-lightbox-close,
+        .photo-lightbox-prev,
+        .photo-lightbox-next {
+            position: absolute;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            background: rgba(15, 15, 18, 0.7);
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.35s var(--ease-out);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 2;
+        }
+
+        .photo-lightbox-close {
+            top: clamp(1rem, 3vw, 2rem);
+            right: clamp(1rem, 3vw, 2rem);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .photo-lightbox-close:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg);
+            transform: rotate(90deg);
+        }
+
+        .photo-lightbox-prev,
+        .photo-lightbox-next {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            font-size: 1.75rem;
+            line-height: 1;
+            padding-bottom: 4px;
+        }
+
+        .photo-lightbox-prev { left: clamp(1rem, 3vw, 2rem); }
+        .photo-lightbox-next { right: clamp(1rem, 3vw, 2rem); }
+
+        .photo-lightbox-prev:hover,
+        .photo-lightbox-next:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg);
+        }
+
+        .photo-lightbox-counter {
+            position: absolute;
+            bottom: clamp(1rem, 3vw, 2rem);
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .photo-lightbox-counter-sep { opacity: 0.4; }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1200px) {
+            .gallery-columns { column-count: 3; }
+        }
+
+        @media (max-width: 900px) {
+            .gallery-columns { column-count: 3; column-gap: 12px; }
+            .gallery-item { margin-bottom: 12px; }
         }
 
         @media (max-width: 768px) {
-            .photo-portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-auto-rows: 180px;
-                gap: 10px;
+            .gallery-columns { column-count: 2; column-gap: 10px; }
+            .gallery-item { margin-bottom: 10px; }
+
+            .gallery-filters { gap: 0.5rem; }
+            .gallery-filter { padding: 0.6rem 1.15rem; font-size: 0.65rem; }
+
+            .photo-lightbox-prev,
+            .photo-lightbox-next {
+                width: 44px;
+                height: 44px;
+                font-size: 1.4rem;
             }
 
-            .photo-card-large {
-                grid-column: span 2;
-                grid-row: span 2;
-            }
-
-            .photo-card-wide {
-                grid-column: span 2;
-                grid-row: span 1;
-            }
-
-            .photo-card-tall {
-                grid-column: span 1;
-                grid-row: span 2;
-            }
-
-            .photo-card-meta {
-                padding: 1rem;
-            }
-
-            .photo-card-category {
-                font-size: 0.55rem;
-                margin-bottom: 0.25rem;
-            }
-
-            .photo-card-title {
-                font-size: 0.9rem;
-            }
-
-            .photo-card-large .photo-card-title {
-                font-size: 1.1rem;
+            .photo-lightbox-close {
+                width: 40px;
+                height: 40px;
+                font-size: 1.3rem;
             }
         }
 
         @media (max-width: 480px) {
-            .photo-portfolio-grid {
-                grid-template-columns: 1fr 1fr;
-                grid-auto-rows: 160px;
-                gap: 8px;
-            }
+            .gallery-columns { column-count: 2; column-gap: 8px; }
+            .gallery-item { margin-bottom: 8px; border-radius: 4px; }
 
-            .photo-card-large {
-                grid-column: span 2;
-                grid-row: span 2;
-            }
+            .gallery-item-zoom { width: 34px; height: 34px; font-size: 0.85rem; }
+            .gallery-item-overlay { padding: 0.75rem; }
 
-            .photo-card-wide {
-                grid-column: span 2;
-                grid-row: span 1;
-            }
+            .photo-lightbox-close { top: 0.85rem; right: 0.85rem; }
+            .photo-lightbox-prev { left: 0.5rem; }
+            .photo-lightbox-next { right: 0.5rem; }
+        }
 
-            .photo-card-tall {
-                grid-column: span 1;
-                grid-row: span 1;
-            }
 
-            .photo-card-meta {
-                padding: 0.75rem;
-            }
+        /* =========================================================
+           HERO RESPONSIVE
+        ========================================================= */
 
-            .photo-card-title {
-                font-size: 0.8rem;
-            }
+        @media (max-width: 1024px) {
+            .photo-title { font-size: clamp(2.4rem, 8vw, 5.5rem); }
+        }
 
-            .photo-card-large .photo-card-title {
-                font-size: 1rem;
-            }
+        @media (max-width: 768px) {
+            .photo-hero { min-height: 620px; }
+            .photo-hero-container { padding-top: 110px; padding-bottom: 32px; }
+            .photo-hero-top { align-items: flex-start; padding-bottom: 1rem; }
+            .photo-hero-index { display: none; }
+            .photo-title { font-size: clamp(2.4rem, 12vw, 4.2rem); line-height: 0.9; }
+            .photo-hero-kicker { max-width: 260px; font-size: 0.62rem; margin-bottom: 1.25rem; }
+            .photo-hero-bottom { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding-top: 1.25rem; }
+            .photo-hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+            .photo-scroll { display: none; }
+        }
 
-            .photo-filter {
-                padding: 0.5rem 1rem;
-                font-size: 0.7rem;
-            }
+        @media (max-width: 480px) {
+            .photo-hero { min-height: 600px; }
+            .photo-title { font-size: clamp(2rem, 13vw, 3.2rem); }
         }
 
 
@@ -1176,11 +1359,7 @@
             overflow-y: auto;
         }
 
-        .mobile-navigation.is-open,
-        .mobile-navigation.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .mobile-navigation.is-open { opacity: 1; visibility: visible; }
 
         .mobile-navigation-inner {
             width: 100%;
@@ -1225,18 +1404,10 @@
         }
 
         .mobile-nav-links a:hover,
-        .mobile-nav-links a.active {
-            color: var(--white);
-        }
+        .mobile-nav-links a.active { color: var(--white); }
 
-        .mobile-nav-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .mobile-nav-parent {
-            justify-content: space-between;
-        }
+        .mobile-nav-group { display: flex; flex-direction: column; }
+        .mobile-nav-parent { justify-content: space-between; }
 
         .mobile-nav-toggle-icon {
             font-size: 1.25rem;
@@ -1246,9 +1417,7 @@
             transition: transform 0.35s var(--ease-out);
         }
 
-        .mobile-nav-group.is-expanded .mobile-nav-toggle-icon {
-            transform: rotate(45deg);
-        }
+        .mobile-nav-group.is-expanded .mobile-nav-toggle-icon { transform: rotate(45deg); }
 
         .mobile-nav-sub {
             display: none;
@@ -1260,9 +1429,7 @@
             margin-left: 0.5rem;
         }
 
-        .mobile-nav-group.is-expanded .mobile-nav-sub {
-            display: flex;
-        }
+        .mobile-nav-group.is-expanded .mobile-nav-sub { display: flex; }
 
         .mobile-nav-sub a {
             font-family: var(--font-body);
@@ -1274,9 +1441,7 @@
             letter-spacing: 0;
         }
 
-        .mobile-nav-sub a:hover {
-            color: var(--accent);
-        }
+        .mobile-nav-sub a:hover { color: var(--accent); }
 
         .mobile-navigation-bottom {
             padding-top: 1.5rem;
@@ -1309,7 +1474,7 @@
 
 
         /* =========================================================
-           FOOTER — BULLETPROOF CSS
+           FOOTER
         ========================================================= */
 
         .site-footer {
@@ -1336,15 +1501,8 @@
             align-items: start !important;
         }
 
-        .site-footer .footer-col {
-            display: flex !important;
-            flex-direction: column !important;
-        }
-
-        .site-footer .footer-col-brand {
-            display: flex !important;
-            flex-direction: column !important;
-        }
+        .site-footer .footer-col { display: flex !important; flex-direction: column !important; }
+        .site-footer .footer-col-brand { display: flex !important; flex-direction: column !important; }
 
         .site-footer .footer-logo {
             display: inline-block !important;
@@ -1457,7 +1615,6 @@
 
         .site-footer .footer-col-list a:hover::before { width: 6px !important; }
 
-        /* "Our Work" non-link parent label */
         .site-footer .footer-parent-label {
             display: inline-block !important;
             color: var(--text-muted) !important;
@@ -1550,7 +1707,6 @@
             border-color: var(--accent) !important;
         }
 
-        /* Footer sub-list for Work */
         .footer-sub-list {
             list-style: none;
             padding: 0;
@@ -1562,26 +1718,19 @@
             padding-left: 0.85rem;
         }
 
-        .footer-sub-list li {
-            line-height: 1.4;
-        }
-
         .footer-sub-list a {
             font-size: 0.78rem !important;
             color: var(--text-dim) !important;
             padding-left: 0;
         }
 
-        .footer-sub-list a::before {
-            display: none !important;
-        }
+        .footer-sub-list a::before { display: none !important; }
 
         .footer-sub-list a:hover {
             color: var(--accent) !important;
             transform: translateX(3px) !important;
         }
 
-        /* Footer Responsive Adjustments */
         @media (max-width: 1024px) {
             .site-footer .footer-grid {
                 grid-template-columns: minmax(240px, 1.4fr) minmax(140px, 1fr) minmax(140px, 1fr) !important;
@@ -1621,29 +1770,9 @@
         }
 
 
-        /* =========================================================
-           RESPONSIVE — PHOTO HERO
-        ========================================================= */
-
-        @media (max-width: 1024px) {
-            .photo-title { font-size: clamp(2.4rem, 8vw, 5.5rem); }
-        }
-
-        @media (max-width: 768px) {
-            .photo-hero { min-height: 620px; }
-            .photo-hero-container { padding-top: 110px; padding-bottom: 32px; }
-            .photo-hero-top { align-items: flex-start; padding-bottom: 1rem; }
-            .photo-hero-index { display: none; }
-            .photo-title { font-size: clamp(2.4rem, 12vw, 4.2rem); line-height: 0.9; }
-            .photo-hero-kicker { max-width: 260px; font-size: 0.62rem; margin-bottom: 1.25rem; }
-            .photo-hero-bottom { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding-top: 1.25rem; }
-            .photo-hero-stats { gap: 1.5rem; flex-wrap: wrap; }
-            .photo-scroll { display: none; }
-        }
-
-        @media (max-width: 480px) {
-            .photo-hero { min-height: 600px; }
-            .photo-title { font-size: clamp(2rem, 13vw, 3.2rem); }
+        @media (prefers-reduced-motion: reduce) {
+            .photo-hero-img { animation: none !important; }
+            .gallery-item img { transition: none !important; }
         }
 
     </style>
@@ -1681,11 +1810,11 @@
                 ========================================================= */
                 const menuToggle = document.querySelector('.menu-toggle');
                 const mobileNav = document.getElementById('mobile-navigation');
-                
+
                 if (menuToggle && mobileNav) {
-                    menuToggle.addEventListener('click', function() {
+                    menuToggle.addEventListener('click', function () {
                         const isOpen = mobileNav.classList.contains('is-open');
-                        
+
                         if (isOpen) {
                             mobileNav.classList.remove('is-open');
                             menuToggle.setAttribute('aria-expanded', 'false');
@@ -1697,8 +1826,6 @@
                         }
                     });
 
-                    /* Close menu when a link is clicked
-                       — EXCLUDING the Work parent (CRITICAL FIX) */
                     mobileNav.querySelectorAll('a').forEach(link => {
                         if (link.classList.contains('mobile-nav-parent')) return;
 
@@ -1711,10 +1838,7 @@
                 }
 
 
-                /* =========================================================
-                   Mobile Nav — Work submenu expand/collapse
-                   (OUTSIDE GSAP conditional — always works)
-                ========================================================= */
+                /* Mobile Nav — Work submenu expand/collapse */
                 const mobileWorkGroup = document.querySelector('.mobile-nav-group');
                 const mobileWorkParent = document.querySelector('.mobile-nav-parent');
 
@@ -1727,51 +1851,146 @@
 
 
                 /* =========================================================
-                   Photography Category Filtering
+                   GALLERY — ORIENTATION FILTERING
                 ========================================================= */
-                const filterButtons = document.querySelectorAll('.photo-filter');
-                const photoCards = document.querySelectorAll('.photo-card');
+                const galleryFilters = document.querySelectorAll('.gallery-filter');
+                const galleryItems = document.querySelectorAll('.gallery-item');
 
-                filterButtons.forEach(button => {
-                    button.addEventListener('click', function() {
+                galleryFilters.forEach(button => {
+                    button.addEventListener('click', function () {
                         const filter = this.getAttribute('data-filter');
 
-                        // Update active button
-                        filterButtons.forEach(btn => btn.classList.remove('is-active'));
+                        galleryFilters.forEach(btn => {
+                            btn.classList.remove('is-active');
+                            btn.setAttribute('aria-selected', 'false');
+                        });
                         this.classList.add('is-active');
+                        this.setAttribute('aria-selected', 'true');
 
-                        // Filter cards
-                        photoCards.forEach(card => {
-                            const category = card.getAttribute('data-category');
-                            if (filter === 'all' || category === filter) {
-                                card.classList.remove('is-hidden');
+                        galleryItems.forEach(item => {
+                            const orientation = item.getAttribute('data-orientation');
+                            if (filter === 'all' || orientation === filter) {
+                                item.classList.remove('is-hidden');
                             } else {
-                                card.classList.add('is-hidden');
+                                item.classList.add('is-hidden');
                             }
                         });
+
+                        if (typeof ScrollTrigger !== "undefined") {
+                            ScrollTrigger.refresh();
+                        }
                     });
                 });
 
 
                 /* =========================================================
-                   GSAP ANIMATIONS
+                   LIGHTBOX
+                ========================================================= */
+                const lightbox = document.getElementById('photoLightbox');
+                const lightboxImg = document.getElementById('photoLightboxImg');
+                const lightboxClose = lightbox ? lightbox.querySelector('.photo-lightbox-close') : null;
+                const lightboxPrev = lightbox ? lightbox.querySelector('.photo-lightbox-prev') : null;
+                const lightboxNext = lightbox ? lightbox.querySelector('.photo-lightbox-next') : null;
+                const lightboxCurrent = document.getElementById('photoLightboxCurrent');
+                const lightboxTotal = document.getElementById('photoLightboxTotal');
+
+                let currentIndex = 0;
+                let visibleItems = [];
+
+                function getVisibleItems() {
+                    return Array.from(galleryItems).filter(item => !item.classList.contains('is-hidden'));
+                }
+
+                function openLightbox(index) {
+                    visibleItems = getVisibleItems();
+                    if (!visibleItems.length) return;
+
+                    currentIndex = index;
+                    updateLightbox();
+
+                    lightbox.classList.add('is-open');
+                    lightbox.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeLightbox() {
+                    lightbox.classList.remove('is-open');
+                    lightbox.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                }
+
+                function updateLightbox() {
+                    const item = visibleItems[currentIndex];
+                    if (!item) return;
+
+                    const img = item.querySelector('img');
+                    const fullSrc = item.getAttribute('href') || (img ? img.src : '');
+                    const alt = img ? img.alt : '';
+
+                    lightboxImg.src = fullSrc;
+                    lightboxImg.alt = alt;
+
+                    if (lightboxCurrent) lightboxCurrent.textContent = currentIndex + 1;
+                    if (lightboxTotal) lightboxTotal.textContent = visibleItems.length;
+                }
+
+                function showPrev() {
+                    if (!visibleItems.length) return;
+                    currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+                    updateLightbox();
+                }
+
+                function showNext() {
+                    if (!visibleItems.length) return;
+                    currentIndex = (currentIndex + 1) % visibleItems.length;
+                    updateLightbox();
+                }
+
+                galleryItems.forEach((item) => {
+                    item.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const items = getVisibleItems();
+                        const itemIndex = items.indexOf(this);
+                        openLightbox(itemIndex >= 0 ? itemIndex : 0);
+                    });
+                });
+
+                if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+                if (lightboxPrev) lightboxPrev.addEventListener('click', function (e) { e.stopPropagation(); showPrev(); });
+                if (lightboxNext) lightboxNext.addEventListener('click', function (e) { e.stopPropagation(); showNext(); });
+
+                if (lightbox) {
+                    lightbox.addEventListener('click', function (e) {
+                        if (e.target === lightbox) closeLightbox();
+                    });
+                }
+
+                document.addEventListener('keydown', function (e) {
+                    if (!lightbox || !lightbox.classList.contains('is-open')) return;
+
+                    if (e.key === 'Escape') closeLightbox();
+                    else if (e.key === 'ArrowLeft') showPrev();
+                    else if (e.key === 'ArrowRight') showNext();
+                });
+
+
+                /* =========================================================
+                   GSAP — SCROLL ANIMATIONS
                 ========================================================= */
                 if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
 
-                    const photoCards = document.querySelectorAll(".photo-card");
-
-                    photoCards.forEach((card, index) => {
-                        gsap.fromTo(card,
+                    galleryItems.forEach((item, index) => {
+                        gsap.fromTo(item,
                             { y: 40, opacity: 0 },
                             {
                                 y: 0,
                                 opacity: 1,
                                 duration: 0.9,
-                                delay: (index % 4) * 0.08,
+                                delay: (index % 4) * 0.06,
                                 ease: "power3.out",
                                 scrollTrigger: {
-                                    trigger: card,
-                                    start: "top 90%",
+                                    trigger: item,
+                                    start: "top 92%",
                                     once: true
                                 }
                             }
@@ -1789,6 +2008,9 @@
                         );
                     });
 
+                    window.addEventListener("load", () => {
+                        ScrollTrigger.refresh();
+                    });
                 }
 
             });

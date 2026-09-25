@@ -87,8 +87,9 @@
     <header class="site-header">
         <div class="container nav-inner">
 
+            <!-- UPDATED HEADER LOGO -->
             <a href="index.html" class="logo" aria-label="Cloudsartist21 home">
-                Clouds<span class="logo-dot">artist21</span>
+                <img src="CloudsArtist21 Logo.png" alt="Cloudsartist21 Logo" class="header-logo-img">
             </a>
 
             <nav class="nav-links" aria-label="Primary navigation">
@@ -329,8 +330,9 @@
                 <!-- Column 1 — Brand -->
                 <div class="footer-col footer-col-brand">
 
+                    <!-- UPDATED FOOTER LOGO -->
                     <a href="index.html" class="footer-logo display">
-                        Clouds<span>artist21.</span>
+                        <img src="CloudsArtist21 Logo.png" alt="Cloudsartist21 Logo" class="footer-logo-img">
                     </a>
 
                     <p class="footer-tagline">Film Production</p>
@@ -577,6 +579,82 @@
         }
 
         /* =========================================================
+           NEW LOGO STYLES (HEADER & FOOTER)
+        ========================================================= */
+
+        /* Header Logo */
+        .site-header .logo {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+        }
+
+        .header-logo-img {
+            height: 52px; /* Increased from 42px */
+            width: auto;
+            object-fit: contain;
+            /* mix-blend-mode helps white backgrounds blend into dark themes */
+            mix-blend-mode: screen;
+            /* Subtle golden glow to make the logo pop */
+            filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.3));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .site-header .logo:hover .header-logo-img {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.7));
+        }
+
+        /* Footer Logo */
+        .site-footer .footer-logo {
+            display: inline-block;
+            margin-bottom: 0.4rem;
+            text-decoration: none;
+        }
+
+        .footer-logo-img {
+            height: 64px; /* Increased from 52px */
+            width: auto;
+            object-fit: contain;
+            /* mix-blend-mode helps white backgrounds blend into dark themes */
+            mix-blend-mode: screen;
+            /* Subtle golden glow to make the logo pop */
+            filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.3));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .site-footer .footer-logo:hover .footer-logo-img {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.7));
+        }
+
+        /* Responsive Logo Adjustments */
+        @media (max-width: 1024px) {
+            .header-logo-img {
+                height: 44px; /* Increased from 36px */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-logo-img {
+                height: 38px; /* Increased from 32px */
+            }
+            .footer-logo-img {
+                height: 54px; /* Increased from 44px */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-logo-img {
+                height: 34px; /* Increased from 28px */
+            }
+            .footer-logo-img {
+                height: 46px; /* Increased from 38px */
+            }
+        }
+
+        /* =========================================================
            CUSTOM CURSOR
         ========================================================= */
 
@@ -709,16 +787,6 @@
             align-items: center;
             justify-content: space-between;
             gap: clamp(1rem, 2vw, 2rem);
-        }
-
-        .logo {
-            font-family: var(--font-display);
-            font-size: clamp(1.15rem, 1.6vw, 1.35rem);
-            font-weight: 700;
-            letter-spacing: -0.06em;
-            color: var(--white);
-            white-space: nowrap;
-            flex-shrink: 0;
         }
 
         .logo-dot {
@@ -1414,27 +1482,6 @@
             display: flex !important;
             flex-direction: column !important;
             min-width: 0 !important;
-        }
-
-        .site-footer .footer-logo {
-            display: inline-block !important;
-            font-family: var(--font-display) !important;
-            font-size: clamp(1.5rem, 2.4vw, 2.25rem) !important;
-            font-weight: 700 !important;
-            letter-spacing: -0.06em !important;
-            line-height: 1 !important;
-            color: var(--white) !important;
-            margin-bottom: 0.4rem !important;
-            transition: opacity 0.3s ease !important;
-            text-decoration: none !important;
-        }
-
-        .site-footer .footer-logo:hover {
-            opacity: 0.85 !important;
-        }
-
-        .site-footer .footer-logo span {
-            color: var(--accent) !important;
         }
 
         .site-footer .footer-tagline {

@@ -55,17 +55,6 @@
     <title>Studio | Cloudsartist21</title>
 
 
-    <!-- ==== Preload first hero image for instant display ==== -->
-    <link rel="preload" as="image"
-        href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2000&q=90"
-        imagesrcset="
-            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80   900w,
-            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=85 1400w,
-            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2000&q=90 2000w
-        "
-        imagesizes="100vw" fetchpriority="high">
-
-
     <link rel="stylesheet" href="assets/styles.css">
 
 
@@ -197,50 +186,18 @@
 
 
         <!-- =================================================
-             01 · ABOUT HERO — Cinematic Slideshow Banner
+             01 · ABOUT HERO — CINEMATIC VIDEO BANNER
         ================================================== -->
 
         <section class="about-hero" aria-labelledby="about-title">
 
             <div class="about-hero-background" aria-hidden="true">
 
-                <!-- ---- Cinematic crossfading slideshow ---- -->
-                <div class="hero-slideshow">
-
-                    <div class="hero-slide hero-slide-1">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2400&q=90"
-                            srcset="
-                                https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80   900w,
-                                https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=85 1400w,
-                                https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2000&q=90 2000w,
-                                https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2600&q=90 2600w
-                            "
-                            sizes="100vw" alt="" fetchpriority="high" decoding="async">
-                    </div>
-
-                    <div class="hero-slide hero-slide-2">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=2400&q=90"
-                            srcset="
-                                https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80   900w,
-                                https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1400&q=85 1400w,
-                                https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=2000&q=90 2000w,
-                                https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=2600&q=90 2600w
-                            "
-                            sizes="100vw" alt="" loading="eager" decoding="async">
-                    </div>
-
-                    <div class="hero-slide hero-slide-3">
-                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2400&q=90"
-                            srcset="
-                                https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80   900w,
-                                https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1400&q=85 1400w,
-                                https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=90 2000w,
-                                https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2600&q=90 2600w
-                            "
-                            sizes="100vw" alt="" loading="eager" decoding="async">
-                    </div>
-
-                </div>
+                <!-- ---- Cinematic video (unmuted autoplay, same as home) ---- -->
+                <video class="about-hero-video" autoplay loop playsinline preload="auto" disablepictureinpicture
+                    poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1920&q=90">
+                    <source src="assets/videos/About Banner Video-compressed.mp4" type="video/mp4">
+                </video>
 
                 <!-- ---- Cinematic overlays ---- -->
                 <div class="about-hero-overlay"></div>
@@ -252,6 +209,30 @@
                 </div>
 
             </div>
+
+
+            <!-- ==============================================
+                 SOUND TOGGLE BUTTON (top-right of hero)
+            =============================================== -->
+            <button class="hero-sound-toggle" id="heroSoundToggle" type="button"
+                aria-label="Toggle sound" aria-pressed="true" data-cursor="SOUND">
+
+                <!-- Speaker ON icon -->
+                <svg class="hero-sound-icon hero-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M11 5 6 9H2v6h4l5 4V5z" />
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                </svg>
+
+                <!-- Speaker OFF icon -->
+                <svg class="hero-sound-icon hero-sound-off" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M11 5 6 9H2v6h4l5 4V5z" />
+                    <line x1="23" y1="9" x2="17" y2="15" />
+                    <line x1="17" y1="9" x2="23" y2="15" />
+                </svg>
+            </button>
 
 
             <div class="container about-hero-content">
@@ -979,7 +960,7 @@
         }
 
         .header-logo-img {
-            height: 52px;
+            height: 60px;
             width: auto;
             object-fit: contain;
             mix-blend-mode: screen;
@@ -1039,7 +1020,7 @@
         }
 
         /* =========================================================
-           ABOUT HERO — FAST CINEMATIC SLIDESHOW BANNER
+           ABOUT HERO — CINEMATIC VIDEO BANNER (updated from slideshow)
         ========================================================= */
 
         .about-hero {
@@ -1051,7 +1032,7 @@
             display: flex;
             align-items: stretch;
             overflow: hidden;
-            background: #0d0d10;
+            background: #050505;
             isolation: isolate;
         }
 
@@ -1060,99 +1041,34 @@
             inset: 0;
             z-index: 0;
             overflow: hidden;
-            background: #0d0d10;
+            background: #050505;
         }
 
-        /* ---------- Slideshow ---------- */
+        /* ---------- VIDEO (same behaviour as home page) ---------- */
 
-        .hero-slideshow {
+        .about-hero-video {
             position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-
-        .hero-slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            background: #0b0b0e;
-            will-change: opacity;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
-
-        .hero-slide img {
-            display: block;
+            top: 50%;
+            left: 50%;
             width: 100%;
             height: 100%;
+            min-width: 100%;
+            min-height: 100%;
             object-fit: cover;
             object-position: center;
-            transform-origin: center center;
-            /* Brighter so images are clearly visible */
-            filter: saturate(0.68) contrast(1.1) brightness(0.62);
-            animation: heroKenBurns 12s ease-in-out infinite;
+            transform: translate(-50%, -50%) scale(1.04);
+            animation: heroKenBurns 26s ease-in-out infinite alternate;
             will-change: transform;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
         }
 
-        /* Stagger the Ken Burns so slides don't zoom in sync */
-        .hero-slide-2 img {
-            animation-delay: -4s;
-        }
-
-        .hero-slide-3 img {
-            animation-delay: -8s;
-        }
-
-        /* Crossfade timelines — 12s cycle, 4s per slide, ~1s crossfade */
-
-        .hero-slide-1 {
-            animation: heroSlide1 12s ease-in-out infinite;
-        }
-
-        .hero-slide-2 {
-            animation: heroSlide2 12s ease-in-out infinite;
-        }
-
-        .hero-slide-3 {
-            animation: heroSlide3 12s ease-in-out infinite;
-        }
-
-        @keyframes heroSlide1 {
-            0%      { opacity: 1; }
-            33.33%  { opacity: 1; }      /* 4s  — fully visible */
-            41.66%  { opacity: 0; }      /* 5s  — faded out   */
-            91.66%  { opacity: 0; }      /* 11s — stay hidden */
-            100%    { opacity: 1; }      /* 12s — fade back in */
-        }
-
-        @keyframes heroSlide2 {
-            0%      { opacity: 0; }
-            33.33%  { opacity: 0; }      /* 4s  */
-            41.66%  { opacity: 1; }      /* 5s  */
-            66.66%  { opacity: 1; }      /* 8s  */
-            75%     { opacity: 0; }      /* 9s  */
-            100%    { opacity: 0; }
-        }
-
-        @keyframes heroSlide3 {
-            0%      { opacity: 0; }
-            66.66%  { opacity: 0; }      /* 8s  */
-            75%     { opacity: 1; }      /* 9s  */
-            91.66%  { opacity: 1; }      /* 11s */
-            100%    { opacity: 0; }      /* 12s */
-        }
-
         @keyframes heroKenBurns {
-            0%   { transform: scale(1.05) translate3d(0, 0, 0); }
-            25%  { transform: scale(1.10) translate3d(-1%, -0.6%, 0); }
-            50%  { transform: scale(1.14) translate3d(0.8%, 0.5%, 0); }
-            75%  { transform: scale(1.09) translate3d(0.5%, -0.5%, 0); }
-            100% { transform: scale(1.05) translate3d(0, 0, 0); }
+            0%   { transform: translate(-50%, -50%) scale(1.04); }
+            100% { transform: translate(-50%, -50%) scale(1.16); }
         }
 
-        /* ---------- Overlays — lighter so images stay visible ---------- */
+        /* ---------- Overlays — same intensity as home ---------- */
 
         .about-hero-overlay {
             position: absolute;
@@ -1160,16 +1076,9 @@
             z-index: 1;
             background:
                 linear-gradient(180deg,
-                    rgba(8, 8, 10, 0.72) 0%,
-                    rgba(8, 8, 10, 0.28) 30%,
-                    rgba(8, 8, 10, 0.38) 55%,
-                    rgba(8, 8, 10, 0.82) 82%,
-                    rgba(8, 8, 10, 1) 100%),
-                linear-gradient(90deg,
-                    rgba(8, 8, 10, 0.68) 0%,
-                    rgba(8, 8, 10, 0.22) 45%,
-                    rgba(8, 8, 10, 0.04) 72%,
-                    rgba(8, 8, 10, 0.38) 100%);
+                    rgba(8, 8, 10, 0.55) 0%,
+                    rgba(8, 8, 10, 0.15) 40%,
+                    rgba(8, 8, 10, 0.55) 100%);
         }
 
         .about-hero-vignette {
@@ -1177,9 +1086,7 @@
             inset: 0;
             z-index: 2;
             pointer-events: none;
-            background: radial-gradient(ellipse 130% 95% at 50% 45%,
-                    rgba(0, 0, 0, 0) 45%,
-                    rgba(8, 8, 10, 0.55) 100%);
+            background: radial-gradient(ellipse at center, transparent 38%, rgba(8, 8, 10, 0.75) 100%);
         }
 
         .about-hero-grain {
@@ -1211,6 +1118,85 @@
         .about-hero-grid span:last-child {
             border-right: 1px solid rgba(255, 255, 255, 0.2);
         }
+
+        /* =========================================================
+           HERO SOUND TOGGLE
+        ========================================================= */
+
+        .hero-sound-toggle {
+            position: absolute;
+            top: clamp(90px, 10vw, 120px);
+            right: clamp(1.5rem, 5vw, 3.5rem);
+            z-index: 10;
+            width: clamp(42px, 4vw, 48px);
+            height: clamp(42px, 4vw, 48px);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(8, 8, 10, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            color: var(--white);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.35s var(--ease-out);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-sound-toggle:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg);
+            transform: scale(1.06);
+            box-shadow: 0 8px 28px rgba(212, 175, 55, 0.4);
+        }
+
+        .hero-sound-icon {
+            width: 45%;
+            height: 45%;
+            position: absolute;
+            transition: opacity 0.3s ease, transform 0.3s var(--ease-out);
+        }
+
+        .hero-sound-toggle .hero-sound-on {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .hero-sound-toggle .hero-sound-off {
+            opacity: 0;
+            transform: scale(0.7);
+        }
+
+        .hero-sound-toggle.is-muted .hero-sound-on {
+            opacity: 0;
+            transform: scale(0.7);
+        }
+
+        .hero-sound-toggle.is-muted .hero-sound-off {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .hero-sound-toggle.is-muted {
+            border-color: rgba(212, 175, 55, 0.7);
+            animation: heroSoundPulse 2.4s ease-in-out infinite;
+        }
+
+        @keyframes heroSoundPulse {
+            0%, 100% {
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35),
+                            0 0 0 0 rgba(212, 175, 55, 0.4);
+            }
+            50% {
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35),
+                            0 0 0 10px rgba(212, 175, 55, 0);
+            }
+        }
+
+        /* ---------- Hero content (unchanged) ---------- */
 
         .about-hero-content {
             position: relative;
@@ -2440,6 +2426,12 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            /* Sound toggle reposition */
+            .hero-sound-toggle {
+                top: clamp(80px, 11vw, 100px);
+                right: 1.5rem;
+            }
+
             .ca-about-meta {
                 grid-template-columns: 1fr;
             }
@@ -2474,6 +2466,13 @@
                 display: none;
             }
 
+            .hero-sound-toggle {
+                top: 92px;
+                right: 1.25rem;
+                width: 42px;
+                height: 42px;
+            }
+
             .ca-create-button {
                 padding: 1rem 1.75rem;
                 font-size: 0.65rem;
@@ -2482,26 +2481,16 @@
 
 
         /* =========================================================
-           REDUCED MOTION — freeze on the first frame
+           REDUCED MOTION
         ========================================================= */
 
         @media (prefers-reduced-motion: reduce) {
-            .hero-slide,
-            .hero-slide img {
+            .about-hero-video {
                 animation: none !important;
             }
 
-            .hero-slide-1 {
-                opacity: 1;
-            }
-
-            .hero-slide-2,
-            .hero-slide-3 {
-                opacity: 0;
-            }
-
-            .hero-slide img {
-                transform: scale(1.05);
+            .hero-sound-toggle.is-muted {
+                animation: none;
             }
         }
     </style>
@@ -2581,6 +2570,106 @@
                 }
 
 
+                /* =========================================================
+                   HERO VIDEO — UNMUTED PLAYBACK + SOUND TOGGLE
+                   (same logic as home page)
+                ========================================================= */
+                const heroVideo = document.querySelector(".about-hero-video");
+                const soundToggle = document.getElementById("heroSoundToggle");
+
+                function updateSoundToggle() {
+                    if (!soundToggle || !heroVideo) return;
+                    const isMuted = heroVideo.muted || heroVideo.volume === 0;
+                    soundToggle.classList.toggle("is-muted", isMuted);
+                    soundToggle.setAttribute("aria-pressed", isMuted ? "false" : "true");
+                    soundToggle.setAttribute("aria-label", isMuted ? "Unmute video" : "Mute video");
+                }
+
+                if (heroVideo) {
+                    /* Start unmuted */
+                    heroVideo.muted = false;
+                    heroVideo.volume = 1;
+
+                    /* Attempt unmuted autoplay */
+                    const tryPlayUnmuted = () => {
+                        const p = heroVideo.play();
+                        if (p && typeof p.then === "function") {
+                            p.then(() => {
+                                updateSoundToggle();
+                            }).catch(() => {
+                                /* Browser blocked — fall back to muted */
+                                heroVideo.muted = true;
+                                const p2 = heroVideo.play();
+                                if (p2 && typeof p2.catch === "function") {
+                                    p2.catch(() => { /* silent fail */ });
+                                }
+                                updateSoundToggle();
+                            });
+                        }
+                    };
+
+                    tryPlayUnmuted();
+
+                    /* Retry unmuted on first user interaction */
+                    let userInteracted = false;
+                    const onFirstInteraction = () => {
+                        if (userInteracted) return;
+                        userInteracted = true;
+
+                        if (soundToggle && !soundToggle.classList.contains("is-muted")) {
+                            heroVideo.muted = false;
+                            const p = heroVideo.play();
+                            if (p && typeof p.catch === "function") {
+                                p.catch(() => { /* silent fail */ });
+                            }
+                            updateSoundToggle();
+                        }
+
+                        document.removeEventListener("touchstart", onFirstInteraction);
+                        document.removeEventListener("click", onFirstInteraction);
+                        document.removeEventListener("keydown", onFirstInteraction);
+                    };
+
+                    document.addEventListener("touchstart", onFirstInteraction, { once: true, passive: true });
+                    document.addEventListener("click", onFirstInteraction, { once: true });
+                    document.addEventListener("keydown", onFirstInteraction, { once: true });
+
+                    /* Pause when tab is hidden, resume when visible */
+                    document.addEventListener("visibilitychange", () => {
+                        if (document.hidden) {
+                            heroVideo.pause();
+                        } else {
+                            const p = heroVideo.play();
+                            if (p && typeof p.catch === "function") {
+                                p.catch(() => { /* silent fail */ });
+                            }
+                        }
+                    });
+
+                    /* Sound toggle click handler */
+                    if (soundToggle) {
+                        soundToggle.addEventListener("click", function (e) {
+                            e.stopPropagation();
+                            heroVideo.muted = !heroVideo.muted;
+
+                            if (!heroVideo.muted) {
+                                heroVideo.volume = 1;
+                            }
+
+                            const p = heroVideo.play();
+                            if (p && typeof p.catch === "function") {
+                                p.catch(() => { /* silent fail */ });
+                            }
+
+                            updateSoundToggle();
+                        });
+
+                        /* Initial state sync */
+                        updateSoundToggle();
+                    }
+                }
+
+
                 /* Hero stats pop-in animation */
                 if (typeof gsap !== "undefined") {
                     const heroStats = document.querySelectorAll(".about-hero-stat strong");
@@ -2605,7 +2694,7 @@
                     if (window.matchMedia("(min-width: 1025px)").matches &&
                         !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
-                        gsap.to(".hero-slideshow", {
+                        gsap.to(".about-hero-background", {
                             yPercent: 10,
                             ease: "none",
                             scrollTrigger: {

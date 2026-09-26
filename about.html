@@ -98,7 +98,7 @@
             <nav class="nav-links" aria-label="Primary navigation">
 
                 <a href="index.html">Home</a>
-                <a href="about.html" class="active" aria-current="page">About</a>
+                <a href="about.html" class="active" aria-current="page">About Us</a>
                 <a href="team.html">Team</a>
 
                 <a href="blog.html">Blog</a>
@@ -146,7 +146,7 @@
 
                 <nav class="mobile-nav-links" aria-label="Mobile navigation">
                     <a href="index.html"><span>01</span>Home</a>
-                    <a href="about.html" class="active"><span>02</span>About</a>
+                    <a href="about.html" class="active"><span>02</span>About Us</a>
                     <a href="team.html"><span>03</span>Team</a>
                     <a href="blog.html"><span>04</span>Blog</a>
                     <div class="mobile-nav-group">
@@ -314,51 +314,32 @@
 
 
         <!-- =================================================
-             02 · PHILOSOPHY — Editorial Split
+             02 · ABOUT — OPTIMIZED EDITORIAL LAYOUT (100vh)
         ================================================== -->
 
-        <section class="section ca-about-section" aria-labelledby="ca-about-heading">
+        <section class="ca-about-section" aria-labelledby="ca-about-heading">
 
-            <div class="container">
+            <div class="container ca-about-container">
 
-                <div class="section-heading-row scroll-reveal">
+                <!-- ---------- Header row ---------- -->
+                <div class="ca-about-header scroll-reveal">
                     <span class="eyebrow">01 — The idea</span>
                     <span class="section-index">Cloudsartist21 / Studio</span>
                 </div>
 
 
-                <div class="ca-about-grid">
+                <!-- ---------- Body: heading (left) + text (right) ---------- -->
+                <div class="ca-about-body scroll-reveal">
 
-                    <div class="ca-about-left scroll-reveal">
-
+                    <div class="ca-about-title-col">
                         <h2 id="ca-about-heading" class="display display-lg">
                             About
                             <span>Cloudsartist21</span>
                         </h2>
-
-                        <div class="ca-about-meta">
-
-                            <div class="ca-about-meta-item">
-                                <span>Founded</span>
-                                <strong>Bhubaneswar</strong>
-                            </div>
-
-                            <div class="ca-about-meta-item">
-                                <span>Focus</span>
-                                <strong>Film &amp; Content</strong>
-                            </div>
-
-                            <div class="ca-about-meta-item">
-                                <span>Service</span>
-                                <strong>Full-Spectrum</strong>
-                            </div>
-
-                        </div>
-
                     </div>
 
 
-                    <div class="ca-about-right scroll-reveal">
+                    <div class="ca-about-text-col">
 
                         <p class="ca-about-lead">
                             At Cloudsartist21, every masterpiece begins
@@ -395,13 +376,34 @@
 
                 </div>
 
+
+                <!-- ---------- Meta strip: 3 horizontal badges ---------- -->
+                <div class="ca-about-meta-strip scroll-reveal">
+
+                    <div class="ca-about-meta-item">
+                        <span>Founded</span>
+                        <strong>Bhubaneswar</strong>
+                    </div>
+
+                    <div class="ca-about-meta-item">
+                        <span>Focus</span>
+                        <strong>Film &amp; Content</strong>
+                    </div>
+
+                    <div class="ca-about-meta-item">
+                        <span>Service</span>
+                        <strong>Full-Spectrum</strong>
+                    </div>
+
+                </div>
+
             </div>
 
         </section>
 
 
         <!-- =================================================
-             03 · OUR CRAFT — Cinematic Split
+             03 · OUR CRAFT — Cinematic Split (100vh)
         ================================================== -->
 
         <section class="ca-split-section" aria-labelledby="split-heading">
@@ -409,7 +411,7 @@
             <div class="ca-split-grid">
 
                 <div class="ca-split-image scroll-reveal">
-                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1600&q=90"
+                    <img src="About 2nd Section Image.jpeg"
                         alt="Film set with professional cinema camera" loading="lazy">
                     <div class="ca-split-image-overlay"></div>
                     <span class="ca-split-image-caption">
@@ -585,7 +587,7 @@
         <section class="ca-why-section" aria-labelledby="why-heading">
 
             <div class="ca-why-image-bg">
-                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=2400&q=90"
+                <img src="About 4th Section.jpeg"
                     alt="" class="parallax-img" loading="lazy">
                 <div class="ca-why-image-overlay"></div>
             </div>
@@ -709,7 +711,7 @@
                     <p class="footer-about">
                         An Indian Film Production Company based in
                         Bhubaneswar, Odisha — bringing your ideas to
-                        life with creative resort ad films and visual
+                        life with creative Ad films and visual
                         storytelling.
                     </p>
 
@@ -774,7 +776,7 @@
 
                     <ul class="footer-col-list">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="team.html">Team</a></li>
                         <li>
                             <a href="work/film.html">Our Work</a>
@@ -873,7 +875,6 @@
     <style>
         /* =========================================================
            BULLETPROOF HEADER & OVERFLOW FIX
-           Fixes: hamburger menu appearing off-screen to the right
         ========================================================= */
 
         html,
@@ -951,7 +952,6 @@
            NEW LOGO STYLES (HEADER & FOOTER)
         ========================================================= */
 
-        /* Header Logo */
         .site-header .logo {
             display: flex;
             align-items: center;
@@ -973,7 +973,6 @@
             filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.7));
         }
 
-        /* Footer Logo */
         .site-footer .footer-logo {
             display: inline-block;
             margin-bottom: 0.4rem;
@@ -994,33 +993,22 @@
             filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.7));
         }
 
-        /* Responsive Logo Adjustments */
         @media (max-width: 1024px) {
-            .header-logo-img {
-                height: 44px;
-            }
+            .header-logo-img { height: 44px; }
         }
 
         @media (max-width: 768px) {
-            .header-logo-img {
-                height: 38px;
-            }
-            .footer-logo-img {
-                height: 54px;
-            }
+            .header-logo-img { height: 38px; }
+            .footer-logo-img { height: 54px; }
         }
 
         @media (max-width: 480px) {
-            .header-logo-img {
-                height: 34px;
-            }
-            .footer-logo-img {
-                height: 46px;
-            }
+            .header-logo-img { height: 34px; }
+            .footer-logo-img { height: 46px; }
         }
 
         /* =========================================================
-           ABOUT HERO — CINEMATIC VIDEO BANNER (updated from slideshow)
+           ABOUT HERO — CINEMATIC VIDEO BANNER
         ========================================================= */
 
         .about-hero {
@@ -1044,8 +1032,6 @@
             background: #050505;
         }
 
-        /* ---------- VIDEO (same behaviour as home page) ---------- */
-
         .about-hero-video {
             position: absolute;
             top: 50%;
@@ -1067,8 +1053,6 @@
             0%   { transform: translate(-50%, -50%) scale(1.04); }
             100% { transform: translate(-50%, -50%) scale(1.16); }
         }
-
-        /* ---------- Overlays — same intensity as home ---------- */
 
         .about-hero-overlay {
             position: absolute;
@@ -1196,7 +1180,9 @@
             }
         }
 
-        /* ---------- Hero content (unchanged) ---------- */
+        /* =========================================================
+           HERO CONTENT
+        ========================================================= */
 
         .about-hero-content {
             position: relative;
@@ -1333,107 +1319,221 @@
             color: var(--accent);
         }
 
-
         /* =========================================================
-           ABOUT CLOUDSARTIST21 — Editorial Split
+           SECTION 02 — ABOUT (OPTIMIZED EDITORIAL)
+           ---------------------------------------------------------
+           - Fits perfectly inside 100vh on all viewports
+           - Header row at top
+           - Body grid (heading left, text right) in the middle
+           - Meta strip (3 horizontal badges) at bottom
+           - No internal scrolling needed on typical viewports
         ========================================================= */
 
-        .ca-about-section {
+        section.ca-about-section {
             background: var(--bg);
-            padding-block: clamp(5rem, 9vw, 8rem);
+            height: 100vh;
+            height: 100svh;
+            min-height: 640px;
+            max-height: 1080px;
+            padding: 0 !important;
+            display: flex;
+            align-items: stretch;
+            overflow: hidden;
+            position: relative;
         }
 
-        .ca-about-grid {
-            display: grid;
-            grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.6fr);
-            gap: clamp(3rem, 7vw, 8rem);
-            align-items: start;
-        }
-
-        .ca-about-left h2 {
-            margin: 1.25rem 0 2.5rem;
-        }
-
-        .ca-about-meta {
+        .ca-about-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
+            gap: clamp(1.25rem, 2.5vw, 2.25rem);
+            padding-block: clamp(4rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4rem);
+            box-sizing: border-box;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
         }
 
-        .ca-about-meta-item {
+        .ca-about-container::-webkit-scrollbar { width: 5px; }
+        .ca-about-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 100px;
+        }
+
+        /* ---------- Header row ---------- */
+
+        .ca-about-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            gap: 1rem;
-            font-size: 0.85rem;
+            align-items: center;
+            padding-bottom: clamp(0.85rem, 1.4vw, 1.15rem);
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
         }
 
-        .ca-about-meta-item span {
-            color: var(--text-dim);
+        .ca-about-header .eyebrow {
             font-size: 0.68rem;
             font-weight: 600;
-            letter-spacing: 0.16em;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
+            color: var(--accent);
         }
 
-        .ca-about-meta-item strong {
-            color: var(--white);
+        .ca-about-header .section-index {
+            font-size: 0.68rem;
             font-weight: 600;
-            font-family: var(--font-display);
-            letter-spacing: -0.01em;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-dim);
         }
 
-        .ca-about-right p {
-            font-size: clamp(0.92rem, 1.05vw, 1rem);
-            line-height: 1.85;
+        /* ---------- Body (heading left, text right) ---------- */
+
+        .ca-about-body {
+            display: grid;
+            grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.7fr);
+            gap: clamp(2rem, 5vw, 5rem);
+            align-items: center;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .ca-about-title-col h2 {
+            margin: 0;
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3.4vw, 3.2rem);
+            font-weight: 500;
+            letter-spacing: -0.055em;
+            line-height: 1.05;
+            color: var(--white);
+        }
+
+        .ca-about-title-col h2 span {
+            display: block;
             color: var(--text-muted);
-            margin: 0 0 1.5rem;
         }
 
-        .ca-about-lead {
+        .ca-about-text-col {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.85rem, 1.4vw, 1.25rem);
+            min-width: 0;
+            max-height: 100%;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+            padding-right: 0.35rem;
+        }
+
+        .ca-about-text-col::-webkit-scrollbar { width: 4px; }
+        .ca-about-text-col::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+        }
+
+        .ca-about-text-col p {
+            margin: 0;
+            font-size: clamp(0.86rem, 0.98vw, 0.95rem);
+            line-height: 1.75;
+            color: var(--text-muted);
+        }
+
+        .ca-about-text-col .ca-about-lead {
             font-family: var(--font-display);
-            font-size: clamp(1rem, 1.2vw, 1.15rem) !important;
-            line-height: 1.75 !important;
+            font-size: clamp(0.95rem, 1.1vw, 1.1rem) !important;
+            line-height: 1.7 !important;
             color: var(--white-soft) !important;
         }
 
-        .ca-about-emphasis {
+        .ca-about-text-col .ca-about-emphasis {
             font-weight: 500;
             color: var(--accent) !important;
-            padding-left: 1.25rem;
+            padding-left: 1.1rem;
             border-left: 2px solid var(--accent);
-            margin-top: 2rem !important;
         }
 
+        /* ---------- Meta strip (3 horizontal badges) ---------- */
+
+        .ca-about-meta-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            flex-shrink: 0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .ca-about-meta-item {
+            padding: clamp(0.95rem, 1.5vw, 1.25rem) clamp(1.1rem, 1.8vw, 1.6rem);
+            background: var(--bg);
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            transition: background 0.35s ease;
+        }
+
+        .ca-about-meta-item:hover {
+            background: #0e0e10;
+        }
+
+        .ca-about-meta-item span {
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+        }
+
+        .ca-about-meta-item strong {
+            font-family: var(--font-display);
+            font-size: clamp(0.88rem, 1.05vw, 1rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--white);
+        }
 
         /* =========================================================
-           OUR CRAFT — Cinematic Split
+           SECTION 03 — OUR CRAFT (Cinematic Split) — unchanged
         ========================================================= */
 
         .ca-split-section {
             background: #08080a;
-            padding: 0;
+            height: 100vh;
+            height: 100svh;
+            min-height: 640px;
+            max-height: 1080px;
+            padding: 0 !important;
+            display: block;
+            overflow: hidden;
+            position: relative;
         }
 
         .ca-split-grid {
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-            min-height: 80vh;
-            min-height: 80svh;
+            height: 100%;
+            min-height: 0;
+            gap: 0;
         }
 
         .ca-split-image {
             position: relative;
             overflow: hidden;
             background: #111;
+            height: 100%;
+            min-height: 0;
         }
 
         .ca-split-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             filter: saturate(0.75) contrast(1.05) brightness(0.75);
             transition: transform 1.2s var(--ease-out);
         }
@@ -1450,13 +1550,13 @@
 
         .ca-split-image-caption {
             position: absolute;
-            left: 1.5rem;
-            bottom: 1.5rem;
-            padding: 0.5rem 0.85rem;
+            left: 1.25rem;
+            bottom: 1.25rem;
+            padding: 0.45rem 0.8rem;
             background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            font-size: 0.62rem;
+            font-size: 0.6rem;
             font-weight: 600;
             letter-spacing: 0.16em;
             text-transform: uppercase;
@@ -1464,66 +1564,76 @@
         }
 
         .ca-split-content {
-            padding: clamp(3rem, 7vw, 7rem) clamp(2rem, 7vw, 7rem);
+            padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.75rem, 5vw, 4.5rem);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            max-width: 720px;
+            height: 100%;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
             background: var(--bg);
+            min-height: 0;
+            box-sizing: border-box;
+        }
+
+        .ca-split-content::-webkit-scrollbar { width: 5px; }
+        .ca-split-content::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 100px;
         }
 
         .ca-split-content .eyebrow {
             color: var(--accent);
-            margin-bottom: 1.5rem;
+            margin-bottom: clamp(0.75rem, 1.4vw, 1.15rem);
         }
 
         .ca-split-content h2 {
-            margin: 0 0 2rem;
+            margin: 0 0 clamp(0.85rem, 1.6vw, 1.6rem);
         }
 
         .ca-split-content>p {
-            font-size: 0.95rem;
-            line-height: 1.85;
+            font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+            line-height: 1.72;
             color: var(--text-muted);
-            margin: 0 0 2.5rem;
+            margin: 0 0 clamp(1.1rem, 1.8vw, 1.75rem);
         }
 
         .ca-split-list {
             list-style: none;
             padding: 0;
-            margin: 0 0 2.5rem;
+            margin: 0 0 clamp(1.1rem, 1.8vw, 1.75rem);
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: clamp(0.75rem, 1.1vw, 1.1rem);
             border-top: 1px solid var(--border);
-            padding-top: 2.5rem;
+            padding-top: clamp(1.1rem, 1.8vw, 1.75rem);
         }
 
         .ca-split-list li {
             display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 1.5rem;
+            grid-template-columns: 130px 1fr;
+            gap: 1.15rem;
             align-items: start;
         }
 
         .ca-split-list strong {
             font-family: var(--font-display);
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             font-weight: 600;
             letter-spacing: -0.02em;
             color: var(--white);
-            padding-top: 0.2rem;
+            padding-top: 0.1rem;
         }
 
         .ca-split-list span {
-            font-size: 0.85rem;
-            line-height: 1.7;
+            font-size: 0.8rem;
+            line-height: 1.65;
             color: var(--text-muted);
         }
 
-
         /* =========================================================
-           OUR SERVICES
+           SERVICES / WHY / CTA (unchanged)
         ========================================================= */
 
         .ca-services {
@@ -1536,9 +1646,7 @@
             text-align: center;
         }
 
-        .ca-services-heading h2 {
-            margin: 0 0 1.75rem;
-        }
+        .ca-services-heading h2 { margin: 0 0 1.75rem; }
 
         .ca-services-heading p {
             font-size: clamp(0.92rem, 1.05vw, 1rem);
@@ -1568,9 +1676,7 @@
             cursor: none;
         }
 
-        .ca-service-card:hover {
-            background: #0e0e10;
-        }
+        .ca-service-card:hover { background: #0e0e10; }
 
         .ca-service-card-featured {
             background: linear-gradient(180deg, var(--accent-glow), transparent);
@@ -1642,11 +1748,6 @@
             transform: translateX(3px);
         }
 
-
-        /* =========================================================
-           WHY CLOUDSARTIST21
-        ========================================================= */
-
         .ca-why-section {
             position: relative;
             min-height: 85vh;
@@ -1707,9 +1808,7 @@
             color: var(--white);
         }
 
-        .ca-why-content h2 span {
-            color: var(--accent);
-        }
+        .ca-why-content h2 span { color: var(--accent); }
 
         .ca-why-lead {
             font-family: var(--font-display);
@@ -1761,11 +1860,6 @@
             color: rgba(255, 255, 255, 0.68);
         }
 
-
-        /* =========================================================
-           LET'S CREATE, TOGETHER — Final CTA
-        ========================================================= */
-
         .ca-create-section {
             padding-block: clamp(5rem, 9vw, 8rem);
             background: var(--bg);
@@ -1785,13 +1879,8 @@
             margin-bottom: 1.5rem;
         }
 
-        .ca-create-inner h2 {
-            margin: 0 0 1.75rem;
-        }
-
-        .ca-create-inner h2 span {
-            color: var(--accent);
-        }
+        .ca-create-inner h2 { margin: 0 0 1.75rem; }
+        .ca-create-inner h2 span { color: var(--accent); }
 
         .ca-create-lead {
             font-family: var(--font-display);
@@ -1826,9 +1915,7 @@
             background: transparent;
         }
 
-        .ca-create-button span:first-child {
-            color: var(--white);
-        }
+        .ca-create-button span:first-child { color: var(--white); }
 
         .ca-create-arrow {
             color: var(--accent);
@@ -1841,15 +1928,12 @@
             border-color: var(--white);
         }
 
-        .ca-create-button:hover span:first-child {
-            color: var(--bg);
-        }
+        .ca-create-button:hover span:first-child { color: var(--bg); }
 
         .ca-create-button:hover .ca-create-arrow {
             color: var(--bg);
             transform: translate(4px, -4px);
         }
-
 
         /* =========================================================
            FOOTER — 4 COLUMNS
@@ -1870,15 +1954,8 @@
             align-items: start;
         }
 
-        .footer-col {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .footer-col-brand {
-            display: flex;
-            flex-direction: column;
-        }
+        .footer-col { display: flex; flex-direction: column; }
+        .footer-col-brand { display: flex; flex-direction: column; }
 
         .footer-tagline {
             font-family: var(--font-display);
@@ -1898,11 +1975,7 @@
             color: var(--text-muted);
         }
 
-        .footer-socials-inline {
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-        }
+        .footer-socials-inline { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 
         .footer-socials-inline a {
             display: inline-flex;
@@ -1916,10 +1989,7 @@
             transition: all 0.35s ease;
         }
 
-        .footer-socials-inline a svg {
-            width: 15px;
-            height: 15px;
-        }
+        .footer-socials-inline a svg { width: 15px; height: 15px; }
 
         .footer-socials-inline a:hover {
             color: var(--bg);
@@ -1947,10 +2017,6 @@
             gap: 0.7rem;
         }
 
-        .footer-col-list li {
-            line-height: 1.5;
-        }
-
         .footer-col-list a {
             position: relative;
             display: inline-block;
@@ -1976,9 +2042,7 @@
             transform: translateX(4px);
         }
 
-        .footer-col-list a:hover::before {
-            width: 6px;
-        }
+        .footer-col-list a:hover::before { width: 6px; }
 
         .footer-contact-list {
             list-style: none;
@@ -2006,10 +2070,7 @@
             margin-top: 0.15rem;
         }
 
-        .footer-contact-icon svg {
-            width: 100%;
-            height: 100%;
-        }
+        .footer-contact-icon svg { width: 100%; height: 100%; }
 
         .footer-contact-body {
             display: flex;
@@ -2037,9 +2098,7 @@
             word-break: break-word;
         }
 
-        .footer-contact-body a:hover {
-            color: var(--accent);
-        }
+        .footer-contact-body a:hover { color: var(--accent); }
 
         .footer-bottom {
             display: flex;
@@ -2067,7 +2126,6 @@
             border-color: var(--accent);
         }
 
-        /* Footer sub-list for Work */
         .footer-sub-list {
             list-style: none;
             padding: 0;
@@ -2079,25 +2137,18 @@
             padding-left: 0.85rem;
         }
 
-        .footer-sub-list li {
-            line-height: 1.4;
-        }
-
         .footer-sub-list a {
             font-size: 0.78rem !important;
             color: var(--text-dim) !important;
             padding-left: 0;
         }
 
-        .footer-sub-list a::before {
-            display: none !important;
-        }
+        .footer-sub-list a::before { display: none !important; }
 
         .footer-sub-list a:hover {
             color: var(--accent) !important;
             transform: translateX(3px) !important;
         }
-
 
         /* =========================================================
            MOBILE NAVIGATION
@@ -2120,10 +2171,7 @@
         }
 
         .mobile-navigation.is-open,
-        .mobile-navigation.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .mobile-navigation.active { opacity: 1; visibility: visible; }
 
         .mobile-navigation-inner {
             width: 100%;
@@ -2141,11 +2189,7 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .mobile-nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
+        .mobile-nav-links { display: flex; flex-direction: column; gap: 1.25rem; }
 
         .mobile-nav-links a {
             font-family: var(--font-display);
@@ -2168,9 +2212,7 @@
         }
 
         .mobile-nav-links a:hover,
-        .mobile-nav-links a.active {
-            color: var(--white);
-        }
+        .mobile-nav-links a.active { color: var(--white); }
 
         .mobile-navigation-bottom {
             padding-top: 1.5rem;
@@ -2196,14 +2238,8 @@
             text-decoration: none;
         }
 
-        .mobile-nav-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .mobile-nav-parent {
-            justify-content: space-between;
-        }
+        .mobile-nav-group { display: flex; flex-direction: column; }
+        .mobile-nav-parent { justify-content: space-between; }
 
         .mobile-nav-toggle-icon {
             font-size: 1.25rem;
@@ -2213,9 +2249,7 @@
             transition: transform 0.35s var(--ease-out);
         }
 
-        .mobile-nav-group.is-expanded .mobile-nav-toggle-icon {
-            transform: rotate(45deg);
-        }
+        .mobile-nav-group.is-expanded .mobile-nav-toggle-icon { transform: rotate(45deg); }
 
         .mobile-nav-sub {
             display: none;
@@ -2227,9 +2261,7 @@
             margin-left: 0.5rem;
         }
 
-        .mobile-nav-group.is-expanded .mobile-nav-sub {
-            display: flex;
-        }
+        .mobile-nav-group.is-expanded .mobile-nav-sub { display: flex; }
 
         .mobile-nav-sub a {
             font-family: var(--font-body);
@@ -2241,10 +2273,7 @@
             letter-spacing: 0;
         }
 
-        .mobile-nav-sub a:hover {
-            color: var(--accent);
-        }
-
+        .mobile-nav-sub a:hover { color: var(--accent); }
 
         /* =========================================================
            RESPONSIVE — FOOTER
@@ -2281,28 +2310,14 @@
                 border-bottom: 1px solid var(--border-soft);
             }
 
-            .footer-about {
-                max-width: 100%;
-            }
-
-            .footer-col-contact {
-                grid-column: 1 / -1;
-            }
-
-            .footer-contact-list {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
+            .footer-about { max-width: 100%; }
+            .footer-col-contact { grid-column: 1 / -1; }
+            .footer-contact-list { grid-template-columns: 1fr; gap: 1rem; }
         }
 
         @media (max-width: 480px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-contact-item {
-                grid-template-columns: 20px 1fr;
-            }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-contact-item { grid-template-columns: 20px 1fr; }
 
             .footer-bottom {
                 flex-direction: column;
@@ -2311,107 +2326,26 @@
             }
         }
 
-
         /* =========================================================
-           RESPONSIVE — Global
+           RESPONSIVE — HERO
         ========================================================= */
 
         @media (max-width: 1024px) {
-            .about-stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .ca-about-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .ca-about-meta {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.5rem;
-            }
-
-            .ca-about-meta-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.4rem;
-            }
-
-            .ca-split-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ca-split-image {
-                min-height: 380px;
-                aspect-ratio: 1.6 / 1;
-            }
-
-            .ca-split-content {
-                max-width: 100%;
-            }
-
-            .ca-services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-title {
-                font-size: clamp(2.4rem, 8.5vw, 5.5rem);
-            }
+            .about-title { font-size: clamp(2.4rem, 8.5vw, 5.5rem); }
         }
 
         @media (max-width: 768px) {
-            .about-hero {
-                min-height: 620px;
-            }
+            .about-hero { min-height: 620px; }
+            .about-hero-content { padding-top: 110px; padding-bottom: 32px; }
+            .about-hero-top { align-items: flex-start; padding-bottom: 1rem; }
+            .about-page-number { display: none; }
+            .about-title { font-size: clamp(2.2rem, 12vw, 4rem); line-height: 0.92; }
+            .about-kicker { max-width: 260px; font-size: 0.62rem; margin-bottom: 1rem; }
+            .about-hero-subtext { margin-top: 1.5rem; font-size: 0.88rem; }
+            .about-hero-bottom { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding-top: 1.25rem; }
+            .about-hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+            .about-scroll-label { display: none; }
 
-            .about-hero-content {
-                padding-top: 110px;
-                padding-bottom: 32px;
-            }
-
-            .about-hero-top {
-                align-items: flex-start;
-                padding-bottom: 1rem;
-            }
-
-            .about-page-number {
-                display: none;
-            }
-
-            .about-title {
-                font-size: clamp(2.2rem, 12vw, 4rem);
-                line-height: 0.92;
-            }
-
-            .about-kicker {
-                max-width: 260px;
-                font-size: 0.62rem;
-                margin-bottom: 1rem;
-            }
-
-            .about-hero-subtext {
-                margin-top: 1.5rem;
-                font-size: 0.88rem;
-            }
-
-            .about-hero-bottom {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1.5rem;
-                padding-top: 1.25rem;
-            }
-
-            .about-hero-stats {
-                gap: 1.5rem;
-                flex-wrap: wrap;
-            }
-
-            .about-scroll-label {
-                display: none;
-            }
-
-            /* Slightly stronger overlay on small screens for legibility */
             .about-hero-overlay {
                 background:
                     linear-gradient(180deg,
@@ -2422,49 +2356,18 @@
                         rgba(8, 8, 10, 1) 100%);
             }
 
-            .about-hero-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .about-hero-grid { grid-template-columns: repeat(2, 1fr); }
 
-            /* Sound toggle reposition */
             .hero-sound-toggle {
                 top: clamp(80px, 11vw, 100px);
                 right: 1.5rem;
             }
-
-            .ca-about-meta {
-                grid-template-columns: 1fr;
-            }
-
-            .ca-split-list li {
-                grid-template-columns: 1fr;
-                gap: 0.4rem;
-            }
-
-            .ca-why-section {
-                min-height: auto;
-                padding-block: clamp(4rem, 8vw, 6rem);
-            }
-
-            .ca-why-image-overlay {
-                background: linear-gradient(180deg,
-                        rgba(8, 8, 10, 0.88) 0%,
-                        rgba(8, 8, 10, 0.78) 100%);
-            }
         }
 
         @media (max-width: 480px) {
-            .about-hero {
-                min-height: 600px;
-            }
-
-            .about-title {
-                font-size: clamp(1.9rem, 13vw, 3.2rem);
-            }
-
-            .about-hero-grain {
-                display: none;
-            }
+            .about-hero { min-height: 600px; }
+            .about-title { font-size: clamp(1.9rem, 13vw, 3.2rem); }
+            .about-hero-grain { display: none; }
 
             .hero-sound-toggle {
                 top: 92px;
@@ -2473,25 +2376,273 @@
                 height: 42px;
             }
 
-            .ca-create-button {
-                padding: 1rem 1.75rem;
-                font-size: 0.65rem;
+            .ca-create-button { padding: 1rem 1.75rem; font-size: 0.65rem; }
+        }
+
+        /* =========================================================
+           RESPONSIVE — SECTION 2 (About, optimized) & SECTION 3
+        ========================================================= */
+
+        /* Tablets landscape ≤ 1024px */
+        @media (max-width: 1024px) {
+
+            /* ---------- SECTION 2 ---------- */
+            section.ca-about-section {
+                height: 100vh;
+                height: 100svh;
+                min-height: 640px;
+                max-height: 1080px;
+                overflow: hidden;
+            }
+
+            .ca-about-container {
+                padding-block: clamp(4rem, 8vw, 5rem) clamp(2rem, 4vw, 3rem);
+                gap: clamp(1.1rem, 2.5vw, 1.75rem);
+            }
+
+            .ca-about-body {
+                grid-template-columns: 1fr;
+                gap: clamp(1rem, 3vw, 1.75rem);
+                align-items: start;
+            }
+
+            .ca-about-title-col h2 {
+                font-size: clamp(1.7rem, 5vw, 2.4rem);
+            }
+
+            .ca-about-text-col {
+                max-height: none;
+                overflow-y: visible;
+                padding-right: 0;
+            }
+
+            .ca-about-meta-strip {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* ---------- SECTION 3 ---------- */
+            .ca-split-section {
+                height: 100vh;
+                height: 100svh;
+                min-height: 640px;
+                max-height: 1080px;
+                overflow: hidden;
+            }
+
+            .ca-split-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: 42% 58%;
+                height: 100%;
+            }
+
+            .ca-split-image {
+                height: 100%;
+                min-height: 0;
+            }
+
+            .ca-split-content {
+                max-width: 100%;
+                height: 100%;
+                overflow-y: auto;
+                padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.25rem, 4vw, 2rem);
+                justify-content: flex-start;
+            }
+
+            .ca-split-list li {
+                grid-template-columns: 1fr;
+                gap: 0.35rem;
             }
         }
 
+        /* Tablets ≤ 768px */
+        @media (max-width: 768px) {
+
+            /* ---------- SECTION 2 ---------- */
+            .ca-about-container {
+                padding-block: clamp(4rem, 8vw, 5rem) clamp(1.75rem, 4vw, 2.5rem);
+                gap: clamp(0.85rem, 2.5vw, 1.25rem);
+            }
+
+            .ca-about-body {
+                gap: clamp(0.85rem, 2.5vw, 1.25rem);
+            }
+
+            .ca-about-title-col h2 {
+                font-size: clamp(1.4rem, 5.5vw, 1.9rem);
+            }
+
+            .ca-about-text-col p {
+                font-size: 0.82rem;
+                line-height: 1.65;
+            }
+
+            .ca-about-text-col .ca-about-lead {
+                font-size: 0.88rem !important;
+                line-height: 1.65 !important;
+            }
+
+            .ca-about-meta-item {
+                padding: 0.85rem 1rem;
+            }
+
+            .ca-about-meta-item span {
+                font-size: 0.58rem;
+                letter-spacing: 0.14em;
+            }
+
+            .ca-about-meta-item strong {
+                font-size: 0.82rem;
+            }
+
+            /* ---------- SECTION 3 ---------- */
+            .ca-split-grid {
+                grid-template-rows: 38% 62%;
+            }
+
+            .ca-split-content h2 {
+                font-size: clamp(1.4rem, 5vw, 1.9rem);
+                margin-bottom: 0.85rem;
+            }
+
+            .ca-split-content > p {
+                font-size: 0.82rem;
+                line-height: 1.65;
+                margin-bottom: 0.85rem;
+            }
+
+            .ca-split-list {
+                gap: 0.65rem;
+                padding-top: 0.85rem;
+                margin-bottom: 0.85rem;
+            }
+
+            .ca-split-list strong {
+                font-size: 0.82rem;
+            }
+
+            .ca-split-list span {
+                font-size: 0.76rem;
+                line-height: 1.6;
+            }
+        }
+
+        /* Phones ≤ 480px */
+        @media (max-width: 480px) {
+
+            /* ---------- SECTION 2 ---------- */
+            section.ca-about-section {
+                min-height: 600px;
+            }
+
+            .ca-about-container {
+                padding-block: clamp(4rem, 9vw, 5rem) 1.5rem;
+                gap: 0.85rem;
+            }
+
+            .ca-about-header {
+                padding-bottom: 0.75rem;
+            }
+
+            .ca-about-header .eyebrow,
+            .ca-about-header .section-index {
+                font-size: 0.6rem;
+            }
+
+            .ca-about-title-col h2 {
+                font-size: 1.35rem;
+                line-height: 1.1;
+            }
+
+            .ca-about-text-col p {
+                font-size: 0.78rem;
+                line-height: 1.65;
+            }
+
+            .ca-about-text-col .ca-about-lead {
+                font-size: 0.84rem !important;
+                line-height: 1.65 !important;
+            }
+
+            .ca-about-text-col .ca-about-emphasis {
+                padding-left: 0.85rem;
+            }
+
+            .ca-about-meta-strip {
+                grid-template-columns: 1fr;
+            }
+
+            .ca-about-meta-item {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0.7rem 0.9rem;
+                gap: 0.6rem;
+            }
+
+            .ca-about-meta-item span {
+                font-size: 0.55rem;
+                letter-spacing: 0.12em;
+            }
+
+            .ca-about-meta-item strong {
+                font-size: 0.78rem;
+            }
+
+            /* ---------- SECTION 3 ---------- */
+            .ca-split-grid {
+                grid-template-rows: 34% 66%;
+            }
+
+            .ca-split-content {
+                padding: 1.1rem 1rem;
+            }
+
+            .ca-split-content .eyebrow {
+                font-size: 0.6rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .ca-split-content h2 {
+                font-size: 1.2rem;
+                margin-bottom: 0.65rem;
+            }
+
+            .ca-split-content > p {
+                font-size: 0.76rem;
+                line-height: 1.6;
+                margin-bottom: 0.7rem;
+            }
+
+            .ca-split-list {
+                gap: 0.55rem;
+                padding-top: 0.7rem;
+                margin-bottom: 0.7rem;
+            }
+
+            .ca-split-list strong {
+                font-size: 0.78rem;
+            }
+
+            .ca-split-list span {
+                font-size: 0.72rem;
+                line-height: 1.55;
+            }
+
+            .ca-split-image-caption {
+                left: 0.85rem;
+                bottom: 0.85rem;
+                padding: 0.35rem 0.6rem;
+                font-size: 0.55rem;
+            }
+        }
 
         /* =========================================================
            REDUCED MOTION
         ========================================================= */
 
         @media (prefers-reduced-motion: reduce) {
-            .about-hero-video {
-                animation: none !important;
-            }
-
-            .hero-sound-toggle.is-muted {
-                animation: none;
-            }
+            .about-hero-video { animation: none !important; }
+            .hero-sound-toggle.is-muted { animation: none; }
         }
     </style>
 
@@ -2544,8 +2695,6 @@
                         }
                     });
 
-                    /* Close menu when a link is clicked
-                       — EXCLUDING the Work parent */
                     mobileNav.querySelectorAll('a').forEach(link => {
                         if (link.classList.contains('mobile-nav-parent')) return;
 
@@ -2572,7 +2721,6 @@
 
                 /* =========================================================
                    HERO VIDEO — UNMUTED PLAYBACK + SOUND TOGGLE
-                   (same logic as home page)
                 ========================================================= */
                 const heroVideo = document.querySelector(".about-hero-video");
                 const soundToggle = document.getElementById("heroSoundToggle");
@@ -2586,18 +2734,15 @@
                 }
 
                 if (heroVideo) {
-                    /* Start unmuted */
                     heroVideo.muted = false;
                     heroVideo.volume = 1;
 
-                    /* Attempt unmuted autoplay */
                     const tryPlayUnmuted = () => {
                         const p = heroVideo.play();
                         if (p && typeof p.then === "function") {
                             p.then(() => {
                                 updateSoundToggle();
                             }).catch(() => {
-                                /* Browser blocked — fall back to muted */
                                 heroVideo.muted = true;
                                 const p2 = heroVideo.play();
                                 if (p2 && typeof p2.catch === "function") {
@@ -2610,7 +2755,6 @@
 
                     tryPlayUnmuted();
 
-                    /* Retry unmuted on first user interaction */
                     let userInteracted = false;
                     const onFirstInteraction = () => {
                         if (userInteracted) return;
@@ -2634,7 +2778,6 @@
                     document.addEventListener("click", onFirstInteraction, { once: true });
                     document.addEventListener("keydown", onFirstInteraction, { once: true });
 
-                    /* Pause when tab is hidden, resume when visible */
                     document.addEventListener("visibilitychange", () => {
                         if (document.hidden) {
                             heroVideo.pause();
@@ -2646,7 +2789,6 @@
                         }
                     });
 
-                    /* Sound toggle click handler */
                     if (soundToggle) {
                         soundToggle.addEventListener("click", function (e) {
                             e.stopPropagation();
@@ -2664,7 +2806,6 @@
                             updateSoundToggle();
                         });
 
-                        /* Initial state sync */
                         updateSoundToggle();
                     }
                 }

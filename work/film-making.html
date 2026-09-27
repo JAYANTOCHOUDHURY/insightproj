@@ -30,7 +30,7 @@
     <title>Film Making | Cloudsartist21</title>
 
 
-    <!-- ==== Preload hero image for instant display ==== -->
+    <!-- ==== Preload first hero image for instant display ==== -->
     <link rel="preload" as="image" href="../assets/PhotoGraphy/2O1A1930 01.jpg" fetchpriority="high">
 
 
@@ -165,16 +165,64 @@
 
 
         <!-- =================================================
-             01 · MAKING OF HERO  (Cinematic Banner)
+             01 · MAKING OF HERO  (Cinematic 7-Image Slideshow)
         ================================================== -->
 
         <section class="making-hero" aria-labelledby="making-title">
 
             <div class="making-hero-background" aria-hidden="true">
 
-                <!-- UPDATED: Single banner image -->
-                <img src="../assets/PhotoGraphy/2O1A1930 01.jpg"
-                    alt="" class="making-hero-image" fetchpriority="high" decoding="async">
+                <!-- ============================================================
+                     CINEMATIC SLIDESHOW — 7 images with smooth crossfade
+                     ------------------------------------------------------------
+                     Replace the src="" values below with your 7 preferred
+                     image filenames. Keep the exact same order (1 to 7).
+                     ============================================================ -->
+                <div class="making-hero-slideshow">
+
+                    <!-- 01 -->
+                    <div class="making-hero-slide">
+                        <img src="../assets/PhotoGraphy/Make1.JPG"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 02 -->
+                    <div class="making-hero-slide">
+                        <img src="../assets/PhotoGraphy/Make2.JPG"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 03 -->
+                    <div class="making-hero-slide">
+                        <img src="../assets/PhotoGraphy/Make3.JPG"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 04 -->
+                    <div class="making-hero-slide">
+                        <img src="../assets/PhotoGraphy/Make4.JPG"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 05 -->
+                    <div class="making-hero-slide">
+                        <img src="../assets/PhotoGraphy/Make5.JPG"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 06 -->
+                    <div class="making-hero-slide">
+                        <img src="../assets/PhotoGraphy/Make6.JPG"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 07 -->
+                    <div class="making-hero-slide">
+                        <img src="../assets/PhotoGraphy/Make7.JPG"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                </div>
 
                 <!-- ---- Cinematic overlays ---- -->
                 <div class="making-hero-overlay"></div>
@@ -741,31 +789,21 @@
 
         /* Responsive Logo Adjustments */
         @media (max-width: 1024px) {
-            .header-logo-img {
-                height: 44px;
-            }
+            .header-logo-img { height: 44px; }
         }
 
         @media (max-width: 768px) {
-            .header-logo-img {
-                height: 38px;
-            }
-            .footer-logo-img {
-                height: 54px;
-            }
+            .header-logo-img { height: 38px; }
+            .footer-logo-img { height: 54px; }
         }
 
         @media (max-width: 480px) {
-            .header-logo-img {
-                height: 34px;
-            }
-            .footer-logo-img {
-                height: 46px;
-            }
+            .header-logo-img { height: 34px; }
+            .footer-logo-img { height: 46px; }
         }
 
         /* =========================================================
-           MAKING OF HERO — CINEMATIC BANNER (single image)
+           MAKING OF HERO — CINEMATIC 7-IMAGE SLIDESHOW
         ========================================================= */
 
         .making-hero {
@@ -789,9 +827,29 @@
             background: #0d0d10;
         }
 
-        /* ---------- Single banner image with subtle Ken Burns ---------- */
+        /* ---------- Slideshow container ---------- */
 
-        .making-hero-image {
+        .making-hero-slideshow {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        /* ---------- Individual slide ---------- */
+
+        .making-hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            background: #0b0b0e;
+            will-change: opacity;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            /* Total cycle = 21s (3s per slide for 7 slides) */
+            animation: heroSlideFade 21s ease-in-out infinite;
+        }
+
+        .making-hero-slide img {
             display: block;
             width: 100%;
             height: 100%;
@@ -799,16 +857,53 @@
             object-position: center;
             transform-origin: center center;
             filter: saturate(0.65) contrast(1.1) brightness(0.62);
+            /* Subtle, cinematic Ken Burns zoom */
             animation: heroKenBurns 22s ease-in-out infinite alternate;
             will-change: transform;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
         }
 
+        /* ---------- Staggered delays — each slide appears 3s after the previous ---------- */
+
+        .making-hero-slide:nth-child(1) { animation-delay: 0s; }
+        .making-hero-slide:nth-child(2) { animation-delay: 3s; }
+        .making-hero-slide:nth-child(3) { animation-delay: 6s; }
+        .making-hero-slide:nth-child(4) { animation-delay: 9s; }
+        .making-hero-slide:nth-child(5) { animation-delay: 12s; }
+        .making-hero-slide:nth-child(6) { animation-delay: 15s; }
+        .making-hero-slide:nth-child(7) { animation-delay: 18s; }
+
+        /* Stagger Ken Burns so images don't all zoom at the same phase */
+        .making-hero-slide:nth-child(1) img { animation-delay: 0s; }
+        .making-hero-slide:nth-child(2) img { animation-delay: -3s; }
+        .making-hero-slide:nth-child(3) img { animation-delay: -6s; }
+        .making-hero-slide:nth-child(4) img { animation-delay: -9s; }
+        .making-hero-slide:nth-child(5) img { animation-delay: -12s; }
+        .making-hero-slide:nth-child(6) img { animation-delay: -15s; }
+        .making-hero-slide:nth-child(7) img { animation-delay: -18s; }
+
+        /* ---------- Fade timeline — fade in, hold, fade out, wait ---------- */
+
+        @keyframes heroSlideFade {
+            0%      { opacity: 0; }      /* start hidden */
+            4.76%   { opacity: 1; }      /* 1s  — fully visible */
+            14.28%  { opacity: 1; }      /* 3s  — begin fade out */
+            19.04%  { opacity: 0; }      /* 4s  — fully hidden */
+            100%    { opacity: 0; }      /* stays hidden until next cycle */
+        }
+
+        /* ---------- Ken Burns — subtle cinematic zoom ---------- */
+
         @keyframes heroKenBurns {
             0%   { transform: scale(1.05) translate3d(0, 0, 0); }
-            100% { transform: scale(1.15) translate3d(-1%, -0.6%, 0); }
+            25%  { transform: scale(1.10) translate3d(-1%, -0.6%, 0); }
+            50%  { transform: scale(1.14) translate3d(0.8%, 0.5%, 0); }
+            75%  { transform: scale(1.09) translate3d(0.5%, -0.5%, 0); }
+            100% { transform: scale(1.05) translate3d(0, 0, 0); }
         }
+
+        /* ---------- Cinematic overlays ---------- */
 
         .making-hero-overlay {
             position: absolute;
@@ -2192,12 +2287,18 @@
         ========================================================= */
 
         @media (prefers-reduced-motion: reduce) {
-            .making-hero-image,
+            .making-hero-slide,
+            .making-hero-slide img,
             .featured-film-badge-dot,
             .featured-film-play-ring,
             .featured-film-glow {
                 animation: none !important;
             }
+
+            /* Freeze on the first slide */
+            .making-hero-slide:nth-child(1) { opacity: 1; }
+            .making-hero-slide:nth-child(n+2) { opacity: 0; }
+            .making-hero-slide img { transform: scale(1.05); }
         }
 
     </style>
@@ -2390,7 +2491,7 @@
                     if (window.matchMedia("(min-width: 1025px)").matches &&
                         !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
-                        gsap.to(".making-hero-image", {
+                        gsap.to(".making-hero-slideshow", {
                             yPercent: 10,
                             ease: "none",
                             scrollTrigger: {

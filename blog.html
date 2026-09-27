@@ -47,6 +47,10 @@
     <title>Blog | Cloudsartist21</title>
 
 
+    <!-- ==== Preload hero image for instant display ==== -->
+    <link rel="preload" as="image" href="Blog Cover Image.jpeg" fetchpriority="high">
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
@@ -176,49 +180,16 @@
 
 
         <!-- =================================================
-             01 · BLOG HERO — Cinematic Slideshow
+             01 · BLOG HERO — Cinematic Banner
         ================================================== -->
 
         <section class="blog-hero" aria-labelledby="blog-title">
 
             <div class="blog-hero-background" aria-hidden="true">
 
-                <div class="hero-slideshow">
-
-                    <div class="hero-slide hero-slide-1">
-                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2400&q=90"
-                            srcset="
-                                https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80   900w,
-                                https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1400&q=85 1400w,
-                                https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=90 2000w,
-                                https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2600&q=90 2600w
-                            "
-                            sizes="100vw" alt="" fetchpriority="high" decoding="async">
-                    </div>
-
-                    <div class="hero-slide hero-slide-2">
-                        <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=2400&q=90"
-                            srcset="
-                                https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=900&q=80   900w,
-                                https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1400&q=85 1400w,
-                                https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=2000&q=90 2000w,
-                                https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=2600&q=90 2600w
-                            "
-                            sizes="100vw" alt="" loading="eager" decoding="async">
-                    </div>
-
-                    <div class="hero-slide hero-slide-3">
-                        <img src="https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=2400&q=90"
-                            srcset="
-                                https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=900&q=80   900w,
-                                https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=1400&q=85 1400w,
-                                https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=2000&q=90 2000w,
-                                https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=2600&q=90 2600w
-                            "
-                            sizes="100vw" alt="" loading="eager" decoding="async">
-                    </div>
-
-                </div>
+                <!-- UPDATED: Single banner image -->
+                <img src="Blog Cover Image.jpg"
+                    alt="" class="blog-hero-image" fetchpriority="high" decoding="async">
 
                 <div class="blog-hero-overlay"></div>
                 <div class="blog-hero-vignette"></div>
@@ -1307,7 +1278,7 @@
 
 
         /* =========================================================
-           BLOG HERO
+           BLOG HERO — CINEMATIC BANNER (single image)
         ========================================================= */
 
         .blog-hero {
@@ -1331,23 +1302,9 @@
             background: #0d0d10;
         }
 
-        .hero-slideshow {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
+        /* ---------- Single banner image with subtle Ken Burns ---------- */
 
-        .hero-slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            background: #0b0b0e;
-            will-change: opacity;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
-
-        .hero-slide img {
+        .blog-hero-image {
             display: block;
             width: 100%;
             height: 100%;
@@ -1355,122 +1312,15 @@
             object-position: center;
             transform-origin: center center;
             filter: saturate(0.68) contrast(1.1) brightness(0.62);
-            animation: heroKenBurns 12s ease-in-out infinite;
+            animation: heroKenBurns 22s ease-in-out infinite alternate;
             will-change: transform;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
         }
 
-        .hero-slide-2 img {
-            animation-delay: -4s;
-        }
-
-        .hero-slide-3 img {
-            animation-delay: -8s;
-        }
-
-        .hero-slide-1 {
-            animation: heroSlide1 12s ease-in-out infinite;
-        }
-
-        .hero-slide-2 {
-            animation: heroSlide2 12s ease-in-out infinite;
-        }
-
-        .hero-slide-3 {
-            animation: heroSlide3 12s ease-in-out infinite;
-        }
-
-        @keyframes heroSlide1 {
-            0% {
-                opacity: 1;
-            }
-
-            33.33% {
-                opacity: 1;
-            }
-
-            41.66% {
-                opacity: 0;
-            }
-
-            91.66% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes heroSlide2 {
-            0% {
-                opacity: 0;
-            }
-
-            33.33% {
-                opacity: 0;
-            }
-
-            41.66% {
-                opacity: 1;
-            }
-
-            66.66% {
-                opacity: 1;
-            }
-
-            75% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        @keyframes heroSlide3 {
-            0% {
-                opacity: 0;
-            }
-
-            66.66% {
-                opacity: 0;
-            }
-
-            75% {
-                opacity: 1;
-            }
-
-            91.66% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
         @keyframes heroKenBurns {
-            0% {
-                transform: scale(1.05) translate3d(0, 0, 0);
-            }
-
-            25% {
-                transform: scale(1.10) translate3d(-1%, -0.6%, 0);
-            }
-
-            50% {
-                transform: scale(1.14) translate3d(0.8%, 0.5%, 0);
-            }
-
-            75% {
-                transform: scale(1.09) translate3d(0.5%, -0.5%, 0);
-            }
-
-            100% {
-                transform: scale(1.05) translate3d(0, 0, 0);
-            }
+            0%   { transform: scale(1.05) translate3d(0, 0, 0); }
+            100% { transform: scale(1.15) translate3d(-1%, -0.6%, 0); }
         }
 
         .blog-hero-overlay {
@@ -2897,24 +2747,10 @@
 
         @media (prefers-reduced-motion: reduce) {
 
-            .hero-slide,
-            .hero-slide img,
+            .blog-hero-image,
             .blog-featured-dot,
             .blog-newsletter-glow {
                 animation: none !important;
-            }
-
-            .hero-slide-1 {
-                opacity: 1;
-            }
-
-            .hero-slide-2,
-            .hero-slide-3 {
-                opacity: 0;
-            }
-
-            .hero-slide img {
-                transform: scale(1.05);
             }
 
             html {
@@ -3135,7 +2971,7 @@
                     if (window.matchMedia("(min-width: 1025px)").matches &&
                         !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
-                        gsap.to(".hero-slideshow", {
+                        gsap.to(".blog-hero-image", {
                             yPercent: 10,
                             ease: "none",
                             scrollTrigger: {

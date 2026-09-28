@@ -186,18 +186,76 @@
 
 
         <!-- =================================================
-             01 · ABOUT HERO — CINEMATIC IMAGE BANNER
+             01 · ABOUT HERO — CINEMATIC 9-IMAGE SLIDESHOW BANNER
         ================================================== -->
 
         <section class="about-hero" aria-labelledby="about-title">
 
             <div class="about-hero-background" aria-hidden="true">
 
-                <!-- ---- Cinematic image (replaces video) ---- -->
-                <!-- Replace the src below with your own image -->
-                <img class="about-hero-image"
-                    src="About Banner Image.jpg"
-                    alt="Cloudsartist21 film production — on set in Bhubaneswar" loading="eager" fetchpriority="high">
+                <!-- ============================================================
+                     CINEMATIC SLIDESHOW — 9 images with smooth crossfade
+                     ------------------------------------------------------------
+                     Images located at: assets/ABBanner/ab01 … ab09
+                     To replace: keep the exact same order and file names.
+                     ============================================================ -->
+                <div class="about-hero-slideshow">
+
+                    <!-- 01 -->
+                    <div class="about-hero-slide">
+                        <img src="assets/ABBanner/ab01.jpg"
+                            alt="" loading="eager" decoding="async" fetchpriority="high">
+                    </div>
+
+                    <!-- 02 -->
+                    <div class="about-hero-slide">
+                        <img src="assets/ABBanner/ab02.jpg"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 03 -->
+                    <div class="about-hero-slide">
+                        <img src="assets/ABBanner/ab03.jpg"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 04 -->
+                    <div class="about-hero-slide">
+                        <img src="assets/ABBanner/ab04.jpg"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 05 -->
+                    <div class="about-hero-slide">
+                        <img src="assets/ABBanner/ab05.jpg"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 06 -->
+                    <div class="about-hero-slide">
+                        <img src="assets/ABBanner/ab06.jpg"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 07 -->
+                    <div class="about-hero-slide">
+                        <img src="assets/ABBanner/ab07.jpg"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 08 -->
+                    <div class="about-hero-slide">
+                        <img src="assets/ABBanner/ab08.jpg"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- 09 -->
+                    <div class="about-hero-slide">
+                        <img src="assets/ABBanner/ab09.jpg"
+                            alt="" loading="eager" decoding="async">
+                    </div>
+
+                </div>
 
                 <!-- ---- Cinematic overlays ---- -->
                 <div class="about-hero-overlay"></div>
@@ -983,7 +1041,7 @@
         }
 
         /* =========================================================
-           ABOUT HERO — CINEMATIC IMAGE BANNER
+           ABOUT HERO — CINEMATIC 9-IMAGE SLIDESHOW
         ========================================================= */
 
         .about-hero {
@@ -1007,27 +1065,87 @@
             background: #050505;
         }
 
-        .about-hero-image {
+        /* ---------- Slideshow container ---------- */
+
+        .about-hero-slideshow {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            inset: 0;
+            z-index: 0;
+        }
+
+        /* ---------- Individual slide ---------- */
+
+        .about-hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            background: #0b0b0e;
+            will-change: opacity;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            /* Total cycle = 27s (3s per slide for 9 slides) */
+            animation: aboutHeroSlideFade 27s ease-in-out infinite;
+        }
+
+        .about-hero-slide img {
+            display: block;
             width: 100%;
             height: 100%;
-            min-width: 100%;
-            min-height: 100%;
             object-fit: cover;
             object-position: center;
-            transform: translate(-50%, -50%) scale(1.04);
-            animation: heroKenBurns 26s ease-in-out infinite alternate;
+            transform-origin: center center;
+            filter: saturate(0.72) contrast(1.08) brightness(0.7);
+            /* Subtle, cinematic Ken Burns zoom */
+            animation: aboutHeroKenBurns 24s ease-in-out infinite alternate;
             will-change: transform;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
         }
 
-        @keyframes heroKenBurns {
-            0%   { transform: translate(-50%, -50%) scale(1.04); }
-            100% { transform: translate(-50%, -50%) scale(1.16); }
+        /* ---------- Staggered delays — each slide appears 3s after the previous ---------- */
+
+        .about-hero-slide:nth-child(1) { animation-delay: 0s; }
+        .about-hero-slide:nth-child(2) { animation-delay: 3s; }
+        .about-hero-slide:nth-child(3) { animation-delay: 6s; }
+        .about-hero-slide:nth-child(4) { animation-delay: 9s; }
+        .about-hero-slide:nth-child(5) { animation-delay: 12s; }
+        .about-hero-slide:nth-child(6) { animation-delay: 15s; }
+        .about-hero-slide:nth-child(7) { animation-delay: 18s; }
+        .about-hero-slide:nth-child(8) { animation-delay: 21s; }
+        .about-hero-slide:nth-child(9) { animation-delay: 24s; }
+
+        /* Stagger Ken Burns so images don't all zoom at the same phase */
+        .about-hero-slide:nth-child(1) img { animation-delay: 0s; }
+        .about-hero-slide:nth-child(2) img { animation-delay: -3s; }
+        .about-hero-slide:nth-child(3) img { animation-delay: -6s; }
+        .about-hero-slide:nth-child(4) img { animation-delay: -9s; }
+        .about-hero-slide:nth-child(5) img { animation-delay: -12s; }
+        .about-hero-slide:nth-child(6) img { animation-delay: -15s; }
+        .about-hero-slide:nth-child(7) img { animation-delay: -18s; }
+        .about-hero-slide:nth-child(8) img { animation-delay: -21s; }
+        .about-hero-slide:nth-child(9) img { animation-delay: -24s; }
+
+        /* ---------- Fade timeline — fade in, hold, fade out, wait ---------- */
+
+        @keyframes aboutHeroSlideFade {
+            0%      { opacity: 0; }        /* start hidden */
+            3.7%    { opacity: 1; }        /* 1s  — fully visible */
+            11.11%  { opacity: 1; }        /* 3s  — begin fade out */
+            14.81%  { opacity: 0; }        /* 4s  — fully hidden */
+            100%    { opacity: 0; }        /* stays hidden until next cycle */
         }
+
+        /* ---------- Ken Burns — subtle cinematic zoom ---------- */
+
+        @keyframes aboutHeroKenBurns {
+            0%   { transform: scale(1.05) translate3d(0, 0, 0); }
+            25%  { transform: scale(1.10) translate3d(-1%, -0.6%, 0); }
+            50%  { transform: scale(1.14) translate3d(0.8%, 0.5%, 0); }
+            75%  { transform: scale(1.09) translate3d(0.5%, -0.5%, 0); }
+            100% { transform: scale(1.05) translate3d(0, 0, 0); }
+        }
+
+        /* ---------- Cinematic overlays ---------- */
 
         .about-hero-overlay {
             position: absolute;
@@ -2527,7 +2645,15 @@
         ========================================================= */
 
         @media (prefers-reduced-motion: reduce) {
-            .about-hero-image { animation: none !important; }
+            .about-hero-slide,
+            .about-hero-slide img {
+                animation: none !important;
+            }
+
+            /* Freeze on the first slide */
+            .about-hero-slide:nth-child(1) { opacity: 1; }
+            .about-hero-slide:nth-child(n+2) { opacity: 0; }
+            .about-hero-slide img { transform: scale(1.05); }
         }
     </style>
 

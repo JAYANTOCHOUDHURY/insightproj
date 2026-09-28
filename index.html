@@ -178,14 +178,19 @@
     <main>
 
         <!-- =====================================================
-             01 · HERO — CINEMATIC VIDEO BANNER
+             01 · HERO — CINEMATIC VIDEO BANNER (WITH SOUND)
         ====================================================== -->
 
         <section class="hero" aria-label="Cloudsartist21 cinematic reel">
 
             <div class="hero-bg" data-hero-bg>
 
-                <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture
+                <!-- =============================================
+                     VIDEO — SOUND ENABLED
+                     (no `muted` attribute · sound toggle below)
+                ============================================== -->
+                <video class="hero-video" id="heroVideo" autoplay loop playsinline preload="auto"
+                    disablepictureinpicture
                     poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1920&q=90">
                     <source src="assets/videos/Insight-hero-video-compressed.mp4" type="video/mp4">
                 </video>
@@ -209,10 +214,44 @@
                         <span>Bhubaneswar · Odisha · India</span>
                     </div>
 
-                    <a href="#work" class="hero-scroll-link" aria-label="Scroll to work">
-                        <span>Scroll</span>
-                        <span class="hero-scroll-line"></span>
-                    </a>
+                    <div class="hero-bottom-actions">
+
+                        <!-- =============================================
+                             SOUND TOGGLE
+                        ============================================== -->
+                        <button class="hero-sound-toggle is-muted" type="button" data-sound-toggle
+                            aria-label="Unmute video" aria-pressed="false">
+
+                            <span class="hero-sound-icon" aria-hidden="true">
+
+                                <!-- Sound ON icon -->
+                                <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M11 5 6 9H3v6h3l5 4V5Z" />
+                                    <path d="M15.5 8.5a5 5 0 0 1 0 7" />
+                                    <path d="M18.5 5.5a9 9 0 0 1 0 13" />
+                                </svg>
+
+                                <!-- Sound OFF icon -->
+                                <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M11 5 6 9H3v6h3l5 4V5Z" />
+                                    <path d="m16 9.5 5 5" />
+                                    <path d="m21 9.5-5 5" />
+                                </svg>
+
+                            </span>
+
+                            <span class="hero-sound-label" data-sound-label>Sound Off</span>
+
+                        </button>
+
+                        <a href="#work" class="hero-scroll-link" aria-label="Scroll to work">
+                            <span>Scroll</span>
+                            <span class="hero-scroll-line"></span>
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -650,6 +689,7 @@
             .menu-toggle,
             .logo,
             .hero-scroll-link,
+            .hero-sound-toggle,
             .footer-col-list a,
             .footer-socials-inline a,
             .mobile-nav-links a,
@@ -1195,6 +1235,12 @@
             margin-top: auto;
         }
 
+        .hero-bottom-actions {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.85rem, 1.8vw, 1.75rem);
+        }
+
         .hero-meta {
             display: flex;
             align-items: center;
@@ -1209,6 +1255,80 @@
 
         .hero-meta-divider {
             opacity: 0.4;
+        }
+
+        /* ---------- HERO SOUND TOGGLE ---------- */
+
+        .hero-sound-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1.15rem;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 100px;
+            background: rgba(8, 8, 10, 0.38);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: rgba(255, 255, 255, 0.88);
+            font-family: var(--font-body);
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            line-height: 1;
+            white-space: nowrap;
+            transition: background 0.35s ease, border-color 0.35s ease, color 0.35s ease,
+                transform 0.35s var(--ease-out);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .hero-sound-toggle:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+
+        .hero-sound-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+        }
+
+        .hero-sound-icon svg {
+            width: 15px;
+            height: 15px;
+            display: block;
+        }
+
+        .hero-sound-toggle.is-muted .icon-unmuted {
+            display: none;
+        }
+
+        .hero-sound-toggle:not(.is-muted) .icon-muted {
+            display: none;
+        }
+
+        /* Gentle attention pulse while sound is off */
+        .hero-sound-toggle.is-muted {
+            animation: soundPulse 2.6s ease-out infinite;
+        }
+
+        @keyframes soundPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.34);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
         }
 
         .hero-scroll-link {
@@ -1746,6 +1866,11 @@
                 white-space: normal;
             }
 
+            .hero-bottom-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+
             .hero-scroll-link {
                 font-size: 0.62rem;
             }
@@ -1811,6 +1936,22 @@
                 padding-bottom: 24px;
             }
 
+            .hero-sound-toggle {
+                padding: 0.55rem 0.95rem;
+                font-size: 0.58rem;
+                letter-spacing: 0.14em;
+            }
+
+            .hero-sound-label {
+                display: none;
+            }
+
+            .hero-sound-icon,
+            .hero-sound-icon svg {
+                width: 17px;
+                height: 17px;
+            }
+
             .work-card-title {
                 font-size: 1.35rem;
             }
@@ -1869,7 +2010,8 @@
         @media (prefers-reduced-motion: reduce) {
 
             .hero-video,
-            .hero-scroll-line::after {
+            .hero-scroll-line::after,
+            .hero-sound-toggle.is-muted {
                 animation: none !important;
             }
 
@@ -1952,7 +2094,7 @@
 
                     /* Grow on interactive elements */
                     const hoverTargets = document.querySelectorAll(
-                        "a, button, [role='button'], .work-card, .header-cta, .menu-toggle, .logo, .hero-scroll-link, .footer-socials-inline a, .footer-col-list a, .mobile-nav-links a, .mobile-nav-parent, .submenu a, .nav-links a, .work-trigger"
+                        "a, button, [role='button'], .work-card, .header-cta, .menu-toggle, .logo, .hero-scroll-link, .hero-sound-toggle, .footer-socials-inline a, .footer-col-list a, .mobile-nav-links a, .mobile-nav-parent, .submenu a, .nav-links a, .work-trigger"
                     );
 
                     hoverTargets.forEach((el) => {
@@ -2053,31 +2195,128 @@
 
 
                 /* =========================================================
-                   VIDEO PLAYBACK ROBUSTNESS
+                   HERO VIDEO — SOUND ON (About Us page behaviour)
+                   ---------------------------------------------------------
+                   · Autoplay with sound is attempted first.
+                   · If the browser blocks it, the video silently falls
+                     back to muted autoplay and un-mutes itself on the
+                     very first user interaction (tap / click / scroll /
+                     key press).
+                   · The hero sound button lets visitors mute/unmute
+                     at any time.
                 ========================================================= */
                 const heroVideo = document.querySelector(".hero-video");
+                const soundToggle = document.querySelector("[data-sound-toggle]");
+                const soundLabel = document.querySelector("[data-sound-label]");
+
+                function syncSoundUI(isMuted) {
+                    if (!soundToggle) return;
+
+                    soundToggle.classList.toggle("is-muted", isMuted);
+                    soundToggle.setAttribute("aria-pressed", isMuted ? "false" : "true");
+                    soundToggle.setAttribute("aria-label", isMuted ? "Unmute video" : "Mute video");
+
+                    if (soundLabel) {
+                        soundLabel.textContent = isMuted ? "Sound Off" : "Sound On";
+                    }
+                }
+
+                function safePlay(video) {
+                    const p = video.play();
+                    if (p && typeof p.catch === "function") {
+                        p.catch(() => { /* silent fail — poster remains */ });
+                    }
+                }
 
                 if (heroVideo) {
-                    heroVideo.muted = true;
 
-                    const tryPlay = () => {
-                        const p = heroVideo.play();
-                        if (p && typeof p.catch === "function") {
-                            p.catch(() => { /* silent fail — poster remains */ });
-                        }
-                    };
+                    heroVideo.loop = true;
+                    heroVideo.playsInline = true;
+                    heroVideo.volume = 1;
 
-                    tryPlay();
+                    let autoUnmuteArmed = false;
 
-                    document.addEventListener("touchstart", tryPlay, { once: true, passive: true });
-                    document.addEventListener("click", tryPlay, { once: true });
+                    /* Un-mute on first real user interaction (fallback path) */
+                    function armAutoUnmute() {
+                        if (autoUnmuteArmed) return;
+                        autoUnmuteArmed = true;
 
+                        const events = ["pointerdown", "touchstart", "keydown", "wheel", "scroll"];
+
+                        const handler = () => {
+                            events.forEach((evt) => {
+                                window.removeEventListener(evt, handler);
+                            });
+
+                            heroVideo.muted = false;
+                            heroVideo.volume = 1;
+
+                            safePlay(heroVideo);
+                            syncSoundUI(false);
+                        };
+
+                        events.forEach((evt) => {
+                            window.addEventListener(evt, handler, { passive: true });
+                        });
+                    }
+
+                    /* 1 · Try to play WITH sound straight away */
+                    heroVideo.muted = false;
+
+                    const initialPlay = heroVideo.play();
+
+                    if (initialPlay && typeof initialPlay.then === "function") {
+
+                        initialPlay
+                            .then(() => {
+                                syncSoundUI(false);
+                            })
+                            .catch(() => {
+                                /* 2 · Blocked → fall back to muted autoplay */
+                                heroVideo.muted = true;
+
+                                const fallback = heroVideo.play();
+
+                                if (fallback && typeof fallback.catch === "function") {
+                                    fallback.catch(() => { /* poster remains */ });
+                                }
+
+                                syncSoundUI(true);
+                                armAutoUnmute();
+                            });
+
+                    } else {
+                        syncSoundUI(!heroVideo.muted);
+                    }
+
+                    /* 3 · Manual sound toggle button */
+                    if (soundToggle) {
+                        soundToggle.addEventListener("click", function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+
+                            const shouldUnmute = heroVideo.muted;
+
+                            heroVideo.muted = !shouldUnmute;
+                            heroVideo.volume = 1;
+
+                            safePlay(heroVideo);
+                            syncSoundUI(heroVideo.muted);
+                        });
+                    }
+
+                    /* 4 · Pause when tab is hidden, resume when visible */
                     document.addEventListener("visibilitychange", () => {
                         if (document.hidden) {
                             heroVideo.pause();
                         } else {
-                            tryPlay();
+                            safePlay(heroVideo);
                         }
+                    });
+
+                    /* 5 · Keep UI in sync if the browser changes mute state */
+                    heroVideo.addEventListener("volumechange", () => {
+                        syncSoundUI(heroVideo.muted);
                     });
                 }
 

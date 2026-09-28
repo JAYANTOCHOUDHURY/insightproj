@@ -186,18 +186,18 @@
 
 
         <!-- =================================================
-             01 · ABOUT HERO — CINEMATIC VIDEO BANNER
+             01 · ABOUT HERO — CINEMATIC IMAGE BANNER
         ================================================== -->
 
         <section class="about-hero" aria-labelledby="about-title">
 
             <div class="about-hero-background" aria-hidden="true">
 
-                <!-- ---- Cinematic video (unmuted autoplay, same as home) ---- -->
-                <video class="about-hero-video" autoplay loop playsinline preload="auto" disablepictureinpicture
-                    poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1920&q=90">
-                    <source src="assets/videos/About Banner Video-compressed.mp4" type="video/mp4">
-                </video>
+                <!-- ---- Cinematic image (replaces video) ---- -->
+                <!-- Replace the src below with your own image -->
+                <img class="about-hero-image"
+                    src="About Banner Image.jpg"
+                    alt="Cloudsartist21 film production — on set in Bhubaneswar" loading="eager" fetchpriority="high">
 
                 <!-- ---- Cinematic overlays ---- -->
                 <div class="about-hero-overlay"></div>
@@ -209,30 +209,6 @@
                 </div>
 
             </div>
-
-
-            <!-- ==============================================
-                 SOUND TOGGLE BUTTON (top-right of hero)
-            =============================================== -->
-            <button class="hero-sound-toggle" id="heroSoundToggle" type="button"
-                aria-label="Toggle sound" aria-pressed="true" data-cursor="SOUND">
-
-                <!-- Speaker ON icon -->
-                <svg class="hero-sound-icon hero-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M11 5 6 9H2v6h4l5 4V5z" />
-                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-                </svg>
-
-                <!-- Speaker OFF icon -->
-                <svg class="hero-sound-icon hero-sound-off" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M11 5 6 9H2v6h4l5 4V5z" />
-                    <line x1="23" y1="9" x2="17" y2="15" />
-                    <line x1="17" y1="9" x2="23" y2="15" />
-                </svg>
-            </button>
 
 
             <div class="container about-hero-content">
@@ -1007,7 +983,7 @@
         }
 
         /* =========================================================
-           ABOUT HERO — CINEMATIC VIDEO BANNER
+           ABOUT HERO — CINEMATIC IMAGE BANNER
         ========================================================= */
 
         .about-hero {
@@ -1031,7 +1007,7 @@
             background: #050505;
         }
 
-        .about-hero-video {
+        .about-hero-image {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -1100,83 +1076,6 @@
 
         .about-hero-grid span:last-child {
             border-right: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* =========================================================
-           HERO SOUND TOGGLE
-        ========================================================= */
-
-        .hero-sound-toggle {
-            position: absolute;
-            top: clamp(90px, 10vw, 120px);
-            right: clamp(1.5rem, 5vw, 3.5rem);
-            z-index: 10;
-            width: clamp(42px, 4vw, 48px);
-            height: clamp(42px, 4vw, 48px);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(8, 8, 10, 0.55);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 50%;
-            color: var(--white);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 0;
-            cursor: pointer;
-            transition: all 0.35s var(--ease-out);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-        }
-
-        .hero-sound-toggle:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: var(--bg);
-            transform: scale(1.06);
-            box-shadow: 0 8px 28px rgba(212, 175, 55, 0.4);
-        }
-
-        .hero-sound-icon {
-            width: 45%;
-            height: 45%;
-            position: absolute;
-            transition: opacity 0.3s ease, transform 0.3s var(--ease-out);
-        }
-
-        .hero-sound-toggle .hero-sound-on {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .hero-sound-toggle .hero-sound-off {
-            opacity: 0;
-            transform: scale(0.7);
-        }
-
-        .hero-sound-toggle.is-muted .hero-sound-on {
-            opacity: 0;
-            transform: scale(0.7);
-        }
-
-        .hero-sound-toggle.is-muted .hero-sound-off {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .hero-sound-toggle.is-muted {
-            border-color: rgba(212, 175, 55, 0.7);
-            animation: heroSoundPulse 2.4s ease-in-out infinite;
-        }
-
-        @keyframes heroSoundPulse {
-            0%, 100% {
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35),
-                            0 0 0 0 rgba(212, 175, 55, 0.4);
-            }
-            50% {
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35),
-                            0 0 0 10px rgba(212, 175, 55, 0);
-            }
         }
 
         /* =========================================================
@@ -2356,24 +2255,12 @@
             }
 
             .about-hero-grid { grid-template-columns: repeat(2, 1fr); }
-
-            .hero-sound-toggle {
-                top: clamp(80px, 11vw, 100px);
-                right: 1.5rem;
-            }
         }
 
         @media (max-width: 480px) {
             .about-hero { min-height: 600px; }
             .about-title { font-size: clamp(1.9rem, 13vw, 3.2rem); }
             .about-hero-grain { display: none; }
-
-            .hero-sound-toggle {
-                top: 92px;
-                right: 1.25rem;
-                width: 42px;
-                height: 42px;
-            }
 
             .ca-create-button { padding: 1rem 1.75rem; font-size: 0.65rem; }
         }
@@ -2640,8 +2527,7 @@
         ========================================================= */
 
         @media (prefers-reduced-motion: reduce) {
-            .about-hero-video { animation: none !important; }
-            .hero-sound-toggle.is-muted { animation: none; }
+            .about-hero-image { animation: none !important; }
         }
     </style>
 
@@ -2715,98 +2601,6 @@
                         e.preventDefault();
                         mobileWorkGroup.classList.toggle('is-expanded');
                     });
-                }
-
-
-                /* =========================================================
-                   HERO VIDEO — UNMUTED PLAYBACK + SOUND TOGGLE
-                ========================================================= */
-                const heroVideo = document.querySelector(".about-hero-video");
-                const soundToggle = document.getElementById("heroSoundToggle");
-
-                function updateSoundToggle() {
-                    if (!soundToggle || !heroVideo) return;
-                    const isMuted = heroVideo.muted || heroVideo.volume === 0;
-                    soundToggle.classList.toggle("is-muted", isMuted);
-                    soundToggle.setAttribute("aria-pressed", isMuted ? "false" : "true");
-                    soundToggle.setAttribute("aria-label", isMuted ? "Unmute video" : "Mute video");
-                }
-
-                if (heroVideo) {
-                    heroVideo.muted = false;
-                    heroVideo.volume = 1;
-
-                    const tryPlayUnmuted = () => {
-                        const p = heroVideo.play();
-                        if (p && typeof p.then === "function") {
-                            p.then(() => {
-                                updateSoundToggle();
-                            }).catch(() => {
-                                heroVideo.muted = true;
-                                const p2 = heroVideo.play();
-                                if (p2 && typeof p2.catch === "function") {
-                                    p2.catch(() => { /* silent fail */ });
-                                }
-                                updateSoundToggle();
-                            });
-                        }
-                    };
-
-                    tryPlayUnmuted();
-
-                    let userInteracted = false;
-                    const onFirstInteraction = () => {
-                        if (userInteracted) return;
-                        userInteracted = true;
-
-                        if (soundToggle && !soundToggle.classList.contains("is-muted")) {
-                            heroVideo.muted = false;
-                            const p = heroVideo.play();
-                            if (p && typeof p.catch === "function") {
-                                p.catch(() => { /* silent fail */ });
-                            }
-                            updateSoundToggle();
-                        }
-
-                        document.removeEventListener("touchstart", onFirstInteraction);
-                        document.removeEventListener("click", onFirstInteraction);
-                        document.removeEventListener("keydown", onFirstInteraction);
-                    };
-
-                    document.addEventListener("touchstart", onFirstInteraction, { once: true, passive: true });
-                    document.addEventListener("click", onFirstInteraction, { once: true });
-                    document.addEventListener("keydown", onFirstInteraction, { once: true });
-
-                    document.addEventListener("visibilitychange", () => {
-                        if (document.hidden) {
-                            heroVideo.pause();
-                        } else {
-                            const p = heroVideo.play();
-                            if (p && typeof p.catch === "function") {
-                                p.catch(() => { /* silent fail */ });
-                            }
-                        }
-                    });
-
-                    if (soundToggle) {
-                        soundToggle.addEventListener("click", function (e) {
-                            e.stopPropagation();
-                            heroVideo.muted = !heroVideo.muted;
-
-                            if (!heroVideo.muted) {
-                                heroVideo.volume = 1;
-                            }
-
-                            const p = heroVideo.play();
-                            if (p && typeof p.catch === "function") {
-                                p.catch(() => { /* silent fail */ });
-                            }
-
-                            updateSoundToggle();
-                        });
-
-                        updateSoundToggle();
-                    }
                 }
 
 

@@ -17,6 +17,9 @@
 
     <link rel="canonical" href="https://www.cloudsartist21.com/contact">
 
+    <!-- Favicon to fix the 404 console error -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <meta property="og:type" content="website">
     <meta property="og:title" content="Contact | Cloudsartist21">
     <meta property="og:description"
@@ -56,13 +59,10 @@
 
     <title>Contact | Cloudsartist21</title>
 
-
     <!-- ==== Preload hero image for instant display ==== -->
     <link rel="preload" as="image" href="Contact Cover Pic.jpeg" fetchpriority="high">
 
-
     <link rel="stylesheet" href="assets/styles.css">
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,9 +72,11 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+
+    <!-- ==== EmailJS SDK ==== -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script src="assets/app.js" defer></script>
 
@@ -455,7 +457,7 @@
                         </div>
 
 
-                        <form class="contact-form" id="contact-form" action="contact-form.php" method="POST" novalidate
+                        <form class="contact-form" id="contact-form" novalidate
                             aria-labelledby="form-heading">
 
                             <!-- Honeypot — invisible to humans, catches bots -->
@@ -3129,19 +3131,20 @@
             });
         })();
     </script>
+    
     <!-- =========================================================
-     CONTACT FORM — EMAIL SUBMISSION
-     ---------------------------------------------------------
-     Submissions are handled by contact-form.php
-     and delivered to:
-     jayantochoudhury07@gmail.com
-     ========================================================== -->
+         CONTACT FORM — EMAILJS SUBMISSION
+    ========================================================== -->
 
     <script>
         (function () {
             "use strict";
 
             document.addEventListener("DOMContentLoaded", function () {
+
+                // Initialize EmailJS with your Public Key
+                // REPLACE "YOUR_PUBLIC_KEY" WITH YOUR ACTUAL PUBLIC KEY
+                emailjs.init("YOUR_PUBLIC_KEY");
 
                 var form = document.getElementById("contact-form");
 
@@ -3157,338 +3160,136 @@
 
                 var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-
                 /* =====================================================
                    MESSAGE
                 ===================================================== */
 
                 function setMessage(type, text) {
-
                     if (!messageBox) return;
-
                     messageBox.textContent = text;
-
-                    messageBox.classList.remove(
-                        "is-success",
-                        "is-error"
-                    );
-
-                    messageBox.classList.add(
-                        type === "success"
-                            ? "is-success"
-                            : "is-error"
-                    );
+                    messageBox.classList.remove("is-success", "is-error");
+                    messageBox.classList.add(type === "success" ? "is-success" : "is-error");
                 }
-
 
                 function clearMessage() {
-
                     if (!messageBox) return;
-
                     messageBox.textContent = "";
-
-                    messageBox.classList.remove(
-                        "is-success",
-                        "is-error"
-                    );
+                    messageBox.classList.remove("is-success", "is-error");
                 }
-
 
                 /* =====================================================
                    LOADING STATE
                 ===================================================== */
 
                 function setLoading(state) {
-
                     if (!submitBtn) return;
-
-                    submitBtn.classList.toggle(
-                        "is-loading",
-                        state
-                    );
-
+                    submitBtn.classList.toggle("is-loading", state);
                     submitBtn.disabled = state;
-
                     if (submitLabel) {
-
-                        submitLabel.textContent = state
-                            ? "Sending..."
-                            : "Send Message";
+                        submitLabel.textContent = state ? "Sending..." : "Send Message";
                     }
                 }
-
 
                 /* =====================================================
                    FIELD HELPER
                 ===================================================== */
 
                 function fieldOf(el) {
-
-                    return el
-                        ? el.closest(".contact-form-field")
-                        : null;
+                    return el ? el.closest(".contact-form-field") : null;
                 }
-
 
                 /* =====================================================
                    VALIDATION
                 ===================================================== */
 
                 var RULES = [
-
-                    {
-                        id: "contact-name",
-
-                        test: function (value) {
-                            return value.trim().length >= 2;
-                        }
-                    },
-
-                    {
-                        id: "contact-email",
-
-                        test: function (value) {
-                            return EMAIL_RE.test(value.trim());
-                        }
-                    },
-
-                    {
-                        id: "contact-phone",
-
-                        test: function (value) {
-                            return value.replace(/\D/g, "").length >= 8;
-                        }
-                    },
-
-                    {
-                        id: "contact-type",
-
-                        test: function (value) {
-                            return value !== "";
-                        }
-                    },
-
-                    {
-                        id: "contact-project",
-
-                        test: function (value) {
-                            return value.trim().length >= 10;
-                        }
-                    }
-
+                    { id: "contact-name", test: function (value) { return value.trim().length >= 2; } },
+                    { id: "contact-email", test: function (value) { return EMAIL_RE.test(value.trim()); } },
+                    { id: "contact-phone", test: function (value) { return value.replace(/\D/g, "").length >= 8; } },
+                    { id: "contact-type", test: function (value) { return value !== ""; } },
+                    { id: "contact-project", test: function (value) { return value.trim().length >= 10; } }
                 ];
 
-
                 function validate() {
-
                     var validForm = true;
                     var firstInvalid = null;
 
-
                     RULES.forEach(function (rule) {
-
-                        var field = form.querySelector(
-                            "#" + rule.id
-                        );
-
+                        var field = form.querySelector("#" + rule.id);
                         if (!field) return;
 
-
-                        var valid = rule.test(
-                            field.value || ""
-                        );
-
+                        var valid = rule.test(field.value || "");
                         var wrapper = fieldOf(field);
 
-
                         if (wrapper) {
-
-                            wrapper.classList.toggle(
-                                "has-error",
-                                !valid
-                            );
+                            wrapper.classList.toggle("has-error", !valid);
                         }
 
-
                         if (!valid) {
-
                             validForm = false;
-
                             if (!firstInvalid) {
                                 firstInvalid = field;
                             }
                         }
-
                     });
-
 
                     if (firstInvalid) {
                         firstInvalid.focus();
                     }
 
-
                     return validForm;
                 }
-
 
                 /* =====================================================
                    CLEAR ERROR WHEN USER FIXES FIELD
                 ===================================================== */
 
-                form
-                    .querySelectorAll("input, select, textarea")
-                    .forEach(function (el) {
-
-                        var clearError = function () {
-
-                            var wrapper = fieldOf(el);
-
-                            if (wrapper) {
-
-                                wrapper.classList.remove(
-                                    "has-error"
-                                );
-                            }
-                        };
-
-
-                        el.addEventListener(
-                            "input",
-                            clearError
-                        );
-
-                        el.addEventListener(
-                            "change",
-                            clearError
-                        );
-
-                    });
-
+                form.querySelectorAll("input, select, textarea").forEach(function (el) {
+                    var clearError = function () {
+                        var wrapper = fieldOf(el);
+                        if (wrapper) {
+                            wrapper.classList.remove("has-error");
+                        }
+                    };
+                    el.addEventListener("input", clearError);
+                    el.addEventListener("change", clearError);
+                });
 
                 /* =====================================================
-                   FORM SUBMIT
+                   FORM SUBMIT — EMAILJS
                 ===================================================== */
 
-                form.addEventListener(
-                    "submit",
-                    function (event) {
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+                    clearMessage();
 
-                        event.preventDefault();
-
-                        clearMessage();
-
-
-                        /* ---------------------------------------------
-                           HONEYPOT
-                        --------------------------------------------- */
-
-                        if (
-                            honeypot &&
-                            honeypot.checked
-                        ) {
-                            return;
-                        }
-
-
-                        /* ---------------------------------------------
-                           VALIDATION
-                        --------------------------------------------- */
-
-                        if (!validate()) {
-
-                            setMessage(
-                                "error",
-                                "Please complete the highlighted fields before sending."
-                            );
-
-                            return;
-                        }
-
-
-                        /* ---------------------------------------------
-                           SEND TO PHP
-                        --------------------------------------------- */
-
-                        var formData = new FormData(form);
-
-                        setLoading(true);
-
-
-                        fetch(
-                            "contact-form.php",
-                            {
-                                method: "POST",
-
-                                body: formData,
-
-                                headers: {
-                                    "Accept": "application/json"
-                                }
-                            }
-                        )
-
-                            .then(function (response) {
-
-                                return response
-                                    .json()
-                                    .catch(function () {
-
-                                        return {
-                                            success: false,
-                                            message:
-                                                "Invalid server response."
-                                        };
-
-                                    });
-
-                            })
-
-                            .then(function (result) {
-
-                                if (result.success) {
-
-                                    form.reset();
-
-
-                                    setMessage(
-                                        "success",
-                                        "Thank you — your brief has been sent to jayantochoudhury07@gmail.com. We'll get back to you within 24 hours."
-                                    );
-
-                                } else {
-
-                                    throw new Error(
-                                        result.message ||
-                                        "Unable to send your message."
-                                    );
-                                }
-
-                            })
-
-                            .catch(function (error) {
-
-                                console.error(
-                                    "Contact form error:",
-                                    error
-                                );
-
-
-                                setMessage(
-                                    "error",
-                                    error.message ||
-                                    "Something went wrong while sending. Please try again, or email us at jayantochoudhury07@gmail.com."
-                                );
-
-                            })
-
-                            .finally(function () {
-
-                                setLoading(false);
-
-                            });
-
+                    // Honeypot check
+                    if (honeypot && honeypot.checked) {
+                        return;
                     }
-                );
+
+                    // Validation
+                    if (!validate()) {
+                        setMessage("error", "Please complete the highlighted fields before sending.");
+                        return;
+                    }
+
+                    setLoading(true);
+
+                    // REPLACE "YOUR_SERVICE_ID" AND "YOUR_TEMPLATE_ID" WITH YOUR ACTUAL IDS
+                    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form)
+                        .then(function (response) {
+                            console.log("EmailJS Success:", response.status, response.text);
+                            form.reset();
+                            setMessage("success", "Thank you — your brief has been sent successfully. We'll get back to you within 24 hours.");
+                        }, function (error) {
+                            console.error("EmailJS Error:", error);
+                            setMessage("error", "Something went wrong while sending. Please try again, or email us directly at jayantochoudhury07@gmail.com.");
+                        })
+                        .finally(function () {
+                            setLoading(false);
+                        });
+                });
 
             });
 

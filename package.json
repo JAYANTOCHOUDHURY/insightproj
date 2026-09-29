@@ -1,0 +1,15 @@
+{
+  "name": "insight-studios",
+  "version": "1.0.0",
+  "description": "A premium, production-ready website for a high-end film and photography studio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "resend": "^6.30.0"
+  }
+}
